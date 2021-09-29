@@ -24,9 +24,8 @@ public class PlayerMovement : MonoBehaviour
         movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized;
 
         //animation
-        if (body.velocity == Vector2.zero){
-            
-        }
+        if (body.velocity == Vector2.zero) anim.SetBool("moving",false);
+        else anim.SetBool("moving",true);
 
     }
     private void FixedUpdate(){
