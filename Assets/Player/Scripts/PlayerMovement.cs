@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CircleCollider2D colliderCircle;
     private Rigidbody2D body;
     private Animator anim;
+    
 
     private Vector2 movementDirection;
 
