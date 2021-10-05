@@ -6,7 +6,8 @@ public class RogueAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject weapon;
-
+    [SerializeField] private float coolDown;
+    private float currentCoolDown = 0;
     void Start()
     {
         
@@ -14,8 +15,10 @@ public class RogueAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
+        currentCoolDown -= Time.deltaTime;
+        if (Input.GetMouseButton(0) && currentCoolDown <= 0){
             shoot();
+            currentCoolDown = coolDown;
         }
     }
     private void shoot(){

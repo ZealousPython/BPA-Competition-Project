@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MageBasicAttack : MonoBehaviour
-{   
+{
+    [SerializeField] private float coolDown;
+    private float currentCoolDown = 0;
     public GameObject fireBall;
     // Start is called before the first frame update
     void Start()
@@ -14,8 +16,11 @@ public class MageBasicAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
+        currentCoolDown -= Time.deltaTime;
+        if (Input.GetMouseButton(0) && currentCoolDown <= 0)
+        {
             shoot();
+            currentCoolDown = coolDown;
         }
     }
     private void shoot(){
