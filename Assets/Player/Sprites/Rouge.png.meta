@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: bfcaa100fbdebfe44a0485569366abbd
+guid: 7360eedb24ab2a74fb1563ae8cefe827
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7285376162372006033
-    second: Mage_0
+      213: 5949114163122182415
+    second: Rouge_0
   - first:
-      213: 1377322663251520538
-    second: Mage_1
+      213: -1587902527818388146
+    second: Rouge_1
   - first:
-      213: 2429379624658069490
-    second: Mage_2
+      213: 7014824896534590752
+    second: Rouge_2
   - first:
-      213: -3092618186771702557
-    second: Mage_3
+      213: -1634845059653263325
+    second: Rouge_3
   - first:
-      213: -4641263954899877479
-    second: Mage_4
+      213: -2418811403396717369
+    second: Rouge_4
   - first:
-      213: -8166337472594541346
-    second: Mage_5
+      213: -2678483093365723837
+    second: Rouge_5
   - first:
-      213: 1096285362524239212
-    second: Mage_6
+      213: -8557672981707576579
+    second: Rouge_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -63,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -108,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mage_0
+      name: Rouge_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,14 +122,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6fc7badaf425ea90800000000000000
-      internalID: -7285376162372006033
+      spriteID: f099425cfcf7f8250800000000000000
+      internalID: 5949114163122182415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_1
+      name: Rouge_1
       rect:
         serializedVersion: 2
         x: 32
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1ca3343aab3d1310800000000000000
-      internalID: 1377322663251520538
+      spriteID: e4da0736013a6f9e0800000000000000
+      internalID: -1587902527818388146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_2
+      name: Rouge_2
       rect:
         serializedVersion: 2
         x: 64
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f7e050b5e3e6b120800000000000000
-      internalID: 2429379624658069490
+      spriteID: 025b287c31aa95160800000000000000
+      internalID: 7014824896534590752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_3
+      name: Rouge_3
       rect:
         serializedVersion: 2
         x: 96
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ec5f8ff420d415d0800000000000000
-      internalID: -3092618186771702557
+      spriteID: 320a09c741ddf49e0800000000000000
+      internalID: -1634845059653263325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_4
+      name: Rouge_4
       rect:
         serializedVersion: 2
         x: 128
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9914e53060be69fb0800000000000000
-      internalID: -4641263954899877479
+      spriteID: 7c4efd118d7ae6ed0800000000000000
+      internalID: -2418811403396717369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_5
+      name: Rouge_5
       rect:
         serializedVersion: 2
         x: 160
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed48a06f5575bae80800000000000000
-      internalID: -8166337472594541346
+      spriteID: 34deb0b51dd14dad0800000000000000
+      internalID: -2678483093365723837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage_6
+      name: Rouge_6
       rect:
         serializedVersion: 2
         x: 192
@@ -248,8 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c65b7b59ab9c63f00800000000000000
-      internalID: 1096285362524239212
+      spriteID: dfaac5d73c90d3980800000000000000
+      internalID: -8557672981707576579
       vertices: []
       indices: 
       edges: []
