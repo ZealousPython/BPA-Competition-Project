@@ -6,11 +6,11 @@ public class RogueAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject weapon;
-    [SerializeField] private float coolDown;
+    private float coolDown;
     private float currentCoolDown = 0;
     void Start()
     {
-        
+        coolDown = weapon.GetComponent<RougeWeapon>().cooldown;
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class RogueAttack : MonoBehaviour
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;
         GameObject p = (GameObject)Instantiate(weapon, transform.position, Quaternion.Euler(rotation));
-        ThrowingDagger pscript = p.GetComponent<ThrowingDagger>();
+        RougeWeapon pscript = p.GetComponent<RougeWeapon>();
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
 }
