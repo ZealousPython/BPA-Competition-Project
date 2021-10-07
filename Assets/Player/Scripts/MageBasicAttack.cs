@@ -6,7 +6,7 @@ public class MageBasicAttack : MonoBehaviour
 {
     [SerializeField] private float coolDown;
     private float currentCoolDown = 0;
-    public GameObject fireBall;
+    public GameObject basicAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class MageBasicAttack : MonoBehaviour
         Vector3 direction = (mousePos - transform.position);
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;
-        GameObject p = (GameObject)Instantiate(fireBall, transform.position, Quaternion.identity);
+        GameObject p = (GameObject)Instantiate(basicAttack, transform.position, Quaternion.identity);
         ProjectileMovement pscript = p.GetComponent<ProjectileMovement>();
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
