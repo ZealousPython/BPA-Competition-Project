@@ -3,39 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class CastIceSpike : MonoBehaviour
+public class CastIceSpike : Spell
 {
-    GameObject iceSpike;
+    private GameObject iceSpike;
     int iceSpikeNum = 10;
-    public float coolDown = 2;
-    public float manaUsage = 30;
-    public float castTime;
-    private float currentCastTime = 0;
-    private bool casting = false;
 
     private void Awake()
     {
         iceSpike=(GameObject)AssetDatabase.LoadAssetAtPath("Assets/Player/MageProjectiles/IceSpike/IceSpike.prefab",typeof(GameObject));
     }
-    private void Update()
-    {
-        if (casting)
-            currentCastTime -= Time.deltaTime;
-        if (currentCastTime <= 0)
-        {
-            currentCastTime = castTime;
-            useSpell();
-            casting = false;
-        }
-    }
+    
 
-    public void cast() {
-        if (!casting) {
-            casting = true;
-            currentCastTime = castTime;
-        }
-    }
-    public void useSpell() {
+
+    public override void useSpell() {
         for (int i = 0; i < iceSpikeNum; i++)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
