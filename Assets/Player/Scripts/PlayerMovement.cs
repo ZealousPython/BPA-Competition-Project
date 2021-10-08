@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CircleCollider2D colliderCircle;
     private Rigidbody2D body;
     private Animator anim;
+    
 
     private Vector2 movementDirection;
 
@@ -24,9 +25,8 @@ public class PlayerMovement : MonoBehaviour
         movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized;
 
         //animation
-        if (body.velocity == Vector2.zero){
-            
-        }
+        if (body.velocity == Vector2.zero) anim.SetBool("moving",false);
+        else anim.SetBool("moving",true);
 
     }
     private void FixedUpdate(){
