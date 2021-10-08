@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class CastIceSpike : MonoBehaviour
 {
-    GameObject iceSpike;
+    private GameObject iceSpike;
     int iceSpikeNum = 10;
     public float coolDown = 2;
     public float manaUsage = 30;

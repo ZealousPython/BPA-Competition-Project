@@ -16,10 +16,12 @@ public class MageBasicAttack : MonoBehaviour
     public float manaRegenTime;
     public GameObject basicAttack;
     private CastIceSpike iceCast;
+    private RockCast rockCast;
     // Start is called before the first frame update
     void Start()
     {
         iceCast = GetComponent<CastIceSpike>();
+        rockCast = GetComponent<RockCast>();
     }
 
     // Update is called once per frame
@@ -41,12 +43,12 @@ public class MageBasicAttack : MonoBehaviour
             currentCoolDown = basicAttackCoolDown;
         }
         if (Input.GetMouseButtonDown(1) && spellCoolDown <= 0&& mana>iceCast.manaUsage && !casting) {
-            iceCast.cast();
-            spellCoolDown = iceCast.coolDown;
-            casting = true;
-            mana -= iceCast.manaUsage;
+            rockCast.cast();
+            spellCoolDown = rockCast.coolDown;
+            mana -= rockCast.manaUsage;
             manaRegenTimer = manaRegenTime;
         }
+        
     }
     private void shoot(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
