@@ -7,10 +7,11 @@ public class MageBasicAttack : MonoBehaviour
     [SerializeField] private float coolDown;
     private float currentCoolDown = 0;
     public GameObject basicAttack;
+    public CastIceSpike iceCast;
     // Start is called before the first frame update
     void Start()
     {
-        
+        iceCast = GetComponent<CastIceSpike>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class MageBasicAttack : MonoBehaviour
         currentCoolDown -= Time.deltaTime;
         if (Input.GetMouseButton(0) && currentCoolDown <= 0)
         {
-            shoot();
+            iceCast.cast();
+            //shoot();
             currentCoolDown = coolDown;
         }
     }
