@@ -4,24 +4,51 @@ using UnityEngine;
 
 public class MageBasicAttack : MonoBehaviour
 {
-    [SerializeField] private float coolDown;
+    [SerializeField] private float basicAttackCoolDown;
+
     private float currentCoolDown = 0;
+    private float spellCoolDown = 0;
+    private bool casting = false;
+    private float mana = 0;
+    public float maxMana;
+    public float manaRegenRate;
+    private float manaRegenTimer;
+    public float manaRegenTime;
     public GameObject basicAttack;
+    private CastIceSpike iceCast;
+    private RockCast rockCast;
     // Start is called before the first frame update
     void Start()
     {
-        
+        iceCast = GetComponent<CastIceSpike>();
+        rockCast = GetComponent<RockCast>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentCoolDown -= Time.deltaTime;
+        if (currentCoolDown>0)
+            currentCoolDown -= Time.deltaTime;
+        if (spellCoolDown>0 && !casting) 
+            spellCoolDown -= Time.deltaTime;
+        if (manaRegenTimer <= 0 && mana < maxMana)
+            mana += manaRegenRate * Time.deltaTime;
+        if (mana > maxMana)
+            mana = maxMana;
+        if (manaRegenTimer > 0)
+            manaRegenTimer -= Time.deltaTime;
         if (Input.GetMouseButton(0) && currentCoolDown <= 0)
         {
             shoot();
-            currentCoolDown = coolDown;
+            currentCoolDown = basicAttackCoolDown;
         }
+        if (Input.GetMouseButtonDown(1) && spellCoolDown <= 0&& mana>iceCast.manaUsage && !casting) {
+            rockCast.cast();
+            spellCoolDown = rockCast.coolDown;
+            mana -= rockCast.manaUsage;
+            manaRegenTimer = manaRegenTime;
+        }
+        
     }
     private void shoot(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
