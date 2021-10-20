@@ -56,7 +56,7 @@ public class MageBasicAttack : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             spellSelection += 1;
-            if (spellSelection > 2)
+            if (spellSelection > 1)
             {
                 spellSelection = 0;
             }
@@ -65,7 +65,7 @@ public class MageBasicAttack : MonoBehaviour
             spellSelection -= 1;
             if (spellSelection < 0)
             {
-                spellSelection = 2;
+                spellSelection = 1;
             }
         }
         currentSpell = spells[spellSelection];
