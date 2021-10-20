@@ -69,9 +69,6 @@ public class MageBasicAttack : MonoBehaviour
             }
         }
         currentSpell = spells[spellSelection];
-
-
-
     }
     private void shoot(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

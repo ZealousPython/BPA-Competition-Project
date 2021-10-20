@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62366195}
   - component: {fileID: 62366197}
+  - component: {fileID: 62366198}
   - component: {fileID: 62366196}
   m_Layer: 0
   m_Name: Oasis
@@ -261,64 +262,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.895051, y: 0.46543276}
-      - {x: 2.8358898, y: 0.5495819}
-      - {x: 2.7189455, y: 0.65750486}
-      - {x: 2.7298126, y: 0.7536214}
-      - {x: 2.6340551, y: 0.86612713}
-      - {x: 2.5760994, y: 1.0829483}
-      - {x: 2.5114717, y: 1.2096472}
-      - {x: 2.368888, y: 1.2784128}
-      - {x: 2.2616167, y: 1.4487827}
-      - {x: 2.0740557, y: 1.6671326}
-      - {x: 1.9784412, y: 1.7092878}
-      - {x: 1.7084236, y: 1.961409}
-      - {x: 1.6001177, y: 2.1231542}
-      - {x: 1.4418364, y: 2.233019}
-      - {x: 1.3538246, y: 2.366101}
-      - {x: 1.2574959, y: 2.4300497}
-      - {x: 1.1824293, y: 2.5586004}
-      - {x: 1.0470076, y: 2.525169}
-      - {x: 0.9172077, y: 2.5805602}
-      - {x: 0.8529644, y: 2.6884353}
-      - {x: 0.6388531, y: 2.7127075}
-      - {x: 0.5067911, y: 2.856584}
-      - {x: 0.16189098, y: 2.870992}
-      - {x: -0.009835243, y: 2.6962442}
-      - {x: -0.32159615, y: 2.7256718}
-      - {x: -0.4919796, y: 2.7060194}
-      - {x: -0.87343025, y: 2.7074816}
-      - {x: -1.0150852, y: 2.5477018}
-      - {x: -1.4816856, y: 2.3397934}
-      - {x: -1.7380466, y: 2.1400566}
-      - {x: -1.7393131, y: 1.9358146}
-      - {x: -2.0778885, y: 1.6386749}
-      - {x: -2.106615, y: 1.4418503}
-      - {x: -2.2634964, y: 1.3146011}
-      - {x: -2.2315016, y: 1.1138673}
-      - {x: -2.3694248, y: 1.0072944}
-      - {x: -2.4208508, y: -0.6939355}
-      - {x: -1.9413962, y: -1.7236198}
-      - {x: -1.8579559, y: -1.974912}
-      - {x: -1.7528458, y: -2.02744}
-      - {x: -1.4139881, y: -2.4687262}
-      - {x: -0.71804047, y: -2.9731927}
-      - {x: -0.21730232, y: -3.1244845}
-      - {x: 0.6337824, y: -3.154831}
-      - {x: 1.1770535, y: -3.1091413}
-      - {x: 1.5383987, y: -2.9264784}
-      - {x: 1.8052927, y: -2.648479}
-      - {x: 1.9978199, y: -2.638225}
-      - {x: 2.214367, y: -2.4047184}
-      - {x: 2.22058, y: -2.1916385}
-      - {x: 2.896987, y: -1.5455807}
-      - {x: 2.9062452, y: -1.3941443}
-      - {x: 3.0775518, y: -1.2225405}
-      - {x: 3.0423374, y: -0.95684755}
-      - {x: 3.1002007, y: -0.7146437}
-      - {x: 3.070428, y: -0.4006697}
-      - {x: 3.0176668, y: -0.08893114}
-      - {x: 2.8951578, y: -0.06329042}
+    - - {x: 0.57730293, y: 2.8857903}
+      - {x: -0.17738342, y: 2.709329}
+      - {x: -1.4932518, y: 2.5447364}
+      - {x: -2.112111, y: 1.7442081}
+      - {x: -2.4261203, y: 0.8358089}
+      - {x: -2.5406098, y: -0.29299307}
+      - {x: -2.131607, y: -1.5824207}
+      - {x: -0.7953625, y: -2.8680725}
+      - {x: 0.94381523, y: -3.186569}
+      - {x: 2.0003948, y: -2.5822513}
+      - {x: 3.0204659, y: -1.1817695}
+      - {x: 3.1276922, y: -0.18972558}
+      - {x: 2.773265, y: 1.0991782}
 --- !u!50 &62366197
 Rigidbody2D:
   serializedVersion: 4
@@ -340,6 +296,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &62366198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62366194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &81535966
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +323,7 @@ GameObject:
   - component: {fileID: 81535967}
   - component: {fileID: 81535969}
   - component: {fileID: 81535968}
+  - component: {fileID: 81535970}
   m_Layer: 0
   m_Name: Palm Tree (6)
   m_TagString: Untagged
@@ -409,6 +382,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &81535970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81535966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &100247649
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +494,7 @@ GameObject:
   - component: {fileID: 126153899}
   - component: {fileID: 126153901}
   - component: {fileID: 126153900}
+  - component: {fileID: 126153902}
   m_Layer: 0
   m_Name: Palm Tree (2)
   m_TagString: Untagged
@@ -563,6 +553,106 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &126153902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126153898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1001 &160638021
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2001259777127697916, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1404102450}
+    - target: {fileID: 6908157489471185031, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_Name
+      value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3541894
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5753539
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908157489471185034, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658741801854966843, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658741801854966843, guid: 0197f6b65715cf6408400e2e2da0b0fe,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0197f6b65715cf6408400e2e2da0b0fe, type: 3}
 --- !u!1 &196882465
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +664,7 @@ GameObject:
   - component: {fileID: 196882466}
   - component: {fileID: 196882468}
   - component: {fileID: 196882467}
+  - component: {fileID: 196882469}
   m_Layer: 0
   m_Name: Tents (Red)
   m_TagString: Untagged
@@ -644,8 +735,8 @@ PolygonCollider2D:
     - - {x: 0.5219574, y: 0.4357462}
       - {x: 0.5496197, y: 0.9209776}
       - {x: 0.48953438, y: 1.2967272}
-      - {x: 0.41800308, y: 1.7440434}
-      - {x: -0.35749346, y: 1.504503}
+      - {x: 0.46966934, y: 1.4930859}
+      - {x: -0.27630144, y: 1.2830695}
       - {x: -0.25850677, y: 1.0945673}
       - {x: -0.29601288, y: 0.40551662}
       - {x: -0.3193016, y: 0.088318825}
@@ -658,6 +749,89 @@ PolygonCollider2D:
       - {x: 0.32739067, y: -1.1704502}
       - {x: 0.39927864, y: -0.7959566}
       - {x: 0.5079737, y: 0.24213785}
+--- !u!114 &196882469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196882465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1 &297860450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297860452}
+  - component: {fileID: 297860451}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &297860451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297860450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 1
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.1
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: 3bc02022adefbe34ab7ae0a03d21ad29, type: 2}
+--- !u!4 &297860452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297860450}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.767714, y: -2.056959, z: -50.552803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1192873772}
+  - {fileID: 1789128889}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &212123874
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +1099,7 @@ GameObject:
   - component: {fileID: 355002776}
   - component: {fileID: 355002778}
   - component: {fileID: 355002777}
+  - component: {fileID: 355002779}
   m_Layer: 0
   m_Name: Training Dummy (3)
   m_TagString: Untagged
@@ -983,6 +1158,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &355002779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355002775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &366133782
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +1185,7 @@ GameObject:
   - component: {fileID: 366133783}
   - component: {fileID: 366133785}
   - component: {fileID: 366133784}
+  - component: {fileID: 366133786}
   m_Layer: 0
   m_Name: Arrow Vase (1)
   m_TagString: Untagged
@@ -1052,6 +1244,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &366133786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366133782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &402564507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1271,7 @@ GameObject:
   - component: {fileID: 402564508}
   - component: {fileID: 402564510}
   - component: {fileID: 402564509}
+  - component: {fileID: 402564511}
   m_Layer: 0
   m_Name: Boundry (Right)
   m_TagString: Untagged
@@ -1131,6 +1340,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &402564511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402564507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &483164589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,6 +1367,7 @@ GameObject:
   - component: {fileID: 483164590}
   - component: {fileID: 483164592}
   - component: {fileID: 483164591}
+  - component: {fileID: 483164593}
   m_Layer: 0
   m_Name: Camp Wall (7)
   m_TagString: Untagged
@@ -1244,6 +1470,22 @@ PolygonCollider2D:
       - {x: -0.0883379, y: -0.1789999}
       - {x: 0.5628767, y: 0.268198}
       - {x: 1.5716934, y: 0.8566379}
+--- !u!114 &483164593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483164589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &513569096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1581,7 @@ GameObject:
   - component: {fileID: 521588118}
   - component: {fileID: 521588120}
   - component: {fileID: 521588119}
+  - component: {fileID: 521588121}
   m_Layer: 0
   m_Name: Camp Wall (11)
   m_TagString: Untagged
@@ -1437,6 +1680,22 @@ PolygonCollider2D:
       - {x: -0.1344328, y: -3.0239305}
       - {x: 0.04442835, y: -2.515034}
       - {x: 0.20925903, y: -1.6987387}
+--- !u!114 &521588121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521588117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &607815248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1707,7 @@ GameObject:
   - component: {fileID: 607815249}
   - component: {fileID: 607815251}
   - component: {fileID: 607815250}
+  - component: {fileID: 607815252}
   m_Layer: 0
   m_Name: Arrow Vase (2)
   m_TagString: Untagged
@@ -1506,6 +1766,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &607815252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607815248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &631581549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1793,7 @@ GameObject:
   - component: {fileID: 631581550}
   - component: {fileID: 631581552}
   - component: {fileID: 631581551}
+  - component: {fileID: 631581553}
   m_Layer: 0
   m_Name: Training Dummy (2)
   m_TagString: Untagged
@@ -1575,6 +1852,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &631581553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631581549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &715174586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1964,7 @@ GameObject:
   - component: {fileID: 738135716}
   - component: {fileID: 738135718}
   - component: {fileID: 738135717}
+  - component: {fileID: 738135719}
   m_Layer: 0
   m_Name: Training Dummy (1)
   m_TagString: Untagged
@@ -1729,6 +2023,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &738135719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738135715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &743834813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +2050,7 @@ GameObject:
   - component: {fileID: 743834814}
   - component: {fileID: 743834816}
   - component: {fileID: 743834815}
+  - component: {fileID: 743834817}
   m_Layer: 0
   m_Name: Boundry (Left)
   m_TagString: Untagged
@@ -1808,6 +2119,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &743834817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743834813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &764382425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +2146,7 @@ GameObject:
   - component: {fileID: 764382426}
   - component: {fileID: 764382428}
   - component: {fileID: 764382427}
+  - component: {fileID: 764382429}
   m_Layer: 0
   m_Name: Camp fire
   m_TagString: Untagged
@@ -1877,6 +2205,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &764382429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764382425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &765121241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +2232,7 @@ GameObject:
   - component: {fileID: 765121242}
   - component: {fileID: 765121244}
   - component: {fileID: 765121243}
+  - component: {fileID: 765121245}
   m_Layer: 0
   m_Name: Camp Wall (10)
   m_TagString: Untagged
@@ -1980,8 +2325,8 @@ PolygonCollider2D:
       - {x: -4.7953434, y: 6.06713}
       - {x: -4.896498, y: 6.389206}
       - {x: -4.970745, y: 7.111164}
-      - {x: -5.025518, y: 7.580883}
-      - {x: -5.201255, y: 7.590498}
+      - {x: -4.9651694, y: 7.3470325}
+      - {x: -5.201255, y: 7.326473}
       - {x: -5.1830473, y: 7.0073586}
       - {x: -5.1528597, y: 6.45883}
       - {x: -4.9907784, y: 5.905596}
@@ -2008,6 +2353,22 @@ PolygonCollider2D:
       - {x: 3.9475489, y: -0.21821594}
       - {x: 4.574437, y: -1.1738062}
       - {x: 4.742629, y: -1.0902414}
+--- !u!114 &765121245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765121241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &861829678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2380,7 @@ GameObject:
   - component: {fileID: 861829679}
   - component: {fileID: 861829681}
   - component: {fileID: 861829680}
+  - component: {fileID: 861829682}
   m_Layer: 0
   m_Name: Palm Tree (5)
   m_TagString: Untagged
@@ -2077,6 +2439,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &861829682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861829678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &934713178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2634,7 @@ GameObject:
   - component: {fileID: 967203732}
   - component: {fileID: 967203734}
   - component: {fileID: 967203733}
+  - component: {fileID: 967203735}
   m_Layer: 0
   m_Name: Palm Tree (4)
   m_TagString: Untagged
@@ -2314,6 +2693,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &967203735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967203731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &992369200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2720,7 @@ GameObject:
   - component: {fileID: 992369201}
   - component: {fileID: 992369203}
   - component: {fileID: 992369202}
+  - component: {fileID: 992369204}
   m_Layer: 0
   m_Name: Camp Wall (12)
   m_TagString: Untagged
@@ -2420,6 +2816,22 @@ PolygonCollider2D:
       - {x: 4.5493007, y: -0.5926981}
       - {x: 6.607331, y: -0.04653907}
       - {x: 6.4914994, y: 0.15528792}
+--- !u!114 &992369204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992369200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1000723871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,6 +2843,7 @@ GameObject:
   - component: {fileID: 1000723872}
   - component: {fileID: 1000723874}
   - component: {fileID: 1000723873}
+  - component: {fileID: 1000723875}
   m_Layer: 0
   m_Name: Tents (Brown)
   m_TagString: Untagged
@@ -2506,6 +2919,22 @@ PolygonCollider2D:
       - {x: 0.15796626, y: -0.5736406}
       - {x: 0.16242409, y: 0.022035599}
       - {x: 0.32679653, y: 0.6569652}
+--- !u!114 &1000723875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000723871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1002752167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2946,7 @@ GameObject:
   - component: {fileID: 1002752168}
   - component: {fileID: 1002752170}
   - component: {fileID: 1002752169}
+  - component: {fileID: 1002752171}
   m_Layer: 0
   m_Name: Palm Tree (1)
   m_TagString: Untagged
@@ -2575,6 +3005,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1002752171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002752167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1031086967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +3032,7 @@ GameObject:
   - component: {fileID: 1031086968}
   - component: {fileID: 1031086970}
   - component: {fileID: 1031086969}
+  - component: {fileID: 1031086971}
   m_Layer: 0
   m_Name: Palm Tree
   m_TagString: Untagged
@@ -2644,6 +3091,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1031086971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031086967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1051861480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,6 +3118,7 @@ GameObject:
   - component: {fileID: 1051861481}
   - component: {fileID: 1051861483}
   - component: {fileID: 1051861482}
+  - component: {fileID: 1051861484}
   m_Layer: 0
   m_Name: Tents (Blue)
   m_TagString: Untagged
@@ -2753,6 +3217,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1051861484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051861480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1091181386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +3244,7 @@ GameObject:
   - component: {fileID: 1091181387}
   - component: {fileID: 1091181389}
   - component: {fileID: 1091181388}
+  - component: {fileID: 1091181390}
   m_Layer: 0
   m_Name: Camp Wall (3)
   m_TagString: Untagged
@@ -2906,6 +3387,22 @@ PolygonCollider2D:
       - {x: 4.273745, y: -0.6886368}
       - {x: 4.1209393, y: -0.21285224}
       - {x: 0.32859015, y: 0.15120882}
+--- !u!114 &1091181390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091181386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1148566307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +3497,7 @@ GameObject:
   - component: {fileID: 1155150844}
   - component: {fileID: 1155150846}
   - component: {fileID: 1155150845}
+  - component: {fileID: 1155150847}
   m_Layer: 0
   m_Name: Cannons
   m_TagString: Untagged
@@ -3101,6 +3599,22 @@ PolygonCollider2D:
       - {x: 0.5527935, y: 0.5340595}
       - {x: 0.6329527, y: 0.54947376}
       - {x: 0.825058, y: 0.6297397}
+--- !u!114 &1155150847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155150843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1192873771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,8 +3638,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192873771}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.767714, y: -50.552814, z: 2.0569534}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1031086968}
@@ -3188,8 +3702,8 @@ Transform:
   - {fileID: 1337167620}
   - {fileID: 212123875}
   - {fileID: 715174587}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 297860452}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194417069
 GameObject:
@@ -3202,6 +3716,7 @@ GameObject:
   - component: {fileID: 1194417070}
   - component: {fileID: 1194417072}
   - component: {fileID: 1194417071}
+  - component: {fileID: 1194417073}
   m_Layer: 0
   m_Name: Arrow Vase
   m_TagString: Untagged
@@ -3260,6 +3775,101 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1194417073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194417069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1001 &1253378575
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4554205182002090432, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: casting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090435, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: casting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090439, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554205182002090459, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerMage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e94a462a9d8fb68459f1c0f0d02ce433, type: 3}
 --- !u!1 &1268675312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,6 +3881,7 @@ GameObject:
   - component: {fileID: 1268675313}
   - component: {fileID: 1268675315}
   - component: {fileID: 1268675314}
+  - component: {fileID: 1268675316}
   m_Layer: 0
   m_Name: Camp Oasis
   m_TagString: Untagged
@@ -3398,6 +4009,22 @@ PolygonCollider2D:
       - {x: 2.2120018, y: 0.8695793}
       - {x: 2.1123257, y: 1.0916939}
       - {x: 1.9709978, y: 1.1817503}
+--- !u!114 &1268675316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268675312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1331147839
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,6 +4036,7 @@ GameObject:
   - component: {fileID: 1331147840}
   - component: {fileID: 1331147842}
   - component: {fileID: 1331147841}
+  - component: {fileID: 1331147843}
   m_Layer: 0
   m_Name: Fruit Crates (Green)
   m_TagString: Untagged
@@ -3491,6 +4119,28 @@ PolygonCollider2D:
       - {x: 1.188364, y: -0.2798977}
       - {x: 1.70014, y: -0.23150253}
       - {x: 1.6924314, y: 0.28367227}
+--- !u!114 &1331147843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331147839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1 &1404102450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4554205182002090459, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253378575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1337167619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,6 +4237,7 @@ GameObject:
   - component: {fileID: 1405485186}
   - component: {fileID: 1405485188}
   - component: {fileID: 1405485187}
+  - component: {fileID: 1405485189}
   m_Layer: 0
   m_Name: Camp Wall (2)
   m_TagString: Untagged
@@ -3680,6 +4331,22 @@ PolygonCollider2D:
       - {x: 0.9707022, y: -0.37751293}
       - {x: 0.64882374, y: -0.136487}
       - {x: -0.041684628, y: 0.22561932}
+--- !u!114 &1405485189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405485185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1496642081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +4358,7 @@ GameObject:
   - component: {fileID: 1496642082}
   - component: {fileID: 1496642084}
   - component: {fileID: 1496642083}
+  - component: {fileID: 1496642085}
   m_Layer: 0
   m_Name: Camp fire (1)
   m_TagString: Untagged
@@ -3749,6 +4417,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1496642085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496642081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1512691634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,6 +4444,7 @@ GameObject:
   - component: {fileID: 1512691635}
   - component: {fileID: 1512691637}
   - component: {fileID: 1512691636}
+  - component: {fileID: 1512691638}
   m_Layer: 0
   m_Name: Camp Wall (8)
   m_TagString: Untagged
@@ -3868,6 +4553,22 @@ PolygonCollider2D:
       - {x: 0.69180584, y: -0.06877136}
       - {x: 0.5354538, y: 0.27920532}
       - {x: 0.3911276, y: 0.79171365}
+--- !u!114 &1512691638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512691634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1512734478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,6 +4580,7 @@ GameObject:
   - component: {fileID: 1512734479}
   - component: {fileID: 1512734481}
   - component: {fileID: 1512734480}
+  - component: {fileID: 1512734482}
   m_Layer: 0
   m_Name: Palm Tree (3)
   m_TagString: Untagged
@@ -3937,6 +4639,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1512734482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512734478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1557244424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,6 +4666,7 @@ GameObject:
   - component: {fileID: 1557244425}
   - component: {fileID: 1557244427}
   - component: {fileID: 1557244426}
+  - component: {fileID: 1557244428}
   m_Layer: 0
   m_Name: Arrow Vase (3)
   m_TagString: Untagged
@@ -4006,6 +4725,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1557244428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557244424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1609509347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,6 +4752,7 @@ GameObject:
   - component: {fileID: 1609509348}
   - component: {fileID: 1609509350}
   - component: {fileID: 1609509349}
+  - component: {fileID: 1609509351}
   m_Layer: 0
   m_Name: Camp Wall (6)
   m_TagString: Untagged
@@ -4122,6 +4858,22 @@ PolygonCollider2D:
       - {x: 1.3487625, y: 0.10807276}
       - {x: 1.9754696, y: 0.3149371}
       - {x: 1.8891649, y: 0.45115513}
+--- !u!114 &1609509351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609509347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1624315156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4971,7 @@ GameObject:
   - component: {fileID: 1632943782}
   - component: {fileID: 1632943784}
   - component: {fileID: 1632943783}
+  - component: {fileID: 1632943785}
   m_Layer: 0
   m_Name: Tents (Blue1)
   m_TagString: Untagged
@@ -4298,6 +5051,22 @@ PolygonCollider2D:
       - {x: 0.45202255, y: -0.1211853}
       - {x: 0.71530247, y: 0.122312546}
       - {x: 0.9695215, y: 0.42904085}
+--- !u!114 &1632943785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632943781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1654398749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,6 +5078,7 @@ GameObject:
   - component: {fileID: 1654398750}
   - component: {fileID: 1654398752}
   - component: {fileID: 1654398751}
+  - component: {fileID: 1654398753}
   m_Layer: 0
   m_Name: Camp Wall (5)
   m_TagString: Untagged
@@ -4397,6 +5167,22 @@ PolygonCollider2D:
       - {x: 1.9895706, y: -3.0006604}
       - {x: 2.9401474, y: -3.6010575}
       - {x: 2.9124327, y: 0.58385986}
+--- !u!114 &1654398753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654398749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1663370210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +5278,7 @@ GameObject:
   - component: {fileID: 1671025151}
   - component: {fileID: 1671025153}
   - component: {fileID: 1671025152}
+  - component: {fileID: 1671025154}
   m_Layer: 0
   m_Name: Camp fire (2)
   m_TagString: Untagged
@@ -4550,6 +5337,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1671025154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671025150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1689714293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,6 +5364,7 @@ GameObject:
   - component: {fileID: 1689714294}
   - component: {fileID: 1689714296}
   - component: {fileID: 1689714295}
+  - component: {fileID: 1689714297}
   m_Layer: 0
   m_Name: Small Plateu
   m_TagString: Untagged
@@ -4672,6 +5476,22 @@ PolygonCollider2D:
       - {x: 1.9417233, y: -0.04868412}
       - {x: 1.8879623, y: 0.19515228}
       - {x: 1.8752184, y: 0.39399713}
+--- !u!114 &1689714297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689714293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1699356108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,6 +5503,7 @@ GameObject:
   - component: {fileID: 1699356109}
   - component: {fileID: 1699356111}
   - component: {fileID: 1699356110}
+  - component: {fileID: 1699356112}
   m_Layer: 0
   m_Name: Camp Wall (1)
   m_TagString: Untagged
@@ -4762,6 +5583,22 @@ PolygonCollider2D:
       - {x: 0.65270615, y: 0.70162964}
       - {x: 2.321467, y: 0.7100594}
       - {x: 2.315381, y: 0.8291654}
+--- !u!114 &1699356112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699356108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1704649946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,6 +5694,7 @@ GameObject:
   - component: {fileID: 1729235177}
   - component: {fileID: 1729235179}
   - component: {fileID: 1729235178}
+  - component: {fileID: 1729235180}
   m_Layer: 0
   m_Name: Camp Wall
   m_TagString: Untagged
@@ -4967,6 +5805,22 @@ PolygonCollider2D:
       - {x: 7.4749784, y: 3.2005906}
       - {x: 8.493886, y: 2.7090125}
       - {x: 9.410878, y: 2.0834775}
+--- !u!114 &1729235180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729235176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1745457279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,6 +5832,7 @@ GameObject:
   - component: {fileID: 1745457280}
   - component: {fileID: 1745457282}
   - component: {fileID: 1745457281}
+  - component: {fileID: 1745457283}
   m_Layer: 0
   m_Name: Training Dummy
   m_TagString: Untagged
@@ -5036,6 +5891,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1745457283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745457279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1789128887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,6 +5917,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1789128889}
   - component: {fileID: 1789128888}
+  - component: {fileID: 1789128891}
+  - component: {fileID: 1789128890}
   m_Layer: 0
   m_Name: HD Level 2
   m_TagString: Untagged
@@ -5110,13 +5983,55 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789128887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.767714, y: -50.552814, z: 2.0569534}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 297860452}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789128890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789128887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!61 &1789128891
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789128887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 39.999996, y: 39.999996}
+    newSize: {x: 153.59999, y: 153.59999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 39.999996, y: 39.999996}
+  m_EdgeRadius: 0
 --- !u!1 &1790955173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +6129,7 @@ GameObject:
   - component: {fileID: 1885001496}
   - component: {fileID: 1885001498}
   - component: {fileID: 1885001497}
+  - component: {fileID: 1885001499}
   m_Layer: 0
   m_Name: Camp Wall (4)
   m_TagString: Untagged
@@ -5307,6 +6223,22 @@ PolygonCollider2D:
       - {x: 0.5680218, y: -0.6185255}
       - {x: 0.5955105, y: -0.18757153}
       - {x: 0.7718706, y: 0.39861006}
+--- !u!114 &1885001499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885001495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1958179262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5318,6 +6250,7 @@ GameObject:
   - component: {fileID: 1958179263}
   - component: {fileID: 1958179265}
   - component: {fileID: 1958179264}
+  - component: {fileID: 1958179266}
   m_Layer: 0
   m_Name: Camp fire (3)
   m_TagString: Untagged
@@ -5376,6 +6309,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1958179266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958179262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1964119224
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,6 +6421,7 @@ GameObject:
   - component: {fileID: 2043661215}
   - component: {fileID: 2043661217}
   - component: {fileID: 2043661216}
+  - component: {fileID: 2043661218}
   m_Layer: 0
   m_Name: Ballista
   m_TagString: Untagged
@@ -5588,6 +6538,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2043661218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043661214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2053273073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5599,6 +6565,7 @@ GameObject:
   - component: {fileID: 2053273074}
   - component: {fileID: 2053273076}
   - component: {fileID: 2053273075}
+  - component: {fileID: 2053273077}
   m_Layer: 0
   m_Name: Cave and Boundry (Top)
   m_TagString: Untagged
@@ -5712,6 +6679,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2053273077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053273073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2123607920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5723,6 +6706,7 @@ GameObject:
   - component: {fileID: 2123607921}
   - component: {fileID: 2123607923}
   - component: {fileID: 2123607922}
+  - component: {fileID: 2123607924}
   m_Layer: 0
   m_Name: Camp Wall (9)
   m_TagString: Untagged
@@ -5822,3 +6806,19 @@ PolygonCollider2D:
       - {x: 10.637975, y: -9.588449}
       - {x: 11.09197, y: -9.443554}
       - {x: 11.0818615, y: 0.85607904}
+--- !u!114 &2123607924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123607920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
