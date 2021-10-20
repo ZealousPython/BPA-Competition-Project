@@ -8,11 +8,10 @@ public class Spell : MonoBehaviour
     public float coolDown;
     public float manaUsage;
     public float castTime;
-    public float currentCastTime = 0;
-    public bool casting = false;
+    private float currentCastTime = 1;
+    private bool casting = false;
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -20,7 +19,7 @@ public class Spell : MonoBehaviour
     {
         if (casting)
             currentCastTime -= Time.deltaTime;
-        if (currentCastTime <= 0)
+        if (currentCastTime <= 0 && casting)
         {
             currentCastTime = castTime;
             useSpell();
