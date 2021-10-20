@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &4554205182002090434
 MonoBehaviour:
@@ -191,8 +191,6 @@ MonoBehaviour:
   coolDown: 2
   manaUsage: 30
   castTime: 0.75
-  currentCastTime: 0
-  casting: 0
 --- !u!114 &4554205182002090432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,5 +206,3 @@ MonoBehaviour:
   coolDown: 0.5
   manaUsage: 15
   castTime: 0.75
-  currentCastTime: 0
-  casting: 0
