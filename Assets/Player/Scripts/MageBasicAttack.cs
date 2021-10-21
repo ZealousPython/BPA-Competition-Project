@@ -9,8 +9,8 @@ public class MageBasicAttack : MonoBehaviour
     private float currentCoolDown = 0;
     private float spellCoolDown = 0;
     private bool casting = false;
-    private float mana = 0;
-    public float maxMana;
+    private float mana;
+    private float maxMana;
     public float manaRegenRate;
     private float manaRegenTimer;
     public float manaRegenTime;
@@ -26,11 +26,14 @@ public class MageBasicAttack : MonoBehaviour
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
         spells = new Spell[] {iceCast,rockCast};
+        maxMana = GameManager.instance.playerMaxMana;
+        mana = GameManager.instance.playerMana;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (currentCoolDown > 0)
             currentCoolDown -= Time.deltaTime;
         if (spellCoolDown > 0 && !casting)
@@ -47,7 +50,7 @@ public class MageBasicAttack : MonoBehaviour
             currentCoolDown = basicAttackCoolDown;
         }
         
-        if (Input.GetMouseButtonDown(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting) {
+        if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting) {
             currentSpell.cast();
             spellCoolDown = currentSpell.coolDown;
             mana -= currentSpell.manaUsage;
@@ -69,6 +72,7 @@ public class MageBasicAttack : MonoBehaviour
             }
         }
         currentSpell = spells[spellSelection];
+        GameManager.instance.playerMana = mana;
     }
     private void shoot(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

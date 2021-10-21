@@ -10,6 +10,7 @@ public class PhysicalAttack : MonoBehaviour
     
     public float cooldown = 5;
     private float attackCooldown = 0;
+    public float damage = 1;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class PhysicalAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") {
-            print("HIT");
+            collision.gameObject.GetComponent<PlayerHealth>().hit(damage) ;
         }
     }
 }
