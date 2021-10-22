@@ -27,8 +27,12 @@ public class ProjectileMovement : MonoBehaviour
         directionCast = direction;
     }
     void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Enemy"){
+        if (col.tag == "Enemy")
+        {
             col.gameObject.GetComponent<EnemyHealth>().hit(damage);
+            Destroy(gameObject);
+        }
+        else if (col.tag != "Player" && col.tag !="Projectile") {
             Destroy(gameObject);
         }
     }
