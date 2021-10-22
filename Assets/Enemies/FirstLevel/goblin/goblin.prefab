@@ -103,7 +103,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.09}
+  m_Offset: {x: -0.015625, y: -0.09}
   serializedVersion: 2
   m_Radius: 0.25930944
 --- !u!50 &8122073817502540389
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4b908f1c495f14da6f7014af91dc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 0.2
   damage: 0.5
 --- !u!114 &7707584480533136573
 MonoBehaviour:
@@ -195,7 +195,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214864016996332949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

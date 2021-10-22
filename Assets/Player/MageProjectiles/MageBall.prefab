@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8027025632209160079}
   m_Layer: 0
   m_Name: MageBall
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4808,3 +4808,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   lifeTime: 3
+  damage: 1
