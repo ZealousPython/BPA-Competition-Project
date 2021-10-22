@@ -13,6 +13,9 @@ public class EnemySpawner : MonoBehaviour
     private float halfWidth;
     private bool needSpawn = false;
     public GameObject player;
+    public GameObject enemyContainer;
+    public bool spawning = false;
+    public int enemiesSpawned = 0;
     void Start()
     {
         Camera camera = Camera.main;
@@ -23,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(spawning)
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -59,20 +63,16 @@ public class EnemySpawner : MonoBehaviour
             spawnPosition.x = Random.Range(-halfWidth, halfWidth);
         }
         int rangeNum = Random.Range(0, 100);
-        bool enemyChosen = false;
         GameObject enemy = enemies[0];
-        float randomVal = enemySpawnWeight[Random.Range(0, enemies.Length)] * 100;
+        float randomVal = Random.Range(0,100);
+
         for (int i = 0; i < enemies.Length; i++)
         {
-
-            if (randomVal <= (enemySpawnWeight[i] * 100))
+            if (randomVal <= ((enemySpawnWeight[i] * 100)-1))
             {
-                print(randomVal);
                 enemy = enemies[i];
-                enemyChosen = true;
                 break;
             }
-            if (enemyChosen) break;
         }
         GameObject e = (GameObject)Instantiate(enemy, spawnPosition, Quaternion.identity);
         NavMeshAgent agent = e.GetComponent<NavMeshAgent>();
@@ -85,6 +85,8 @@ public class EnemySpawner : MonoBehaviour
         {
             needSpawn = false;
             e.GetComponent<FollowPlayer>().target = player;
+            e.transform.parent = enemyContainer.transform;
+            enemiesSpawned++;
         }
 
     }
