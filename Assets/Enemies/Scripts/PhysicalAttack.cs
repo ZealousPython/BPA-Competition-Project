@@ -17,6 +17,7 @@ public class PhysicalAttack : MonoBehaviour
         ai = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
         hitbox = GetComponent<BoxCollider2D>();
+        attackCooldown = cooldown;
     }
 
     // Update is called once per frame

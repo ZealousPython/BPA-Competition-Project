@@ -10,8 +10,9 @@ public class RougeWeapon : MonoBehaviour
     [SerializeField] private float speed;
     private Vector2 directionThrown = new Vector2(1, 0);
     [SerializeField] private float lifeTime;
-    [SerializeField] private float peirce;
+    [SerializeField] public float peirce;
     [SerializeField] public float cooldown;
+    public float damage;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +35,7 @@ public class RougeWeapon : MonoBehaviour
     {
         if (col.tag == "Enemy")
         {
-            print("Hit Enemy");
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
             peirce--;
             if (peirce <= 0)
             {
