@@ -80,7 +80,6 @@ public class EnemySpawner : MonoBehaviour
         {
             needSpawn = true;
             Destroy(e);
-            print("NEED SPAWN");
         }
         else
         {

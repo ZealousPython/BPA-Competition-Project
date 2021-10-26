@@ -42,6 +42,7 @@ public class PhysicalAttack : MonoBehaviour
     {
         if (collision.tag == "Player") {
             collision.gameObject.GetComponent<PlayerHealth>().hit(damage) ;
+            hitbox.enabled = false;
         }
     }
 }

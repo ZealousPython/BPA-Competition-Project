@@ -29,7 +29,6 @@ public class RougeWeapon : MonoBehaviour
     public void updateDirection(Vector2 direction)
     {
         directionThrown = direction;
-        print("Direction Change");
     }
     void OnTriggerEnter2D(Collider2D col)
     {

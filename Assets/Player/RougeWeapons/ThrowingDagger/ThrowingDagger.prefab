@@ -120,7 +120,7 @@ MonoBehaviour:
   speed: 4
   lifeTime: 3
   peirce: 2
-  cooldown: 0.25
+  cooldown: 0.05
   damage: 0.5
 --- !u!50 &4813338335886852281
 Rigidbody2D:
