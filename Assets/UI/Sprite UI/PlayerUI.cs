@@ -11,6 +11,8 @@ public class PlayerUI : MonoBehaviour
     public Image HeartBarTwoE;
     public Image HeartBarTwoF;
     public Image SpellBar;
+    public Text Coins;
+    public Text Potions;
     public GameManager game;
     // Start is called before the first frame update
     void Start()
@@ -26,5 +28,7 @@ public class PlayerUI : MonoBehaviour
         HeartBarOneF.fillAmount = game.playerMaxHealth / 10 * (game.playerHealth / game.playerMaxHealth);
         HeartBarTwoE.fillAmount = (game.playerMaxHealth-10) / 10;
         HeartBarTwoF.fillAmount = (game.playerMaxHealth-10) / 10 * ((game.playerHealth-10) / (game.playerMaxHealth-10));
+        Coins.text = game.gold.ToString();
+        Potions.text = game.potions.ToString();
     }
 }

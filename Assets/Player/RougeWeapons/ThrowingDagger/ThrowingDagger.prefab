@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4813338335886852280}
   m_Layer: 0
   m_Name: ThrowingDagger
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 9916291
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1982712031924621246, guid: 1ed78085cef5f6e4f8998fb7dc1f3781,
     type: 3}
@@ -118,9 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  lifeTime: 10
-  peirce: 1
-  cooldown: 0.25
+  lifeTime: 3
+  peirce: 2
+  cooldown: 0.05
+  damage: 0.5
 --- !u!50 &4813338335886852281
 Rigidbody2D:
   serializedVersion: 4

@@ -27,4 +27,11 @@ public class PlayerHealth : MonoBehaviour
             print("dead");
         game.playerHealth = health;
     }
+    public void usePotion() {
+        health += 5;
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
+        game.playerHealth = health;
+    }
 }

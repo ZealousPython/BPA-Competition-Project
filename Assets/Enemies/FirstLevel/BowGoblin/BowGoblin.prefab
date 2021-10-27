@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3439378612504074128}
   - component: {fileID: 3733601402697546034}
   - component: {fileID: 2470211371071156247}
+  - component: {fileID: 2482437769002144741}
   m_Layer: 0
   m_Name: BowGoblin
   m_TagString: Enemy
@@ -209,3 +210,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 3295556504713134533, guid: 9f272f8ec42251944ae93364dcdc79f7, type: 3}
   cooldown: 1
+--- !u!114 &2482437769002144741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8707427584704906385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce91b788b3d4cc44bfd4bc4188962a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

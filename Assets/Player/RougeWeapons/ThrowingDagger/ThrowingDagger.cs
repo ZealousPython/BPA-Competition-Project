@@ -12,23 +12,27 @@ public class ThrowingDagger : RougeWeapon
     [SerializeField] private float lifeTime;
     [SerializeField] private float peirce;
     */
-    private float spinTime = 0.25f;
+    private float spinTime = 0.3f;
     private Animator anim;
+    bool spining = false;
     // Start is called before the first frame update
-    /*void Awake(){
-        body = GetComponent<Rigidbody2D>();
-        hitbox = GetComponent<CircleCollider2D>();
+    private void Start()
+    {
         anim = GetComponent<Animator>();
-        Destroy(gameObject, lifeTime);
     }
-    */
+
     // Update is called once per frame
     void Update()
     {
         //body.velocity = speed*directionThrown;
         spinTime -= Time.deltaTime;
-        if (spinTime <= 0){
+        if (spinTime <= 0 && !spining){
             anim.SetTrigger("spin");
+            damage /= 2;
+            spining = true;
+            if (peirce < 2) {
+                peirce = 0;
+            }
         }
     }
     /*
