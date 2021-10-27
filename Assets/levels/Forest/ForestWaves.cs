@@ -1,28 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ForestWaves : MonoBehaviour
 {
     private int wave = 1;
     private int endWave = 4;
     private int baseEnemyCount = 10;
     private float baseEnemySpeed = 2;
-    public float difficultyScale = 1.5f;
+    public float difficultyScale = .75f;
     private EnemySpawner spawner;
     private int enemiesLeft = 0;
     private int inBetweenTime = 5;
-    private float timer = 0;
+    public float timer = 0;
+    public Text waves;
+    public int waveEnemyCount;
+    public bool waveEnded = true;
     private void Awake()
     {
+        waveEnemyCount = (int)(baseEnemyCount);
         spawner = GetComponent<EnemySpawner>();
         spawner.spawnInterval = baseEnemySpeed;
     }
     void Update()
     {
         enemiesLeft = spawner.enemyContainer.transform.childCount;
-        if (enemiesLeft <= 0 && spawner.enemiesSpawned >= baseEnemyCount*wave*difficultyScale) { 
-               
+        if (enemiesLeft <= 0 && spawner.enemiesSpawned >= waveEnemyCount)
+        {
+            spawner.spawning = false;
+            if (wave != endWave)
+            {
+                spawner.enemiesSpawned = 0;
+                wave++;
+                waveEnemyCount = (int)(baseEnemyCount * wave * difficultyScale);
+                enemiesLeft = waveEnemyCount;
+                timer = inBetweenTime;
+                spawner.spawnInterval = baseEnemySpeed / (wave * difficultyScale);
+                waveEnded = true;
+            }
         }
+        else if (spawner.enemiesSpawned >= waveEnemyCount && !waveEnded) {
+            spawner.spawning = false;
+        }
+        if (timer > 0 && waveEnded)
+            timer -= Time.deltaTime;
+        if (!spawner.spawning && waveEnded && timer <= 0)
+        {
+            print("Hello: " + timer.ToString());
+
+            spawner.spawning = true;
+            waveEnded = false;
+        }
+
+        waves.text = "Wave: " + wave.ToString();
     }
 }

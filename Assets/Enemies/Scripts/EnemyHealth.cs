@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         {
             GameObject p = (GameObject)Instantiate(coin, transform.position, Quaternion.identity);
         }
-        else if (drop <= 60)
+        else if (drop <= 52)
         {
             GameObject p = (GameObject)Instantiate(potion, transform.position, Quaternion.identity);
         }
