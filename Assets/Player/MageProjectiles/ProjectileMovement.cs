@@ -9,6 +9,7 @@ public class ProjectileMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Vector2 directionCast = new Vector2(1,0);
     [SerializeField] private float lifeTime;
+    public float damage = 1;
     // Start is called before the first frame update
     void Awake(){
         body = GetComponent<Rigidbody2D>();
@@ -26,8 +27,12 @@ public class ProjectileMovement : MonoBehaviour
         directionCast = direction;
     }
     void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Enemy"){
-            print("Hit Enemy");
+        if (col.tag == "Enemy")
+        {
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
+            Destroy(gameObject);
+        }
+        else if (col.tag != "Player" && col.tag !="Projectile") {
             Destroy(gameObject);
         }
     }
