@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public float playerHealth = 3;
     public float playerMaxMana = 100;
     public float playerMana = 100;
-    public float potions = 0;
+    public float potions = 2;
+    public GameObject player;
     void Awake()
     {
         if (instance == null)
@@ -26,5 +27,9 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0) {
+            potions--;
+            player.GetComponent<PlayerHealth>().usePotion();
+        }
     }
 }
