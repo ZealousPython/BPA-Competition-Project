@@ -30,7 +30,7 @@ public class RougeWeapon : MonoBehaviour
     {
         directionThrown = direction;
     }
-    void OnTriggerEnter2D(Collider2D col)
+    virtual public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Enemy")
         {

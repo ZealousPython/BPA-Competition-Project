@@ -16,7 +16,6 @@ public class ItemDetect : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Hi");
         if (collision.tag == "Player")
         {
             if (itemType == 0)
