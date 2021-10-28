@@ -31,22 +31,21 @@ public class ThrowingDagger : RougeWeapon
             damage /= 2;
             spining = true;
             if (peirce < 2) {
-                peirce = 0;
+                peirce = -1;
             }
         }
     }
-    /*
-    public void updateDirection(Vector2 direction){
-        directionThrown = direction;
-    }
-    void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Enemy"){
-            print("Hit Enemy");
+    override public void OnTriggerEnter2D(Collider2D col){
+        if (col.tag == "Enemy")
+        {
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
             peirce--;
-            if (peirce <= 0){
+            if (peirce <= 0 || spining)
+            {
                 Destroy(gameObject);
             }
         }
+        else if (col.tag != "Projectile" && col.tag != "Player")
+            Destroy(gameObject);
     }
-    */
 }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float playerMaxMana = 100;
     public float playerMana = 100;
     public float potions = 2;
+    public float bossHealth = 100;
     public GameObject player;
     void Awake()
     {
