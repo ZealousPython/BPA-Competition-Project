@@ -36,11 +36,16 @@ public class ThrowingDagger : RougeWeapon
         }
     }
     override public void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Enemy"){
+        if (col.tag == "Enemy")
+        {
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
             peirce--;
-            if (peirce <= 0 || spining){
+            if (peirce <= 0 || spining)
+            {
                 Destroy(gameObject);
             }
         }
+        else if (col.tag != "Projectile" && col.tag != "Player")
+            Destroy(gameObject);
     }
 }
