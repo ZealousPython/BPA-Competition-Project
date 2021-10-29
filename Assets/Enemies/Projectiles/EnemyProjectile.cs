@@ -10,6 +10,7 @@ public class EnemyProjectile : MonoBehaviour
     private Vector2 directionCast = new Vector2(1, 0);
     [SerializeField] private float lifeTime;
     public float damage = 1;
+    public bool transparent = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,7 +36,7 @@ public class EnemyProjectile : MonoBehaviour
             col.gameObject.GetComponent<PlayerHealth>().hit(damage);
             Destroy(gameObject);
         }
-        else if (col.tag != "Enemy" && col.tag != "Projectile")
+        else if (col.tag != "Enemy" && col.tag != "Projectile" && !transparent)
         {
             Destroy(gameObject);
         }

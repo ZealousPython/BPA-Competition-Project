@@ -121,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.29
+  m_Radius: 0.9917341
 --- !u!50 &2124700758225667587
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +157,7 @@ NavMeshAgent:
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1000
-  m_StoppingDistance: 2
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -179,8 +179,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   attacking: 0
-  SmashProjectile: {fileID: 0}
-  BarfProjectile: {fileID: 0}
+  SmashProjectile: {fileID: 251088339609207957, guid: 6b6497d20239bf0488d716db88eee850,
+    type: 3}
+  BarfProjectile: {fileID: 7758533804339505842, guid: f93f6aaeb00765f43b33d9e5b81f1b32,
+    type: 3}
   stopped: 0
+  healthBar: {fileID: 0}
   barfCooldown: 5
   smashCooldown: 5
+  attackCooldown: 0
+  maxHealth: 15
