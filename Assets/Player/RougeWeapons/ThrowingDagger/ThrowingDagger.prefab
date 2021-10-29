@@ -119,8 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifeTime: 3
-  peirce: 100
-  cooldown: 0.1
+  peirce: 2
+  cooldown: 0.25
   damage: 0.5
 --- !u!50 &4813338335886852281
 Rigidbody2D:
