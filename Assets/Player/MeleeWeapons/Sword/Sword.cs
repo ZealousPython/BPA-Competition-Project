@@ -6,6 +6,7 @@ public class Sword : MonoBehaviour
 {
     private Animator anim;
     private BoxCollider2D hitbox;
+    public float damage;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class Sword : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy") {
-            print("Hit");
+            collision.gameObject.GetComponent<EnemyHealth>().hit(damage);
         }
     }
     void SwingStart() {
@@ -33,6 +34,5 @@ public class Sword : MonoBehaviour
     }
     void SwingEnd() {
         hitbox.enabled = false;
-        print("Hi");
     }
 }
