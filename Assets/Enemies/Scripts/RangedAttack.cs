@@ -11,6 +11,7 @@ public class RangedAttack : MonoBehaviour
 
     public float cooldown = 5;
     private float attackCooldown = 0;
+    public float rotation_offset = -90;
     void Start()
     {
         ai = GetComponent<FollowPlayer>();
@@ -30,7 +31,7 @@ public class RangedAttack : MonoBehaviour
     public void shoot()
     {
         Vector3 rotation = transform.rotation.eulerAngles;
-        rotation = new Vector3(rotation.x, rotation.y, rotation.z - 90);
+        rotation = new Vector3(rotation.x, rotation.y, rotation.z +rotation_offset);
         Vector3 direction = (ai.target.transform.position - transform.position);
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;

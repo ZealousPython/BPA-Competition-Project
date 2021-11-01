@@ -20,16 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 5184831053750644559, guid: 299b667c5198d0c4095152ae9a7b623a,
+      value: {fileID: -7099314937184983041, guid: bdb7d17030f5d4b41bb6f03e62639024,
         type: 3}
-    - time: 0.11666667
-      value: {fileID: 4345086733073366625, guid: 299b667c5198d0c4095152ae9a7b623a,
+    - time: 0.16666667
+      value: {fileID: -1094214226080622985, guid: bdb7d17030f5d4b41bb6f03e62639024,
         type: 3}
-    - time: 0.18333334
-      value: {fileID: 1575559808605154654, guid: 299b667c5198d0c4095152ae9a7b623a,
+    - time: 0.33333334
+      value: {fileID: -4159630510536405998, guid: bdb7d17030f5d4b41bb6f03e62639024,
         type: 3}
-    - time: 0.25
-      value: {fileID: 1575559808605154654, guid: 299b667c5198d0c4095152ae9a7b623a,
+    - time: 0.5
+      value: {fileID: -8811068934476819377, guid: bdb7d17030f5d4b41bb6f03e62639024,
+        type: 3}
+    - time: 0.6666667
+      value: {fileID: -8811068934476819377, guid: bdb7d17030f5d4b41bb6f03e62639024,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -50,16 +53,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 5184831053750644559, guid: 299b667c5198d0c4095152ae9a7b623a, type: 3}
-    - {fileID: 4345086733073366625, guid: 299b667c5198d0c4095152ae9a7b623a, type: 3}
-    - {fileID: 1575559808605154654, guid: 299b667c5198d0c4095152ae9a7b623a, type: 3}
-    - {fileID: 1575559808605154654, guid: 299b667c5198d0c4095152ae9a7b623a, type: 3}
+    - {fileID: -7099314937184983041, guid: bdb7d17030f5d4b41bb6f03e62639024, type: 3}
+    - {fileID: -1094214226080622985, guid: bdb7d17030f5d4b41bb6f03e62639024, type: 3}
+    - {fileID: -4159630510536405998, guid: bdb7d17030f5d4b41bb6f03e62639024, type: 3}
+    - {fileID: -8811068934476819377, guid: bdb7d17030f5d4b41bb6f03e62639024, type: 3}
+    - {fileID: -8811068934476819377, guid: bdb7d17030f5d4b41bb6f03e62639024, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.26666668
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,14 +83,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.18333334
+  - time: 0.5
     functionName: attackStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.6666667
     functionName: attackEnd
     data: 
     objectReferenceParameter: {fileID: 0}
