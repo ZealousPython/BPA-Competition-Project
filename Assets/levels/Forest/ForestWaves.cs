@@ -5,17 +5,17 @@ using UnityEngine.UI;
 public class ForestWaves : MonoBehaviour
 {
     private int wave = 1;
-    private int endWave = 4;
-    private int baseEnemyCount = 10;
-    private float baseEnemySpeed = 2;
+    public int endWave = 4;
+    public int baseEnemyCount = 10;
+    public float baseEnemySpeed = 2;
     public float difficultyScale = .75f;
     private EnemySpawner spawner;
     private int enemiesLeft = 0;
     private int inBetweenTime = 5;
-    public float timer = 0;
+    private float timer = 0;
     public Text waves;
-    public int waveEnemyCount;
-    public bool waveEnded = true;
+    private int waveEnemyCount;
+    private bool waveEnded = true;
     private bool bossWave = false;
     public GameObject boss;
     public GameObject bossBar;

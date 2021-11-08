@@ -70,6 +70,11 @@ public class OgreStuff : MonoBehaviour
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
     }
+    private void LateUpdate()
+    {
+        game.bossHealth = health;
+        healthBar.fillAmount = healthScript.health / maxHealth;
+    }
     public void BarfAttack()
     {
         Vector3 rotation = transform.rotation.eulerAngles;
