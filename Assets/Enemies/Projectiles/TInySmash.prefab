@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 64053288375670320, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 64053288375670320, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}
@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TInySmash
       objectReference: {fileID: 0}
+    - target: {fileID: 251088339609207957, guid: 6b6497d20239bf0488d716db88eee850,
+        type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 4205945733614535831, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}
       propertyPath: m_Size.x
@@ -80,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 4205945733614535831, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.0132997
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4205945733614535831, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}
@@ -91,6 +96,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: 0.0044466257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205945733614535831, guid: 6b6497d20239bf0488d716db88eee850,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4887603878302528493, guid: 6b6497d20239bf0488d716db88eee850,
         type: 3}

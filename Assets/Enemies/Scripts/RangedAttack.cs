@@ -10,13 +10,14 @@ public class RangedAttack : MonoBehaviour
     private BoxCollider2D hitbox;
 
     public float cooldown = 5;
-    private float attackCooldown = 0;
+    private float attackCooldown = 5;
     public float rotation_offset = -90;
     void Start()
     {
         ai = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
         hitbox = GetComponent<BoxCollider2D>();
+        attackCooldown = cooldown;
     }
     void Update()
     {
