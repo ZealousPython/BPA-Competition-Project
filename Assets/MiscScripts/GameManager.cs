@@ -38,10 +38,8 @@ public class GameManager : MonoBehaviour
                 player.GetComponent<PlayerHealth>().usePotion();
             }
         }
-        print(milesToKilo(123));
     }
-
-    public static void ChangeScene(string scenePath) {
+    public void ChangeScene(string scenePath) {
         SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
     }
 }
