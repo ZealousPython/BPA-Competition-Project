@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject target = null;
     private NavMeshAgent agent;
     private Animator anim;
     public bool attacking = false;
     public bool stopped = false;
+    private GameManager game;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +18,15 @@ public class FollowPlayer : MonoBehaviour
         anim = GetComponent<Animator>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-    }
+        game = GameManager.instance;
 
+    }
     // Update is called once per frame
     void Update()
     {
+        if (target == null) {
+            target = game.player;
+        }
         if (!attacking)
         {
             agent.SetDestination(target.transform.position);
