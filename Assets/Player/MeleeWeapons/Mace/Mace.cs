@@ -7,6 +7,7 @@ public class Mace : MonoBehaviour
     // Start is called before the first frame update
     private bool swinging = false;
     private Animator anim;
+    public float damage = 1;
     void Start()
     {
         anim = GetComponent<Animator>();     
@@ -31,7 +32,7 @@ public class Mace : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
         if (col.tag == "Enemy" && swinging){
-            print("hit");
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
         }
     }
 }

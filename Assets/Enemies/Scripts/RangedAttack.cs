@@ -10,12 +10,14 @@ public class RangedAttack : MonoBehaviour
     private BoxCollider2D hitbox;
 
     public float cooldown = 5;
-    private float attackCooldown = 0;
+    private float attackCooldown = 5;
+    public float rotation_offset = -90;
     void Start()
     {
         ai = GetComponent<FollowPlayer>();
         anim = GetComponent<Animator>();
         hitbox = GetComponent<BoxCollider2D>();
+        attackCooldown = cooldown;
     }
     void Update()
     {
@@ -30,7 +32,7 @@ public class RangedAttack : MonoBehaviour
     public void shoot()
     {
         Vector3 rotation = transform.rotation.eulerAngles;
-        rotation = new Vector3(rotation.x, rotation.y, rotation.z - 90);
+        rotation = new Vector3(rotation.x, rotation.y, rotation.z +rotation_offset);
         Vector3 direction = (ai.target.transform.position - transform.position);
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;

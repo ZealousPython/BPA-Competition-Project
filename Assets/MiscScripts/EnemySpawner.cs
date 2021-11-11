@@ -44,23 +44,23 @@ public class EnemySpawner : MonoBehaviour
         int offscreenDirection = Random.Range(0, 4);
         if (offscreenDirection == 0)
         {
-            spawnPosition.x = -halfWidth - 1;
-            spawnPosition.y = Random.Range(-halfHeight, halfHeight);
+            spawnPosition.x += -halfWidth - 1;
+            spawnPosition.y += Random.Range(-halfHeight, halfHeight);
         }
         else if (offscreenDirection == 1)
         {
-            spawnPosition.x = halfWidth + 1;
-            spawnPosition.y = Random.Range(-halfHeight, halfHeight);
+            spawnPosition.x += halfWidth + 1;
+            spawnPosition.y += Random.Range(-halfHeight, halfHeight);
         }
         else if (offscreenDirection == 2)
         {
-            spawnPosition.y = -halfHeight - 1;
-            spawnPosition.x = Random.Range(-halfWidth, halfWidth);
+            spawnPosition.y += -halfHeight - 1;
+            spawnPosition.x += Random.Range(-halfWidth, halfWidth);
         }
         else if (offscreenDirection == 3)
         {
-            spawnPosition.y = halfHeight + 1;
-            spawnPosition.x = Random.Range(-halfWidth, halfWidth);
+            spawnPosition.y += halfHeight + 1;
+            spawnPosition.x += Random.Range(-halfWidth, halfWidth);
         }
         int rangeNum = Random.Range(0, 100);
         GameObject enemy = enemies[0];
