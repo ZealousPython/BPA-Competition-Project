@@ -96,10 +96,10 @@ public class SpiderBoss : MonoBehaviour
     public void egg()
 
     {
-        Vector3 spawnPosition = new Vector3(transform.position.x,transform.position.y - 2,0);
+        Vector3 spawnPosition = new Vector3(transform.position.x,transform.position.y,0);
         GameObject e = (GameObject)Instantiate(babyegg, spawnPosition, Quaternion.identity);
-        e.GetComponent<FollowPlayer>().target = target;
-        e.transform.parent = enemyContainer.transform;
+        e.GetComponent<SpiderEggBreak>().enemyContainer = enemyContainer;
+        e.transform.parent = gameObject.transform;
         attackCooldown = summonCooldown;
         attacking = false;
 

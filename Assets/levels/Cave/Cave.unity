@@ -276,6 +276,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1b836740d6fbb42a9e91582796e91f, type: 3}
+--- !u!1 &38052933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2813193866778222578, guid: 3e08942657f9832459d936c2ee5920d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 344763238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52277922
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +483,11 @@ PrefabInstance:
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142158442064917, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1324,10 +1335,72 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1174820283189864289, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: isBoss
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2813193866778222578, guid: 3e08942657f9832459d936c2ee5920d9,
         type: 3}
       propertyPath: m_Name
       value: SpiderBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813193866778222578, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986985702909031491, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 480291759}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: babyegg
+      value: 
+      objectReference: {fileID: 6928312404323984271, guid: ff23e63b3e1b9a34abb7a8c09e56a60d,
+        type: 3}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: webBall
+      value: 
+      objectReference: {fileID: 1589974107040209818, guid: 1fa08e8778d1a6c42958b8e435315fd8,
+        type: 3}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1815336838}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: biteCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: enemyContainer
+      value: 
+      objectReference: {fileID: 1344964513}
+    - target: {fileID: 5030924464668358897, guid: 3e08942657f9832459d936c2ee5920d9,
+        type: 3}
+      propertyPath: summonCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7114091712545209236, guid: 3e08942657f9832459d936c2ee5920d9,
         type: 3}
@@ -3702,6 +3775,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 38052933}
+    - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
       propertyPath: waves
       value: 
       objectReference: {fileID: 85373354}
@@ -3832,7 +3910,7 @@ PrefabInstance:
     - target: {fileID: 2146466820046233956, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a7ae5ec8c51b541a70c88486e75753, type: 3}
@@ -7280,6 +7358,18 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1815336838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6562142156680323221, guid: c1ac5720b22e96546956aa834a4a0fa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 85373352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1887141178
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 299573421
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1607197239722563570, guid: ec02c03c9c9023f41946091e90276928,
     type: 3}
@@ -203,7 +203,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 10
+  m_Speed: 7
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1000

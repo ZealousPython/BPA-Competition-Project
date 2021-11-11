@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject target = null;
     private NavMeshAgent agent;
     private Animator anim;
     public bool attacking = false;
@@ -18,12 +18,7 @@ public class FollowPlayer : MonoBehaviour
         anim = GetComponent<Animator>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        
-    }
-    private void Awake()
-    {
         game = GameManager.instance;
-        
 
     }
     // Update is called once per frame
