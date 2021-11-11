@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public float potions = 2;
     public float bossHealth = 100;
     public GameObject player;
+
+    public bool playing = false;
     void Awake()
     {
         if (instance == null)
@@ -23,14 +25,23 @@ public class GameManager : MonoBehaviour
 
         else if (instance != this)
             Destroy(gameObject);
-        
+
         DontDestroyOnLoad(gameObject);
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && potions > 0) {
-            potions--;
-            player.GetComponent<PlayerHealth>().usePotion();
+        if (playing)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) && potions > 0)
+            {
+                potions--;
+                player.GetComponent<PlayerHealth>().usePotion();
+            }
         }
+        print(milesToKilo(123));
+    }
+
+    public static void ChangeScene(string scenePath) {
+        SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
     }
 }
