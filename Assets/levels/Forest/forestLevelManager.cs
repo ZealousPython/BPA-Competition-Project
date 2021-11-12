@@ -30,7 +30,6 @@ public class forestLevelManager : MonoBehaviour
         
     }
     void getPlayer() {
-        print("HI");
         if (game.playerClass == 0)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
