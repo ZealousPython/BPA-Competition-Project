@@ -1759,8 +1759,15 @@ MonoBehaviour:
   playerMaxMana: 100
   playerMana: 100
   potions: 2
-  bossHealth: 100
+  playerWeapon: {fileID: 0}
+  mageSpells: []
   player: {fileID: 480291759}
+  bossHealth: 100
+  playing: 0
+  firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  secondLevelScenePath: Assets/levels/Desert/Desert.unity
+  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
+  shopScenePath: 
 --- !u!4 &375908976
 Transform:
   m_ObjectHideFlags: 0
