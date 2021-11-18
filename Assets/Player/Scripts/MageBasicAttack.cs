@@ -25,7 +25,7 @@ public class MageBasicAttack : MonoBehaviour
     {
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
-        spells = new Spell[] {iceCast,rockCast};
+        spells = GameManager.instance.mageSpells;
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
     }
@@ -49,12 +49,17 @@ public class MageBasicAttack : MonoBehaviour
             shoot();
             currentCoolDown = basicAttackCoolDown;
         }
-        
-        if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting) {
-            currentSpell.cast();
-            spellCoolDown = currentSpell.coolDown;
-            mana -= currentSpell.manaUsage;
-            manaRegenTimer = manaRegenTime;
+        if (spells.Length <= 0)
+        {
+            spellCoolDown = 9999;
+            currentSpell = null;
+        }
+        else if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
+        {
+                currentSpell.cast();
+                spellCoolDown = currentSpell.coolDown;
+                mana -= currentSpell.manaUsage;
+                manaRegenTimer = manaRegenTime;
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {

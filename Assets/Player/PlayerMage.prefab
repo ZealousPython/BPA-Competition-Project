@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4554205182002090437}
   - component: {fileID: 4554205182002090435}
   - component: {fileID: 4554205182002090432}
+  - component: {fileID: 4276969650604971253}
   m_Layer: 0
   m_Name: PlayerMage
   m_TagString: Player
@@ -205,3 +206,15 @@ MonoBehaviour:
   coolDown: 0.5
   manaUsage: 15
   castTime: 0.75
+--- !u!114 &4276969650604971253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554205182002090459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c985bae0843cbdf41b5778713a7166f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

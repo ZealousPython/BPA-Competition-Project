@@ -5,11 +5,12 @@ using UnityEngine;
 public class RogueAttack : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject weapon;
+    private GameObject weapon;
     private float coolDown;
     private float currentCoolDown = 0;
     void Start()
     {
+        weapon = GameManager.instance.playerWeapon;
         coolDown = weapon.GetComponent<RougeWeapon>().cooldown;
     }
 

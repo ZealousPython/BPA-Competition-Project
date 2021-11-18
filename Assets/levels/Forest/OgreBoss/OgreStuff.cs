@@ -67,8 +67,13 @@ public class OgreStuff : MonoBehaviour
             anim.SetBool("moving", false);
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
+        if(health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
     private void LateUpdate()
     {
