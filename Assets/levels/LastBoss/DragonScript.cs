@@ -7,8 +7,12 @@ public class DragonScript : MonoBehaviour
 {
     private Animator anim;
     public bool attacking = false;
+
     public GameObject Wind;
     public GameObject Fire;
+    public GameObject rageWind;
+    public GameObject rageFire;
+
     public bool stopped = true;
     private GameManager game;
     public Image healthBar;
@@ -19,9 +23,11 @@ public class DragonScript : MonoBehaviour
     public float attackCooldown = 0;
 
     private EnemyHealth healthScript;
-    private float health = 15;
-    public float maxHealth = 15;
+    private float health = 250;
+    public float maxHealth = 250;
     Quaternion towardsPlayer;
+
+    bool rageMode = false;
     void Start()
     {
 
@@ -62,6 +68,11 @@ public class DragonScript : MonoBehaviour
         health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
+        if (health <= (maxHealth / 2)) {
+            fireCooldown = .5f;
+            windCooldown = 3.25f;
+            rageMode = true;
+        }
         if (health <= 0)
         {
             gameObject.SetActive(false);
@@ -79,8 +90,12 @@ public class DragonScript : MonoBehaviour
         Vector3 direction = (game.player.transform.position - newPosition);
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;
-        
-        GameObject p = (GameObject)Instantiate(Fire, newPosition, Quaternion.Euler(rotation));
+        GameObject p;
+        if (rageMode)
+            p = (GameObject)Instantiate(rageFire, newPosition, Quaternion.Euler(rotation));
+        else
+            p = (GameObject)Instantiate(Fire, newPosition, Quaternion.Euler(rotation));
+
         EnemyProjectile pscript = p.GetComponent<EnemyProjectile>();
         pscript.updateDirection(new Vector2(directionNormalized.x, directionNormalized.y));
         attackCooldown = fireCooldown;
@@ -94,10 +109,14 @@ public class DragonScript : MonoBehaviour
         //Vector3 direction = (game.player.transform.position - transform.position);
         //direction.z = 0.0f;
         //Vector3 directionNormalized = direction.normalized;
-
+        GameObject p;
         Vector3 newPosition = new Vector3(0, transform.position.y, 0);
 
-        GameObject p = (GameObject)Instantiate(Wind, newPosition, Quaternion.Euler(newRotation));
+        if (rageMode) 
+            p = (GameObject)Instantiate(rageWind, newPosition, Quaternion.Euler(newRotation));
+        else
+            p = (GameObject)Instantiate(Wind, newPosition, Quaternion.Euler(newRotation));
+
         ProjectileHolder pscript = p.GetComponent<ProjectileHolder>();
         pscript.updateDirection(new Vector2(0,-1));
         attackCooldown = windCooldown;

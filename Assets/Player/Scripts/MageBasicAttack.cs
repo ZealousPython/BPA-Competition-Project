@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MageBasicAttack : MonoBehaviour
 {
@@ -20,12 +21,15 @@ public class MageBasicAttack : MonoBehaviour
     private int spellSelection = 0;
     private Spell[] spells;
     private Spell currentSpell;
+    public Image SpellBar;
+    public Sprite[] SpellBarFrames;
+
     // Start is called before the first frame update
     void Start()
     {
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
-        spells = GameManager.instance.mageSpells;
+        spells = new Spell[1] {iceCast};
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
     }
@@ -51,6 +55,7 @@ public class MageBasicAttack : MonoBehaviour
         }
         if (spells.Length <= 0)
         {
+            SpellBar.sprite = SpellBarFrames[0];
             spellCoolDown = 9999;
             currentSpell = null;
         }
@@ -64,17 +69,19 @@ public class MageBasicAttack : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             spellSelection += 1;
-            if (spellSelection > 1)
+            if (spellSelection > spells.Length-1)
             {
                 spellSelection = 0;
             }
+            SpellBar.sprite = SpellBarFrames[spellSelection+1] ;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
             spellSelection -= 1;
             if (spellSelection < 0)
             {
-                spellSelection = 1;
+                spellSelection = spells.Length-1;
             }
+            SpellBar.sprite = SpellBarFrames[spellSelection + 1];
         }
         currentSpell = spells[spellSelection];
         GameManager.instance.playerMana = mana;
