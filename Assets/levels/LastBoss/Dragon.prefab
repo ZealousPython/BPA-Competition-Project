@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4649953728202590905}
   - component: {fileID: 5403472369335879236}
   - component: {fileID: 6798266379535685893}
+  - component: {fileID: 7723244237735696567}
+  - component: {fileID: 9059874887906393191}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Enemy
@@ -119,3 +121,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -2.2}
   serializedVersion: 2
   m_Radius: 0.73475146
+--- !u!114 &7723244237735696567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757603663672657815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c02634af0645142ac4e8779374a785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacking: 0
+  Wind: {fileID: 8501737956590104818, guid: 1aa2d5a9b96c0ec419e9b47fb2b6c145, type: 3}
+  Fire: {fileID: 0}
+  stopped: 1
+  healthBar: {fileID: 0}
+  windCooldown: 5
+  fireCooldown: 5
+  attackCooldown: 0
+  maxHealth: 15
+--- !u!114 &9059874887906393191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757603663672657815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba16fc3463061c84eb45e092a582f8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 150
+  isBoss: 1
