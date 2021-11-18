@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public float playerMana = 100;
     public float potions = 0;
     public GameObject playerWeapon;
-    public Spell[] mageSpells = { };
     public GameObject player;
+    public Spell[] mageSpells = { };
 
 
     public float bossHealth = 0;
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        s
     }
     void Update()
     {
