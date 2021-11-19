@@ -18,6 +18,7 @@ public class MageBasicAttack : MonoBehaviour
     public GameObject basicAttack;
     private CastIceSpike iceCast;
     private RockCast rockCast;
+    private FireCast fireCast;
     private int spellSelection = 0;
     private Spell[] spells;
     private Spell currentSpell;
@@ -29,7 +30,8 @@ public class MageBasicAttack : MonoBehaviour
     {
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
-        spells = new Spell[1] {iceCast};
+        fireCast = GetComponent<FireCast>();
+        spells = new Spell[3] {iceCast,rockCast,fireCast};
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
     }

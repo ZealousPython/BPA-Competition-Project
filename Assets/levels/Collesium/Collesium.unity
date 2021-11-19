@@ -1219,10 +1219,10 @@ MonoBehaviour:
   playerMana: 100
   potions: 0
   playerWeapon: {fileID: 1892600792}
+  player: {fileID: 1892600792}
   mageSpells:
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 1892600792}
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
