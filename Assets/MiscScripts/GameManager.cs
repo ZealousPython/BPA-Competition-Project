@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerWeapon;
     public GameObject player;
     public Spell[] mageSpells = { };
+    public Image spellBar;
+    public Image[] spriteUIImages;
 
 
     public float bossHealth = 0;
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
             instance = this;
 
         else if (instance != this)
+            instance.spellBar = spellBar;
+            instance.spriteUIImages = spriteUIImages;
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);

@@ -12,13 +12,12 @@ GameObject:
   - component: {fileID: 1021093078948168243}
   - component: {fileID: 6348880364038667149}
   - component: {fileID: 8122073817502540389}
-  - component: {fileID: 4443029416481435101}
   - component: {fileID: 855657102811457274}
   - component: {fileID: 7707584480533136573}
   - component: {fileID: 6189944888858799063}
   - component: {fileID: 5895349944331587248}
   - component: {fileID: 6634160922401905474}
-  - component: {fileID: 5131800842460851602}
+  - component: {fileID: 8523922871813649733}
   m_Layer: 0
   m_Name: goblin
   m_TagString: Enemy
@@ -128,25 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &4443029416481435101
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214864016996332949}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: acbb495d0d9fa8245a9db6b1d2256d2a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &855657102811457274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  isBoss: 0
 --- !u!61 &5895349944331587248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,15 +218,22 @@ NavMeshAgent:
   m_BaseOffset: 0.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5131800842460851602
-MonoBehaviour:
+--- !u!95 &8523922871813649733
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214864016996332949}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce91b788b3d4cc44bfd4bc4188962a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acbb495d0d9fa8245a9db6b1d2256d2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

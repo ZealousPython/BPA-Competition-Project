@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spear : MonoBehaviour
+public class Spear : Weapon
 {
     // Start is called before the first frame update
     private Animator anim;
