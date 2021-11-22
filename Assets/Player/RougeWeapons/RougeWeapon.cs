@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RougeWeapon : MonoBehaviour
+public class RougeWeapon : Weapon
 {
     // Start is called before the first frame update
     private Rigidbody2D body;

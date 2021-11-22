@@ -24,6 +24,9 @@ public class MageBasicAttack : MonoBehaviour
     private Spell currentSpell;
     public Image SpellBar;
     public Sprite[] SpellBarFrames;
+    private Vector2[] SpellUIPositions = new Vector2[] {new Vector2(-56,8), new Vector2(-9, 10), new Vector2(34, 11)};
+    public Sprite[] SpellUISprites;
+    public Image[] SpriteUIImages;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +34,24 @@ public class MageBasicAttack : MonoBehaviour
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
         fireCast = GetComponent<FireCast>();
-        spells = new Spell[3] {iceCast,rockCast,fireCast};
+        spells = new Spell[3] {rockCast,iceCast,fireCast};
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
+        SpellBar = GameManager.instance.spellBar;
+        SpriteUIImages = GameManager.instance.spriteUIImages;
+        for (int i = 0; i < spells.Length;i++) {
+            SpriteUIImages[i].enabled = true;
+            if (spells[i] == fireCast)
+                SpriteUIImages[i].sprite = SpellUISprites[2];
+            else if (spells[i] == rockCast)
+                SpriteUIImages[i].sprite = SpellUISprites[1];
+            else if (spells[i] == iceCast)
+                SpriteUIImages[i].sprite = SpellUISprites[0];
+            else {
+                SpriteUIImages[i].sprite = null;
+                SpriteUIImages[i].enabled = false;
+            }
+        }
     }
 
     // Update is called once per frame

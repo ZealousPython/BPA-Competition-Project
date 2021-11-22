@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     private float rotationOffset = 90;
     private CircleCollider2D colliderCircle;
     private Rigidbody2D body;
