@@ -4806,6 +4806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f6546bcef86334aa35da6261507fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  price: 0
   speed: 1
   lifeTime: 3
   damage: 1
+  damagelvl1: 1.75
+  damagelvl2: 1
+  damagelvl3: 1

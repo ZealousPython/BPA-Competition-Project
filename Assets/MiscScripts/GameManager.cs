@@ -37,21 +37,24 @@ public class GameManager : MonoBehaviour
             instance = this;
 
         else if (instance != this)
+        {
             instance.spellBar = spellBar;
             instance.spriteUIImages = spriteUIImages;
             Destroy(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0)
+        {
+            potions--;
+            player.GetComponent<PlayerHealth>().usePotion();
+        }
         if (playing)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && potions > 0)
-            {
-                potions--;
-                player.GetComponent<PlayerHealth>().usePotion();
-            }
+            
         }
     }
     public void ChangeScene(string scenePath) {

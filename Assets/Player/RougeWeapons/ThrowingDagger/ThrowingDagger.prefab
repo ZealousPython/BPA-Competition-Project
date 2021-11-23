@@ -117,10 +117,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0af0b848d9ec9a4bb538940b9329260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  price: 0
   speed: 8
   lifeTime: 3
   peirce: 3
   cooldown: 0.2
+  piercelvl1: 3
+  piercelvl2: 3
+  piercelvl3: 3
+  damagelvl1: 0.5
+  damagelvl2: 0
+  damagelvl3: 0
   damage: 1
 --- !u!50 &4813338335886852281
 Rigidbody2D:
