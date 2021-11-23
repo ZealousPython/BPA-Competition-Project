@@ -30,6 +30,7 @@ public class forestLevelManager : MonoBehaviour
         
     }
     void getPlayer() {
+        print(game.playerClass);
         if (game.playerClass == 0)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
@@ -49,6 +50,7 @@ public class forestLevelManager : MonoBehaviour
         cam.player = player.transform;
         spawner.player = player;
         ogre.target = player;
+        game.player = player;
 
     }
 }
