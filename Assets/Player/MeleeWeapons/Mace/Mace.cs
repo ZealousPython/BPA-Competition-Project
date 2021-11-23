@@ -7,7 +7,9 @@ public class Mace : Weapon
     // Start is called before the first frame update
     private bool swinging = false;
     private Animator anim;
-    public float damage = 1;
+    public float damagelvl1 = 1;
+    public float damagelvl2 = 2;
+    public float damagelvl3 = 4;
     void Start()
     {
         anim = GetComponent<Animator>();     
@@ -35,7 +37,12 @@ public class Mace : Weapon
     }
     void OnTriggerEnter2D(Collider2D col){
         if (col.tag == "Enemy" && swinging){
-            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
+            if (level == 1)
+                col.gameObject.GetComponent<EnemyHealth>().hit(damagelvl1);
+            if (level == 2)
+                col.gameObject.GetComponent<EnemyHealth>().hit(damagelvl2);
+            if (level == 3)
+                col.gameObject.GetComponent<EnemyHealth>().hit(damagelvl3);
         }
     }
 }
