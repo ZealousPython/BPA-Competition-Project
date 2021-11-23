@@ -7,7 +7,9 @@ public class Spear : Weapon
     // Start is called before the first frame update
     private Animator anim;
     private BoxCollider2D hitbox;
-    public float damage;
+    public float damagelvl1;
+    public float damagelvl2;
+    public float damagelvl3;
 
     void Start()
     {
@@ -31,7 +33,12 @@ public class Spear : Weapon
     {
         if (collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyHealth>().hit(damage);
+            if(level == 1)
+                collision.gameObject.GetComponent<EnemyHealth>().hit(damagelvl1);
+            if (level == 2)
+                collision.gameObject.GetComponent<EnemyHealth>().hit(damagelvl2);
+            if (level == 3)
+                collision.gameObject.GetComponent<EnemyHealth>().hit(damagelvl3);
         }
     }
     void SwingStart()

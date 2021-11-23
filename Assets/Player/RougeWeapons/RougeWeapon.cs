@@ -12,10 +12,28 @@ public class RougeWeapon : Weapon
     [SerializeField] private float lifeTime;
     [SerializeField] public float peirce;
     [SerializeField] public float cooldown;
+    public float piercelvl1;
+    public float piercelvl2;
+    public float piercelvl3;
+    public float damagelvl1;
+    public float damagelvl2;
+    public float damagelvl3;
     public float damage;
     // Start is called before the first frame update
     void Awake()
     {
+        if (level == 1) {
+            peirce = piercelvl1;
+            damage = damagelvl1;
+        }
+        else if (level == 2) {
+            peirce = piercelvl2;
+            damage = damagelvl2;
+        }
+        else if (level == 3) {
+            peirce = piercelvl3;
+            damage = damagelvl3;
+        }
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<CircleCollider2D>();
         Destroy(gameObject, lifeTime);
