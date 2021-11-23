@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MageBasicAttack : MonoBehaviour
 {
@@ -17,17 +18,40 @@ public class MageBasicAttack : MonoBehaviour
     public GameObject basicAttack;
     private CastIceSpike iceCast;
     private RockCast rockCast;
+    private FireCast fireCast;
     private int spellSelection = 0;
     private Spell[] spells;
     private Spell currentSpell;
+    public Image SpellBar;
+    public Sprite[] SpellBarFrames;
+    private Vector2[] SpellUIPositions = new Vector2[] {new Vector2(-56,8), new Vector2(-9, 10), new Vector2(34, 11)};
+    public Sprite[] SpellUISprites;
+    public Image[] SpriteUIImages;
+
     // Start is called before the first frame update
     void Start()
     {
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
-        spells = new Spell[] {iceCast,rockCast};
+        fireCast = GetComponent<FireCast>();
+        spells = new Spell[3] {rockCast,iceCast,fireCast};
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
+        SpellBar = GameManager.instance.spellBar;
+        SpriteUIImages = GameManager.instance.spriteUIImages;
+        for (int i = 0; i < spells.Length;i++) {
+            SpriteUIImages[i].enabled = true;
+            if (spells[i] == fireCast)
+                SpriteUIImages[i].sprite = SpellUISprites[2];
+            else if (spells[i] == rockCast)
+                SpriteUIImages[i].sprite = SpellUISprites[1];
+            else if (spells[i] == iceCast)
+                SpriteUIImages[i].sprite = SpellUISprites[0];
+            else {
+                SpriteUIImages[i].sprite = null;
+                SpriteUIImages[i].enabled = false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -49,27 +73,35 @@ public class MageBasicAttack : MonoBehaviour
             shoot();
             currentCoolDown = basicAttackCoolDown;
         }
-        
-        if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting) {
-            currentSpell.cast();
-            spellCoolDown = currentSpell.coolDown;
-            mana -= currentSpell.manaUsage;
-            manaRegenTimer = manaRegenTime;
+        if (spells.Length <= 0)
+        {
+            SpellBar.sprite = SpellBarFrames[0];
+            spellCoolDown = 9999;
+            currentSpell = null;
+        }
+        else if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
+        {
+                currentSpell.cast();
+                spellCoolDown = currentSpell.coolDown;
+                mana -= currentSpell.manaUsage;
+                manaRegenTimer = manaRegenTime;
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             spellSelection += 1;
-            if (spellSelection > 1)
+            if (spellSelection > spells.Length-1)
             {
                 spellSelection = 0;
             }
+            SpellBar.sprite = SpellBarFrames[spellSelection+1] ;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
             spellSelection -= 1;
             if (spellSelection < 0)
             {
-                spellSelection = 1;
+                spellSelection = spells.Length-1;
             }
+            SpellBar.sprite = SpellBarFrames[spellSelection + 1];
         }
         currentSpell = spells[spellSelection];
         GameManager.instance.playerMana = mana;

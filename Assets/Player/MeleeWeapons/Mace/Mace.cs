@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mace : MonoBehaviour
+public class Mace : Weapon
 {
     // Start is called before the first frame update
     private bool swinging = false;
     private Animator anim;
+    public float damage = 1;
     void Start()
     {
         anim = GetComponent<Animator>();     
@@ -15,6 +16,9 @@ public class Mace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (swinging) transform.parent.GetComponent<PlayerMovement>().speed = 2;
+        else transform.parent.GetComponent<PlayerMovement>().speed = 3;
+
         if (!swinging && Input.GetMouseButtonDown(0)){
             anim.SetTrigger("Swing");
             anim.SetBool("Startup",true);
@@ -31,7 +35,7 @@ public class Mace : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
         if (col.tag == "Enemy" && swinging){
-            print("hit");
+            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
         }
     }
 }

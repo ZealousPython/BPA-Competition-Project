@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2146466820046233956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146466820046233955}
+  - component: {fileID: 2146466820046233954}
+  - component: {fileID: 2146466820046233953}
+  m_Layer: 0
+  m_Name: WaveHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146466820046233955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146466820046233956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146466820046233954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146466820046233956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdd6bd508a92b5469b739fcac255297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 6311007232571081159, guid: 2dd882641d1fda341b21701820901d05, type: 3}
+  - {fileID: 214864016996332949, guid: b9c84de218c610846bd46958a4d44921, type: 3}
+  - {fileID: 8707427584704906385, guid: 15c4b4095e8ba9345b29b9e88f25298e, type: 3}
+  - {fileID: 311530879853015538, guid: 886232e350dd243478460efb2822964f, type: 3}
+  enemySpawnWeight:
+  - 0.3
+  - 0.6
+  - 0.7
+  - 1
+  spawnInterval: 2
+  player: {fileID: 0}
+  enemyContainer: {fileID: 0}
+  spawning: 0
+  enemiesSpawned: 0
+--- !u!114 &2146466820046233953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146466820046233956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1178f0749579c774ebd4431547734eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyScale: 0.75
+  timer: 0
+  waves: {fileID: 0}
+  waveEnemyCount: 0
+  waveEnded: 1
+  boss: {fileID: 0}
+  bossBar: {fileID: 0}

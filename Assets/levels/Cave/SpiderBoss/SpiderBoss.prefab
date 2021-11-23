@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!61 &-8281646760994015039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813193866778222578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.75}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2.0625, y: 2.0625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3125, y: 0.4375}
+  m_EdgeRadius: 0
+--- !u!114 &-3520655703790435441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813193866778222578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9b4b03a29e22645adb4f91cca65169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  attacking: 0
+  stopped: 0
+--- !u!114 &1174820283189864289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813193866778222578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba16fc3463061c84eb45e092a582f8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  isBoss: 1
+--- !u!114 &5030924464668358897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813193866778222578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579b9871bcc241641893c3ff20bdfe92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  attacking: 0
+  webBall: {fileID: 0}
+  babyegg: {fileID: 0}
+  stopped: 0
+  healthBar: {fileID: 0}
+  hitbox: {fileID: 0}
+  enemyContainer: {fileID: 0}
+  summonCooldown: 5
+  shootCooldown: 5
+  biteCooldown: 5
+  attackCooldown: 0
+  maxHealth: 30
+--- !u!1001 &2566084726832405384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330707380041483386, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_Name
+      value: SpiderBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594501831403035058, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594501831403035058, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694656054643400732, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833265591127071482, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3841958840291549116, guid: 6346a9662d0b017478ccf54ad37e08c9,
+        type: 3}
+    - target: {fileID: 8176592968308909915, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e8ee6b86b83ccbc4b80244a58b04edae, type: 2}
+    m_RemovedComponents:
+    - {fileID: -858137347991556504, guid: e94785bd69865aa47985ea8341836b0c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e94785bd69865aa47985ea8341836b0c, type: 3}
+--- !u!1 &2813193866778222578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330707380041483386, guid: e94785bd69865aa47985ea8341836b0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2566084726832405384}
+  m_PrefabAsset: {fileID: 0}
