@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mace : MonoBehaviour
+public class Mace : Weapon
 {
     // Start is called before the first frame update
     private bool swinging = false;
@@ -16,6 +16,9 @@ public class Mace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (swinging) transform.parent.GetComponent<PlayerMovement>().speed = 2;
+        else transform.parent.GetComponent<PlayerMovement>().speed = 3;
+
         if (!swinging && Input.GetMouseButtonDown(0)){
             anim.SetTrigger("Swing");
             anim.SetBool("Startup",true);

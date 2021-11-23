@@ -114,7 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d76d5d497e334fbe11badd7e9361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  level: 1
+  price: 0
+  damage: 4
 --- !u!95 &1659305017069763091
 Animator:
   serializedVersion: 3
