@@ -6,12 +6,16 @@ public class Shop : MonoBehaviour
 {
     private GameManager game;
     private float gold;
-    private GameObject[] playerWeapons;
+    private List<GameObject> weaponsAvailable;
+    private List<string> spellsAvailable;
+
+    private List<GameObject> playerWeapons;
     private int playerClass;
 
     void Start()
     {
         
     }
+
     
 }

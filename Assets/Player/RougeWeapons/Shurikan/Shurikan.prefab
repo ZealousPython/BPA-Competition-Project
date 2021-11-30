@@ -47,10 +47,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e43594e23f6814b8374ae52143936b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  price: 75
+  name: Shurikan
   speed: 10
   lifeTime: 0.6
   peirce: 3
   cooldown: 0.2
+  piercelvl1: 0
+  piercelvl2: 0
+  piercelvl3: 0
+  damagelvl1: 0
+  damagelvl2: 0
+  damagelvl3: 0
   damage: 2
 --- !u!212 &1824860921114156515
 SpriteRenderer:

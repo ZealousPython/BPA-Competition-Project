@@ -114,9 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d76d5d497e334fbe11badd7e9361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 75
   price: 0
-  damage: 4
+  name: Mace
+  damagelvl1: 1
+  damagelvl2: 2
+  damagelvl3: 4
 --- !u!95 &1659305017069763091
 Animator:
   serializedVersion: 3

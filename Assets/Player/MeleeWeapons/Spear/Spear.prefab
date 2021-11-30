@@ -163,4 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001e8f3ce2ca9f4980160940870ba28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  level: 1
+  price: 35
+  name: Spear
+  damagelvl1: 0
+  damagelvl2: 0
+  damagelvl3: 0
