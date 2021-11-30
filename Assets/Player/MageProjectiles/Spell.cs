@@ -10,7 +10,6 @@ public class Spell : MonoBehaviour
     public float castTime;
     private float currentCastTime = 1;
     private bool casting = false;
-    public string name = "null";
     void Start()
     {
     }

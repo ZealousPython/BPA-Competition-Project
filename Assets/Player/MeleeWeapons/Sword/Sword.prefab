@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   price: 0
+  name: Sword
   damagelvl1: 0.75
   damagelvl2: 2
   damagelvl3: 3

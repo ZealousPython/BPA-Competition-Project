@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   price: 0
+  name: Dagger
   speed: 8
   lifeTime: 3
   peirce: 3
