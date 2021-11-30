@@ -857,8 +857,10 @@ MonoBehaviour:
   playerMana: 100
   potions: 2
   playerWeapon: {fileID: 0}
-  mageSpells: []
   player: {fileID: 0}
+  mageSpells: []
+  spellBar: {fileID: 0}
+  spriteUIImages: []
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -2845,6 +2847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  width: 20
+  height: 20
 --- !u!1 &1475197283
 GameObject:
   m_ObjectHideFlags: 0
