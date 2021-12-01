@@ -18,6 +18,7 @@ public class forestLevelManager : MonoBehaviour
     public CameraMovement cam;
     public EnemySpawner spawner;
     public OgreStuff ogre;
+    private float debugTimer = 5;
 
 
     void Start()
@@ -27,7 +28,9 @@ public class forestLevelManager : MonoBehaviour
     }
     void Update()
     {
-        if (!ogre.gameObject.activeInHierarchy && !spawner.spawning) {
+        debugTimer -= Time.deltaTime;
+        if (debugTimer < 0)
+        {
             game.endLevel(1);
         }
     }
