@@ -15,7 +15,7 @@ public class CharacterSelect : MonoBehaviour
     void Update() {
     }
     public void ChooseWarrior() {
-        game.playerClass = 0;
+        game.playerClass = 1;
         game.playerMaxHealth = 8;
         game.playerHealth = 8;
         game.playerMaxMana = 0;
@@ -24,7 +24,7 @@ public class CharacterSelect : MonoBehaviour
     }
     public void ChooseRouge()
     {
-        game.playerClass = 1;
+        game.playerClass = 2;
         game.playerMaxHealth = 7;
         game.playerHealth = 7;
         game.playerMaxMana = 0;
@@ -33,7 +33,7 @@ public class CharacterSelect : MonoBehaviour
     }
     public void ChooseMage()
     {
-        game.playerClass = 2;
+        game.playerClass = 3;
         game.playerMaxHealth = 6;
         game.playerHealth = 6;
         game.playerMaxMana = 100;

@@ -833,7 +833,7 @@ Transform:
   - {fileID: 1192873772}
   - {fileID: 1789128889}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322786358
 GameObject:
@@ -1289,7 +1289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 698035426}
+      objectReference: {fileID: 0}
     - target: {fileID: -858137347991556504, guid: e94785bd69865aa47985ea8341836b0c,
         type: 3}
       propertyPath: healthBar
@@ -1903,18 +1903,6 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1 &698035426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 962818087081856893, guid: ff1b836740d6fbb42a9e91582796e91f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645458416}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &698035434 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645458416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &715174586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,8 +2024,19 @@ MonoBehaviour:
   playerMaxMana: 100
   playerMana: 100
   potions: 2
+  playerWeapon: {fileID: 0}
+  player: {fileID: 0}
+  mageSpells: []
+  weaponsOwned: []
+  spellBar: {fileID: 0}
+  spriteUIImages: []
+  AllWeapons: []
   bossHealth: 100
-  player: {fileID: 698035426}
+  playing: 0
+  firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  secondLevelScenePath: Assets/levels/Desert/Desert.unity
+  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
+  shopScenePath: 
 --- !u!4 &729431553
 Transform:
   m_ObjectHideFlags: 0
@@ -2050,7 +2049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &738135715
 GameObject:
@@ -2496,7 +2495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &861829678
 GameObject:
@@ -3628,7 +3627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5e739a967908e47b6fe032bd3d861f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 698035434}
+  player: {fileID: 0}
+  width: 20
+  height: 20
 --- !u!1 &1155150843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,7 +4265,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 698035426}
+      objectReference: {fileID: 0}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: spawnInterval
@@ -4332,7 +4333,7 @@ PrefabInstance:
     - target: {fileID: 2146466820046233955, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2146466820046233955, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
@@ -5232,75 +5233,6 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1001 &1645458416
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856891, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 962818087081856893, guid: ff1b836740d6fbb42a9e91582796e91f,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerRogue
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ff1b836740d6fbb42a9e91582796e91f, type: 3}
 --- !u!1 &1654398749
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,7 +6623,7 @@ PrefabInstance:
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}

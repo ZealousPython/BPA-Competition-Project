@@ -27,23 +27,25 @@ public class forestLevelManager : MonoBehaviour
     }
     void Update()
     {
-        
+        if (!ogre.gameObject.activeInHierarchy && !spawner.spawning) {
+            game.endLevel(1);
+        }
     }
     void getPlayer() {
         print(game.playerClass);
-        if (game.playerClass == 0)
+        if (game.playerClass == 1)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
             GameObject playerWeapon = (GameObject)Instantiate(warriorStartWeapon, playerStartPos, Quaternion.identity);
             playerWeapon.transform.parent = player.transform;
             game.playerWeapon = warriorStartWeapon;
         }
-        else if (game.playerClass == 1)
+        else if (game.playerClass == 2)
         {
             player = (GameObject)Instantiate(rouge, playerStartPos, Quaternion.identity);
             game.playerWeapon = rougeStartWeapon;
         }
-        else {
+        else if(game.playerClass == 3){
             
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
