@@ -20,7 +20,8 @@ public class MageBasicAttack : MonoBehaviour
     private RockCast rockCast;
     private FireCast fireCast;
     private int spellSelection = 0;
-    private Spell[] spells;
+    private List<Spell> spells = new List<Spell>();
+    public List<string> currentSpells = new List<string>();
     private Spell currentSpell;
     public Image SpellBar;
     public Sprite[] SpellBarFrames;
@@ -34,12 +35,20 @@ public class MageBasicAttack : MonoBehaviour
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
         fireCast = GetComponent<FireCast>();
-        spells = new Spell[3] {rockCast,iceCast,fireCast};
+        currentSpells = GameManager.instance.mageSpells;
+        for (int i = 0; i < currentSpells.Count; i++) {
+            if (currentSpells[i] == "Ice")
+                spells[i] = iceCast;
+            else if (currentSpells[i] == "Fire")
+                spells[i] = fireCast;
+            else if (currentSpells[i] == "Rock")
+                spells[i] = rockCast;
+        }
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
         SpellBar = GameManager.instance.spellBar;
         SpriteUIImages = GameManager.instance.spriteUIImages;
-        for (int i = 0; i < spells.Length;i++) {
+        for (int i = 0; i < spells.Count;i++) {
             SpriteUIImages[i].enabled = true;
             if (spells[i] == fireCast)
                 SpriteUIImages[i].sprite = SpellUISprites[2];
@@ -73,7 +82,7 @@ public class MageBasicAttack : MonoBehaviour
             shoot();
             currentCoolDown = basicAttackCoolDown;
         }
-        if (spells.Length <= 0)
+        if (spells.Count <= 0)
         {
             SpellBar.sprite = SpellBarFrames[0];
             spellCoolDown = 9999;
@@ -89,7 +98,7 @@ public class MageBasicAttack : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             spellSelection += 1;
-            if (spellSelection > spells.Length-1)
+            if (spellSelection > spells.Count-1)
             {
                 spellSelection = 0;
             }
@@ -99,7 +108,7 @@ public class MageBasicAttack : MonoBehaviour
             spellSelection -= 1;
             if (spellSelection < 0)
             {
-                spellSelection = spells.Length-1;
+                spellSelection = spells.Count-1;
             }
             SpellBar.sprite = SpellBarFrames[spellSelection + 1];
         }
