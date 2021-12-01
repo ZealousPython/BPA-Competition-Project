@@ -155,6 +155,7 @@ RectTransform:
   - {fileID: 6988292958132093925}
   - {fileID: 5538915451926682330}
   - {fileID: 9160787656133777558}
+  - {fileID: 4203042029345186681}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,6 +201,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2297130050922224031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4203042029345186681}
+  - component: {fileID: 3735112546969048686}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4203042029345186681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297130050922224031}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.474731, y: 5.4640503, z: -25.28125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2347268617218121040}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3735112546969048686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297130050922224031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  playerClass: 0
+  playerMaxHealth: 0
+  playerHealth: 0
+  playerMaxMana: 100
+  playerMana: 100
+  potions: 0
+  playerWeapon: {fileID: 0}
+  player: {fileID: 0}
+  mageSpells: []
+  spellBar: {fileID: 0}
+  spriteUIImages: []
+  bossHealth: 0
+  playing: 0
+  firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  secondLevelScenePath: Assets/levels/Desert/Desert.unity
+  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
+  shopScenePath: 
 --- !u!1 &2515047958785138025
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +661,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1382650727362449401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2297130050922224031}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7638182829964478350
 GameObject:
   m_ObjectHideFlags: 0
