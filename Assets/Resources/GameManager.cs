@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
     string databasePath = Application.streamingAssetsPath + "/Saves/saves.db";
     void Awake()
     {
-        if (instance == null) {
+        if (instance == null)
+        {
             instance = this;
             StartCoroutine(InitDataBase());
         }
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        
+
     }
     void Update()
     {
@@ -66,10 +67,12 @@ public class GameManager : MonoBehaviour
 
         }
     }
-    public void ChangeScene(string scenePath) {
+    public void ChangeScene(string scenePath)
+    {
         SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
     }
-    IEnumerator InitDataBase() {
+    IEnumerator InitDataBase()
+    {
 
 
         if (!File.Exists(databasePath))
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
         {
             print("File Found");
         }
-        databasePath = "URI=file:" + databasePath+";";
+        databasePath = "URI=file:" + databasePath + ";";
         print(databasePath);
         connection = new SQLiteConnection(databasePath);
         connection.Open();
@@ -97,7 +100,7 @@ public class GameManager : MonoBehaviour
             "Potions INTEGER," +
             "Class INTEGER)";
         command.ExecuteNonQuery();
-        command.CommandText = "CREATE TABLE IF NOT EXISTS weaponSaves (File INTEGER PRIMARY KEY, "+
+        command.CommandText = "CREATE TABLE IF NOT EXISTS weaponSaves (File INTEGER PRIMARY KEY, " +
             "WeaponOne STRING," +
             "WeaponOneLevel INTEGER," +
             "WeaponTwo STRING," +
@@ -113,7 +116,8 @@ public class GameManager : MonoBehaviour
         connection.Close();
         yield break;
     }
-    public void saveFile() {
+    public void saveFile()
+    {
         connection.Open();
         SQLiteCommand command = connection.CreateCommand();
         command.CommandText = string.Format("INSERT or REPLACE INTO playerSaves(File, Level, PlayerHealth, Coins, Potions,Class) " +
@@ -123,45 +127,45 @@ public class GameManager : MonoBehaviour
         if (weaponsOwned.Count == 1)
         {
             Weapon weaponOne = weaponsOwned[0].GetComponent<Weapon>();
-            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},{1},{2},{3},{4},{5},{6})"
-                , 0, "'" + weaponOne.name + "'", weaponOne.level, "NULL", 0, "NULL", 0);
+            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},{3},{4},{5},{6})"
+                , 0, weaponOne.name, weaponOne.level, "NULL", 0, "NULL", 0);
         }
         else if (weaponsOwned.Count == 2)
         {
             Weapon weaponOne = weaponsOwned[0].GetComponent<Weapon>();
             Weapon weaponTwo = weaponsOwned[1].GetComponent<Weapon>();
-            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},{1},{2},{3},{4},{5},{6})"
-                , 0, "'" + weaponOne.name + "'", weaponOne.level, "'" + weaponTwo.name + "'", weaponTwo.level, "NULL", 0);
+            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},'{3}',{4},{5},{6})"
+                , 0, weaponOne.name, weaponOne.level, weaponTwo.name, weaponTwo.level, "NULL", 0);
         }
         else if (weaponsOwned.Count == 3)
         {
             Weapon weaponOne = weaponsOwned[0].GetComponent<Weapon>();
             Weapon weaponTwo = weaponsOwned[1].GetComponent<Weapon>();
             Weapon weaponThree = weaponsOwned[2].GetComponent<Weapon>();
-            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},{1},{2},{3},{4},{5},{6})"
-                , 0, "'" + weaponOne.name + "'", weaponOne.level, "'" + weaponTwo.name + "'", weaponTwo.level, "'" + weaponThree.name + "'", weaponThree.level);
+            command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},'{3}',{4},'{5}',{6})"
+                , 0, weaponOne.name, weaponOne.level, weaponTwo.name, weaponTwo.level, weaponThree.name, weaponThree.level);
         }
         else
             command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},{1},{2},{3},{4},{5},{6})"
-                , 0, "NULL",0, "NULL", 0, "NULL", 0);
+                , 0, "NULL", 0, "NULL", 0, "NULL", 0);
         command.ExecuteNonQuery();
         //Save Spells
         command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves(File) " +
             "VALUES({0})", 0);
         if (mageSpells.Count == 1)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,{0},{1},{2})",
-                "'" + mageSpells[0] + "'", "NULL", "NULL");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
+                mageSpells[0], "NULL", "NULL");
         }
         else if (mageSpells.Count == 2)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,{0},{1},{2})",
-                "'" + mageSpells[0] + "'", "'"+mageSpells[1]+"'", "NULL");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
+                mageSpells[0], mageSpells[1], "NULL");
         }
         else if (mageSpells.Count == 3)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,{0},{1},{2})",
-                "'" + mageSpells[0] + "'", "'" + mageSpells[1] + "'", "'"+mageSpells[2]+"'");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
+                mageSpells[0], mageSpells[1], mageSpells[2]);
         }
         else
             command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,{0},{1},{2})",
@@ -170,7 +174,8 @@ public class GameManager : MonoBehaviour
         connection.Close();
 
     }
-    public void loadFile() {
+    public void loadFile()
+    {
         connection.Open();
         SQLiteCommand readCommand = connection.CreateCommand();
         SQLiteDataReader reader;
@@ -190,24 +195,30 @@ public class GameManager : MonoBehaviour
         readCommand.CommandText = query;
         reader = readCommand.ExecuteReader();
         weaponsOwned.Clear();
+        int Itemindex = 0;
         while (reader.Read())
         {
-            for (int i = 0; i < AllWeapons.Length; i++) {
+            for (int i = 0; i < AllWeapons.Length; i++)
+            {
                 string weaponName = AllWeapons[i].GetComponent<Weapon>().name;
                 if (weaponName == reader[1].ToString())
                 {
                     weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[0].GetComponent<Weapon>().level = int.Parse(reader[2].ToString());
+                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[2].ToString());
+                    Itemindex++;
                 }
                 else if (weaponName == reader[3].ToString())
                 {
                     weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[1].GetComponent<Weapon>().level = int.Parse(reader[4].ToString());
+                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[4].ToString());
+                    Itemindex++;
                 }
-                else if (weaponName == reader[5].ToString()) {
+                else if (weaponName == reader[5].ToString())
+                {
 
                     weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[2].GetComponent<Weapon>().level = int.Parse(reader[6].ToString());
+                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[6].ToString());
+                    Itemindex++;
                 }
             }
         }
