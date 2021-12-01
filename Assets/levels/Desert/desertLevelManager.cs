@@ -2,60 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class forestLevelManager : MonoBehaviour
+public class desertLevelManager : MonoBehaviour
 {
     private GameManager game;
     private GameObject player;
-    private Vector3 playerStartPos = new Vector3(5,-13,0);
+    private Vector3 playerStartPos = new Vector3(2.75f, -18, 0);
 
     public GameObject warrior;
     public GameObject rouge;
     public GameObject mage;
 
-    public GameObject rougeStartWeapon;
-    public GameObject warriorStartWeapon;
-
     public CameraMovement cam;
     public EnemySpawner spawner;
-    public OgreStuff ogre;
-    private float debugTimer = 5;
-
-
+    public BossBandit bandit;
+    // Start is called before the first frame update
+    void Awake() {
+        
+    }
     void Start()
     {
         game = GameManager.instance;
-        getPlayer();
+        SetUpPlayer();
     }
+
+    // Update is called once per frame
     void Update()
     {
-        debugTimer -= Time.deltaTime;
-        if (debugTimer < 0)
-        {
-            game.endLevel(1);
-        }
+        
     }
-    void getPlayer() {
-        print(game.playerClass);
+    public void SetUpPlayer() {
+        print("Set");
         if (game.playerClass == 1)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
-            GameObject playerWeapon = (GameObject)Instantiate(warriorStartWeapon, playerStartPos, Quaternion.identity);
+            GameObject playerWeapon = (GameObject)Instantiate(game.playerWeapon, playerStartPos, Quaternion.identity);
             playerWeapon.transform.parent = player.transform;
-            game.playerWeapon = warriorStartWeapon;
         }
         else if (game.playerClass == 2)
         {
             player = (GameObject)Instantiate(rouge, playerStartPos, Quaternion.identity);
-            game.playerWeapon = rougeStartWeapon;
         }
-        else if(game.playerClass == 3){
-            
+        else if (game.playerClass == 3)
+        {
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
+
         cam.player = player.transform;
         spawner.player = player;
-        ogre.target = player;
+        bandit.target = player;
         game.player = player;
-
     }
 }

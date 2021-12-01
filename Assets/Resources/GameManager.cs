@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private float level = 1;
 
     public int gold = 0;
-    public int playerClass = 0; // 0 is warrior, 1 is rouge, 2 is mage
+    public int playerClass = 0; // 1 is warrior, 2 is rouge, 3 is mage
     public float playerMaxHealth = 5;
     public float playerHealth = 0;
     public float playerMaxMana = 100;
@@ -67,6 +67,11 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    public void endLevel(float levelEnded) {
+        if (levelEnded == 1) {
+            ChangeScene(secondLevelScenePath);
+        }
+    }
     public void ChangeScene(string scenePath)
     {
         SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
@@ -78,12 +83,7 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(databasePath))
         {
             File.Create(databasePath);
-            print("File Created");
             yield return new WaitForSeconds(2);
-        }
-        else
-        {
-            print("File Found");
         }
         databasePath = "URI=file:" + databasePath + ";";
         print(databasePath);

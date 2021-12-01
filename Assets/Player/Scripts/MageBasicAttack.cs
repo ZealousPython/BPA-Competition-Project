@@ -38,11 +38,11 @@ public class MageBasicAttack : MonoBehaviour
         currentSpells = GameManager.instance.mageSpells;
         for (int i = 0; i < currentSpells.Count; i++) {
             if (currentSpells[i] == "Ice")
-                spells[i] = iceCast;
+                spells.Add(iceCast);
             else if (currentSpells[i] == "Fire")
-                spells[i] = fireCast;
+                spells.Add(fireCast);
             else if (currentSpells[i] == "Rock")
-                spells[i] = rockCast;
+                spells.Add(rockCast);
         }
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
