@@ -4808,6 +4808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   price: 0
+  name: MageBasicAttack
   speed: 1
   lifeTime: 3
   damage: 1
