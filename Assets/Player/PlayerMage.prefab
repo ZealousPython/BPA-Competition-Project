@@ -145,6 +145,10 @@ MonoBehaviour:
   manaRegenTime: 0
   basicAttack: {fileID: 8027025632209160076, guid: 1201c33e85550304aaf65a27876f4ec4,
     type: 3}
+  iceCast: {fileID: 0}
+  rockCast: {fileID: 0}
+  fireCast: {fileID: 0}
+  currentSpells: []
   SpellBar: {fileID: 0}
   SpellBarFrames:
   - {fileID: -5860834673356430966, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
@@ -156,6 +160,7 @@ MonoBehaviour:
   - {fileID: -291602024742867435, guid: ba7ec7e380ccfa14d8127f2ae928f39f, type: 3}
   - {fileID: -8092295105046505211, guid: e2b95c19b076b7744849401384f7d2f9, type: 3}
   SpriteUIImages: []
+  active: 1
 --- !u!114 &4554205182002090436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,8 +206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 2
-  manaUsage: 30
+  manaUsage: 40
   castTime: 0
+  price: 100
 --- !u!114 &4554205182002090432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +224,7 @@ MonoBehaviour:
   coolDown: 0.5
   manaUsage: 15
   castTime: 0
+  price: 25
 --- !u!114 &7237896335311677629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 1
-  manaUsage: 50
+  manaUsage: 25
   castTime: 0
+  price: 50
 --- !u!114 &4276969650604971253
 MonoBehaviour:
   m_ObjectHideFlags: 0

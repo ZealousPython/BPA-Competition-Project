@@ -7,8 +7,8 @@ public class Shop : MonoBehaviour
     private GameManager game;
 
 
-    private List<GameObject> weaponsAvailable;
-    private List<string> spellsAvailable;
+    private List<GameObject> weaponsAvailable = new List<GameObject>();
+    private List<string> spellsAvailable = new List<string>();
     public List<string> allSpells;
     public List<GameObject> WarriorWeapons;
     public List<GameObject> RougeWeapons;
@@ -20,14 +20,20 @@ public class Shop : MonoBehaviour
 
     public int heartPrice = 15;
     public int potionPrice = 5;
+    MageBasicAttack Mage;
 
     void Start()
     {
         game = GameManager.instance;
         playerClass = game.playerClass;
+        print(playerClass);
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
+        getAvailableWeapons();
+        if (playerClass == 3) {
+            Mage = game.player.GetComponent<MageBasicAttack>();
+        }
     }
 
     void updateShopValues() {
@@ -73,6 +79,7 @@ public class Shop : MonoBehaviour
             }
         }
         else if (playerClass == 3) {
+            print("Hi");
             for (int i = 0; i < allSpells.Count; i++)
             {
                 bool spellAvailable = true;
@@ -151,13 +158,13 @@ public class Shop : MonoBehaviour
         {
             if (spell == spellsAvailable[i])
             {
-                Spell spellToBuy = new FireCast();
+                Spell spellToBuy = Mage.fireCast;
                 if (spell == "Fire")
-                    spellToBuy = new FireCast();
+                    spellToBuy = Mage.fireCast;
                 else if (spell == "Ice")
-                    spellToBuy = new CastIceSpike();
+                    spellToBuy = Mage.iceCast;
                 else if (spell == "Rock")
-                    spellToBuy = new RockCast();
+                    spellToBuy = Mage.rockCast;
                 int spellPrice = spellToBuy.price;
                 if (gold >= spellPrice)
                 {
@@ -176,13 +183,13 @@ public class Shop : MonoBehaviour
     }
 
     public int getItemPrice(string spell) {
-        Spell spellChosen = new FireCast();
+        Spell spellChosen = Mage.fireCast;
         if (spell == "Fire")
-            spellChosen = new FireCast();
+            spellChosen = Mage.fireCast;
         else if (spell == "Ice")
-            spellChosen = new CastIceSpike();
+            spellChosen = Mage.iceCast;
         else if (spell == "Rock")
-            spellChosen = new RockCast();
+            spellChosen = Mage.rockCast;
         return spellChosen.price;
     }
 }

@@ -16,9 +16,9 @@ public class MageBasicAttack : MonoBehaviour
     private float manaRegenTimer;
     public float manaRegenTime;
     public GameObject basicAttack;
-    private CastIceSpike iceCast;
-    private RockCast rockCast;
-    private FireCast fireCast;
+    public CastIceSpike iceCast;
+    public RockCast rockCast;
+    public FireCast fireCast;
     private int spellSelection = 0;
     private List<Spell> spells = new List<Spell>();
     public List<string> currentSpells = new List<string>();
@@ -28,6 +28,7 @@ public class MageBasicAttack : MonoBehaviour
     private Vector2[] SpellUIPositions = new Vector2[] {new Vector2(-56,8), new Vector2(-9, 10), new Vector2(34, 11)};
     public Sprite[] SpellUISprites;
     public Image[] SpriteUIImages;
+    public bool active = true;
 
     // Start is called before the first frame update
     void Start()
@@ -66,54 +67,57 @@ public class MageBasicAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (currentCoolDown > 0)
-            currentCoolDown -= Time.deltaTime;
-        if (spellCoolDown > 0 && !casting)
-            spellCoolDown -= Time.deltaTime;
-        if (manaRegenTimer <= 0 && mana < maxMana)
-            mana += manaRegenRate * Time.deltaTime;
-        if (mana > maxMana)
-            mana = maxMana;
-        if (manaRegenTimer > 0)
-            manaRegenTimer -= Time.deltaTime;
-        if (Input.GetMouseButton(0) && currentCoolDown <= 0)
+        if (active)
         {
-            shoot();
-            currentCoolDown = basicAttackCoolDown;
-        }
-        if (spells.Count <= 0)
-        {
-            SpellBar.sprite = SpellBarFrames[0];
-            spellCoolDown = 9999;
-            currentSpell = null;
-        }
-        else if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
-        {
+            if (currentCoolDown > 0)
+                currentCoolDown -= Time.deltaTime;
+            if (spellCoolDown > 0 && !casting)
+                spellCoolDown -= Time.deltaTime;
+            if (manaRegenTimer <= 0 && mana < maxMana)
+                mana += manaRegenRate * Time.deltaTime;
+            if (mana > maxMana)
+                mana = maxMana;
+            if (manaRegenTimer > 0)
+                manaRegenTimer -= Time.deltaTime;
+            if (Input.GetMouseButton(0) && currentCoolDown <= 0)
+            {
+                shoot();
+                currentCoolDown = basicAttackCoolDown;
+            }
+            if (spells.Count <= 0)
+            {
+                SpellBar.sprite = SpellBarFrames[0];
+                spellCoolDown = 9999;
+                currentSpell = null;
+            }
+            else if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
+            {
                 currentSpell.cast();
                 spellCoolDown = currentSpell.coolDown;
                 mana -= currentSpell.manaUsage;
                 manaRegenTimer = manaRegenTime;
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
-            spellSelection += 1;
-            if (spellSelection > spells.Count-1)
-            {
-                spellSelection = 0;
             }
-            SpellBar.sprite = SpellBarFrames[spellSelection+1] ;
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
-            spellSelection -= 1;
-            if (spellSelection < 0)
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
-                spellSelection = spells.Count-1;
+                spellSelection += 1;
+                if (spellSelection > spells.Count - 1)
+                {
+                    spellSelection = 0;
+                }
+                SpellBar.sprite = SpellBarFrames[spellSelection + 1];
             }
-            SpellBar.sprite = SpellBarFrames[spellSelection + 1];
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+            {
+                spellSelection -= 1;
+                if (spellSelection < 0)
+                {
+                    spellSelection = spells.Count - 1;
+                }
+                SpellBar.sprite = SpellBarFrames[spellSelection + 1];
+            }
+            currentSpell = spells[spellSelection];
+            GameManager.instance.playerMana = mana;
         }
-        currentSpell = spells[spellSelection];
-        GameManager.instance.playerMana = mana;
     }
     private void shoot(){
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
