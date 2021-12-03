@@ -252,11 +252,17 @@ MonoBehaviour:
   playerMaxMana: 100
   playerMana: 100
   potions: 1
+  MageBasicAttackLevel: 1
   playerWeapon: {fileID: 0}
   player: {fileID: 0}
   mageSpells: []
+  weaponsOwned:
+  - {fileID: 4749384897960592764, guid: 16b13481446574d429c36ef73ecadf3c, type: 3}
+  - {fileID: 2560238881642370027, guid: 1487ee6f27ce49142be327460225f769, type: 3}
+  - {fileID: 1659305017069763102, guid: a389419826af6c9448031ad56bff1da3, type: 3}
   spellBar: {fileID: 0}
   spriteUIImages: []
+  AllWeapons: []
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity

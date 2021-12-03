@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2120890381760913137}
   - component: {fileID: 3607521431324676209}
   - component: {fileID: 2120890381760913136}
+  - component: {fileID: 1106704727574418351}
   m_Layer: 0
   m_Name: PlayerWarrior
   m_TagString: Player
@@ -168,3 +169,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1106704727574418351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120890381760913139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b691d18965e4b42a438d99a4e368e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  weaponLevels: 
+  currentWeaponLevel: 1
+  SpellBar: {fileID: 0}
+  SpellBarFrames:
+  - {fileID: -5860834673356430966, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: -6380919357660579612, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: 1500289781778293843, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: 4064195486293972507, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  WeaponUISprites:
+  - {fileID: -5399522029325404883, guid: 552732b12b4d0364692ecdbbfb59cbcc, type: 3}
+  - {fileID: 21300000, guid: fa6f2285458a01c438879b75a3aee155, type: 3}
+  - {fileID: -5675910084441776498, guid: 8401c6f14c9827e4bb622dcb11a567f4, type: 3}
+  SpriteUIImages: []
