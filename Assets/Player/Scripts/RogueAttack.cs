@@ -8,6 +8,8 @@ public class RogueAttack : MonoBehaviour
     private GameObject weapon;
     private float coolDown;
     private float currentCoolDown = 0;
+    public List<int> weaponLevels = new List<int>();
+    public int currentWeaponLevel = 1;
     void Start()
     {
         weapon = GameManager.instance.playerWeapon;
@@ -31,6 +33,8 @@ public class RogueAttack : MonoBehaviour
         Vector3 directionNormalized = direction.normalized;
         GameObject p = (GameObject)Instantiate(weapon, transform.position, Quaternion.Euler(rotation));
         RougeWeapon pscript = p.GetComponent<RougeWeapon>();
+        pscript.level = currentWeaponLevel;
+        pscript.updateProjectileLevel();
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
 }

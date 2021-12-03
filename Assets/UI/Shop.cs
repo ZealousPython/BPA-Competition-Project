@@ -18,7 +18,7 @@ public class Shop : MonoBehaviour
     private int playerClass;
     private int gold;
 
-    public int heartPrice = 15;
+    public int heartPrice = 10;
     public int potionPrice = 5;
     MageBasicAttack Mage;
 
@@ -98,6 +98,7 @@ public class Shop : MonoBehaviour
         if (gold >= heartPrice && game.playerMaxHealth < 20) {
             gold -= heartPrice;
             game.playerMaxHealth++;
+            game.playerHealth = game.playerMaxHealth;
         }
         updateGameValues();
     }
@@ -127,8 +128,34 @@ public class Shop : MonoBehaviour
             }
         }
         if (!itemToBuy) {
+            if (playerClass == 3) {
+                if (item.gameObject.name == Mage.basicAttack.name) {
+                    if (game.MageBasicAttackLevel != 3)
+                    {
+                        print("level");
+                        int upgradePrice = 25 * game.MageBasicAttackLevel;
+                        if (upgradePrice <= gold)
+                        {
+                            gold -= upgradePrice;
+                            game.MageBasicAttackLevel++;
+                        }
+                    }
+                }
+            }
             for (int i = 0; i < playerWeapons.Count; i++) {
                 if (item == playerWeapons[i]) {
+                    if (playerClass == 2)
+                    {
+
+                        int currentLevel;
+                        for (int e = 0; e < game.weaponsOwned.Count; e++)
+                        {
+                            if (game.weaponsOwned[i].name == item.GetComponent<Weapon>().name)
+                            {
+                                currentLevel = game.player.GetComponent<RogueAttack>().weaponLevels[i];
+                            }
+                        }
+                    }
                     if (item.GetComponent<Weapon>().price != 0)
                     {
                         int upgradePrice = (int)(0.5f * playerWeapons[i].GetComponent<Weapon>().price * playerWeapons[i].GetComponent<Weapon>().level);
@@ -139,7 +166,7 @@ public class Shop : MonoBehaviour
                         }
                     }
                     else {
-                        int upgradePrice = 10 * playerWeapons[i].GetComponent<Weapon>().level;
+                        int upgradePrice = 25 * playerWeapons[i].GetComponent<Weapon>().level;
                         if (upgradePrice <= gold) {
                             gold -= upgradePrice;
                             playerWeapons[i].GetComponent<Weapon>().level++;
@@ -171,6 +198,7 @@ public class Shop : MonoBehaviour
                     gold -= spellPrice;
                     playerSpells.Add(spellsAvailable[i]);
                     spellsAvailable.RemoveAt(i);
+                    Mage.updateSpellUI();
                     break;
                 }
             }

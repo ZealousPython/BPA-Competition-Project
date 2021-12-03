@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float playerMaxMana = 100;
     public float playerMana = 100;
     public float potions = 0;
+    public int MageBasicAttackLevel = 1;
     public GameObject playerWeapon;
     public GameObject player;
     public List<string> mageSpells = new List<string>();
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
         }
     }
     public void endLevel(float levelEnded) {
-        if (levelEnded == 1) {
+        if (levelEnded == 1.5f) {
             ChangeScene(secondLevelScenePath);
         }
     }
@@ -235,5 +236,15 @@ public class GameManager : MonoBehaviour
         }
         reader.Close();
         connection.Close();
+    }
+    public void saveAndQuit() {
+        saveFile();
+        Quit();
+    }
+    public void Quit() {
+        Application.Quit();
+    }
+    public void nextLevel() {
+        endLevel(1.5f);
     }
 }

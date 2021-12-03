@@ -29,6 +29,7 @@ public class MageBasicAttack : MonoBehaviour
     public Sprite[] SpellUISprites;
     public Image[] SpriteUIImages;
     public bool active = true;
+    public int basicAttackLevel = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -62,11 +63,42 @@ public class MageBasicAttack : MonoBehaviour
                 SpriteUIImages[i].enabled = false;
             }
         }
+        basicAttackLevel = GameManager.instance.MageBasicAttackLevel;
     }
 
+    public void updateSpellUI() {
+        currentSpells = GameManager.instance.mageSpells;
+        spells.Clear();
+        for (int i = 0; i < currentSpells.Count; i++)
+        {
+
+            if (currentSpells[i] == "Ice")
+                spells.Add(iceCast);
+            else if (currentSpells[i] == "Fire")
+                spells.Add(fireCast);
+            else if (currentSpells[i] == "Rock")
+                spells.Add(rockCast);
+        }
+        for (int i = 0; i < spells.Count; i++)
+        {
+            SpriteUIImages[i].enabled = true;
+            if (spells[i] == fireCast)
+                SpriteUIImages[i].sprite = SpellUISprites[2];
+            else if (spells[i] == rockCast)
+                SpriteUIImages[i].sprite = SpellUISprites[1];
+            else if (spells[i] == iceCast)
+                SpriteUIImages[i].sprite = SpellUISprites[0];
+            else
+            {
+                SpriteUIImages[i].sprite = null;
+                SpriteUIImages[i].enabled = false;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        
         if (active)
         {
             if (currentCoolDown > 0)
@@ -126,6 +158,8 @@ public class MageBasicAttack : MonoBehaviour
         Vector3 directionNormalized = direction.normalized;
         GameObject p = (GameObject)Instantiate(basicAttack, transform.position, Quaternion.identity);
         ProjectileMovement pscript = p.GetComponent<ProjectileMovement>();
+        pscript.level = basicAttackLevel;
+        pscript.updateProjectileLevel();
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
 }
