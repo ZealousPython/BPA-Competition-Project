@@ -38,15 +38,26 @@ public class forestLevelManager : MonoBehaviour
         print(game.playerClass);
         if (game.playerClass == 1)
         {
+            if (game.weaponsOwned.Count > 0)
+                game.weaponsOwned[0] = warriorStartWeapon;
+            else {
+                game.weaponsOwned.Add(warriorStartWeapon);
+            }
+            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
-            GameObject playerWeapon = (GameObject)Instantiate(warriorStartWeapon, playerStartPos, Quaternion.identity);
-            playerWeapon.transform.parent = player.transform;
-            game.playerWeapon = warriorStartWeapon;
+            
         }
         else if (game.playerClass == 2)
         {
+            if (game.weaponsOwned.Count > 0)
+                game.weaponsOwned[0] = rougeStartWeapon;
+            else
+            {
+                game.weaponsOwned.Add(rougeStartWeapon);
+            }
+            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(rouge, playerStartPos, Quaternion.identity);
-            game.playerWeapon = rougeStartWeapon;
+            
         }
         else if(game.playerClass == 3){
             

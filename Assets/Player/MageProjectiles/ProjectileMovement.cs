@@ -26,6 +26,14 @@ public class ProjectileMovement : Weapon
         hitbox = GetComponent<CircleCollider2D>();
         Destroy(gameObject, lifeTime);
     }
+    public void updateProjectileLevel() {
+        if (level == 1)
+            damage = damagelvl1;
+        else if (level == 2)
+            damage = damagelvl2;
+        else if (level == 3)
+            damage = damagelvl3;
+    }
 
     // Update is called once per frame
     void Update()

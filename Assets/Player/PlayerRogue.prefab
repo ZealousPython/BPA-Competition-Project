@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 962818087081856884}
   - component: {fileID: 5853548916927494342}
   m_Layer: 0
-  m_Name: PlayerRogue 1 1
+  m_Name: PlayerRogue
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74242b14de47a824190847837eb623de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 4813338335886852283, guid: bcea0f00a59da344cb3f6d864e356dcd, type: 3}
+  weapons: []
+  weaponLevels: 
+  currentWeaponLevel: 1
+  SpellBar: {fileID: 0}
+  SpellBarFrames:
+  - {fileID: -5860834673356430966, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: -6380919357660579612, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: 1500289781778293843, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  - {fileID: 4064195486293972507, guid: 97a5ed81955217f4dae603436a88902c, type: 3}
+  WeaponUISprites:
+  - {fileID: -1982712031924621246, guid: 1ed78085cef5f6e4f8998fb7dc1f3781, type: 3}
+  - {fileID: 21300000, guid: b11d2d9aa8b3222438d0199467dd04f4, type: 3}
+  - {fileID: 3552898119303372681, guid: 6dd104edbbf515747b7155829882756a, type: 3}
+  SpriteUIImages: []
 --- !u!114 &5853548916927494342
 MonoBehaviour:
   m_ObjectHideFlags: 0

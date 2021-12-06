@@ -54,12 +54,12 @@ MonoBehaviour:
   lifeTime: 0.6
   peirce: 3
   cooldown: 0.2
-  piercelvl1: 0
-  piercelvl2: 0
-  piercelvl3: 0
-  damagelvl1: 0
-  damagelvl2: 0
-  damagelvl3: 0
+  piercelvl1: 2
+  piercelvl2: 4
+  piercelvl3: 6
+  damagelvl1: 1
+  damagelvl2: 3
+  damagelvl3: 6
   damage: 2
 --- !u!212 &1824860921114156515
 SpriteRenderer:

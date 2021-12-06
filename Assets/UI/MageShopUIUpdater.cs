@@ -28,10 +28,10 @@ public class MageShopUIUpdater : MonoBehaviour
         RockPrice.text = Mage.rockCast.price.ToString();
         FirePrice.text = Mage.fireCast.price.ToString();
         IcePrice.text = Mage.iceCast.price.ToString();
-        MageBasicAttackPrice.text = ((int)Mage.basicAttack.GetComponent<ProjectileMovement>().level * 25).ToString();
-    }
-    public void MageUpgradeButtonPressed() {
-        MageBasicAttackPrice.text = ((int)game.player.GetComponent<MageBasicAttack>().basicAttack.GetComponent<ProjectileMovement>().level * 25).ToString();
-        UpgradeMageBasicAttack.image.sprite = UpgradeUI[Mage.basicAttack.GetComponent<ProjectileMovement>().level-1];
+        if (game.MageBasicAttackLevel != 3)
+            MageBasicAttackPrice.text = ((int)game.MageBasicAttackLevel * 25).ToString();
+        else
+            MageBasicAttackPrice.text = "";
+        UpgradeMageBasicAttack.image.sprite = UpgradeUI[game.MageBasicAttackLevel - 1];
     }
 }
