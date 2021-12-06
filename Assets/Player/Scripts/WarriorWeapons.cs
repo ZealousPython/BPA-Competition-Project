@@ -104,17 +104,17 @@ public class WarriorWeapons : MonoBehaviour
         }
     }
     private void swapCurrentWeapon() {
+        for (int i = 0; i < transform.childCount; i++)
+            transform.GetChild(i).GetComponent<Weapon>().destroyWeapon();
         if (currentWeapon.GetComponent<Weapon>().name == "Spear")
         {
-            print("HELO");
-            transform.GetChild(0).GetComponent<Weapon>().destroyWeapon();
             GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
             playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
             playerWeapon.transform.parent = gameObject.transform;
             GameManager.instance.playerWeapon = currentWeapon;
         }
         else {
-            transform.GetChild(0).GetComponent<Weapon>().destroyWeapon();
+            
             GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, Quaternion.identity);
             playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
             playerWeapon.transform.parent = gameObject.transform;

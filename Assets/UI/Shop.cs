@@ -21,12 +21,13 @@ public class Shop : MonoBehaviour
     public int heartPrice = 10;
     public int potionPrice = 5;
     MageBasicAttack Mage;
+    WarriorWeapons Warrior;
+    RogueAttack Rogue;
 
     void Start()
     {
         game = GameManager.instance;
         playerClass = game.playerClass;
-        print(playerClass);
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
@@ -34,6 +35,13 @@ public class Shop : MonoBehaviour
         if (playerClass == 3)
         {
             Mage = game.player.GetComponent<MageBasicAttack>();
+        }
+        else if (playerClass == 1)
+        {
+            Warrior = game.player.GetComponent<WarriorWeapons>();
+        }
+        else { 
+            Rogue = game.player.GetComponent<RogueAttack>();
         }
     }
 
@@ -194,6 +202,7 @@ public class Shop : MonoBehaviour
                 }
             }
         }
+
         updateGameValues();
     }
 

@@ -146,16 +146,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36194862}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.35315606, w: 0.93556446}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 562057101}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -41.361}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57, y: 0}
+  m_AnchoredPosition: {x: -47.7, y: 15.8}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36194864
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3552898119303372681, guid: 6dd104edbbf515747b7155829882756a,
+  m_Sprite: {fileID: -5675910084441776498, guid: 8401c6f14c9827e4bb622dcb11a567f4,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -384,18 +384,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 1000
-  playerClass: 2
+  playerClass: 1
   playerMaxHealth: 6
   playerHealth: 6
   playerMaxMana: 100
   playerMana: 100
   potions: 0
   MageBasicAttackLevel: 1
-  playerWeapon: {fileID: 0}
+  playerWeapon: {fileID: 4749384897960592764, guid: 16b13481446574d429c36ef73ecadf3c,
+    type: 3}
   player: {fileID: 583447974}
   mageSpells: []
   weaponsOwned:
-  - {fileID: 4813338335886852283, guid: bcea0f00a59da344cb3f6d864e356dcd, type: 3}
+  - {fileID: 4749384897960592764, guid: 16b13481446574d429c36ef73ecadf3c, type: 3}
   weaponLevels: 01000000
   spellBar: {fileID: 5162923978260572704}
   spriteUIImages:
@@ -746,7 +747,7 @@ GameObject:
   - component: {fileID: 562057103}
   - component: {fileID: 562057102}
   m_Layer: 5
-  m_Name: Shurikan
+  m_Name: Mace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -820,7 +821,7 @@ MonoBehaviour:
         m_MethodName: selectItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6789345497600479027, guid: fc2ca21a0ed5bf64bbbcaea8ceea602c,
+          m_ObjectArgument: {fileID: 1659305017069763102, guid: a389419826af6c9448031ad56bff1da3,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1665,14 +1666,14 @@ RectTransform:
   m_GameObject: {fileID: 1303075082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1768229294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.2, y: 0.5}
+  m_AnchoredPosition: {x: -73.6, y: -0.1}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303075084
@@ -1694,7 +1695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1982712031924621246, guid: 1ed78085cef5f6e4f8998fb7dc1f3781,
+  m_Sprite: {fileID: -5399522029325404883, guid: 552732b12b4d0364692ecdbbfb59cbcc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1915,7 +1916,7 @@ GameObject:
   - component: {fileID: 1768229296}
   - component: {fileID: 1768229295}
   m_Layer: 5
-  m_Name: ThrowingDagger
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1989,7 +1990,7 @@ MonoBehaviour:
         m_MethodName: selectItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4813338335886852283, guid: bcea0f00a59da344cb3f6d864e356dcd,
+          m_ObjectArgument: {fileID: 4749384897960592764, guid: 16b13481446574d429c36ef73ecadf3c,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -2069,7 +2070,10 @@ MonoBehaviour:
   - Fire
   - Rock
   - Ice
-  WarriorWeapons: []
+  WarriorWeapons:
+  - {fileID: 4749384897960592764, guid: 16b13481446574d429c36ef73ecadf3c, type: 3}
+  - {fileID: 2560238881642370027, guid: 1487ee6f27ce49142be327460225f769, type: 3}
+  - {fileID: 1659305017069763102, guid: a389419826af6c9448031ad56bff1da3, type: 3}
   RougeWeapons:
   - {fileID: 4813338335886852283, guid: bcea0f00a59da344cb3f6d864e356dcd, type: 3}
   - {fileID: 894552532679164538, guid: c6df18bbc6d3d1a408fba9b881c072d9, type: 3}
@@ -2117,9 +2121,9 @@ MonoBehaviour:
   - {fileID: -8565589411722741696, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
   - {fileID: -5113054401711203866, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
   - {fileID: -5507831728832444965, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
-  JavelinWeapon: {fileID: 894552532679164538, guid: c6df18bbc6d3d1a408fba9b881c072d9,
+  JavelinWeapon: {fileID: 2560238881642370027, guid: 1487ee6f27ce49142be327460225f769,
     type: 3}
-  ShurikanWeapon: {fileID: 6789345497600479027, guid: fc2ca21a0ed5bf64bbbcaea8ceea602c,
+  ShurikanWeapon: {fileID: 1659305017069763102, guid: a389419826af6c9448031ad56bff1da3,
     type: 3}
 --- !u!1 &1840844466
 GameObject:
@@ -2214,7 +2218,7 @@ GameObject:
   - component: {fileID: 1950587343}
   - component: {fileID: 1950587342}
   m_Layer: 5
-  m_Name: Javelin
+  m_Name: Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2288,7 +2292,7 @@ MonoBehaviour:
         m_MethodName: selectItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 894552532679164538, guid: c6df18bbc6d3d1a408fba9b881c072d9,
+          m_ObjectArgument: {fileID: 2560238881642370027, guid: 1487ee6f27ce49142be327460225f769,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -2416,7 +2420,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 204195455}
-        m_MethodName: nextLevel
+        m_MethodName: endLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2610,11 +2614,10 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Choose Wisely Rouge
-
+  m_Text: 'Choose Wisely Warrior
 
 '
 --- !u!222 &1988240156
@@ -2790,7 +2793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.7, y: -8.9}
+  m_AnchoredPosition: {x: -58, y: -2.2}
   m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104111830
@@ -2806,13 +2809,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b11d2d9aa8b3222438d0199467dd04f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa6f2285458a01c438879b75a3aee155, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

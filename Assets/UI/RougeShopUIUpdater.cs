@@ -38,7 +38,7 @@ public class RougeShopUIUpdater : MonoBehaviour
         }
         if (game.weaponsOwned.Count == 2)
         {
-            if (game.weaponsOwned[1].name == "Javelin") {
+            if (game.weaponsOwned[1].name == "Spear") {
                 if (game.weaponLevels[1] != 3)
                 {
                     JavelinPrice.text = ((int)JavelinWeapon.GetComponent<Weapon>().price * game.weaponLevels[1]).ToString();
@@ -47,7 +47,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                     JavelinPrice.text = "";
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
             }
-            else if (game.weaponsOwned[1].name == "Shurikan")
+            else if (game.weaponsOwned[1].name == "Mace")
             {
                 if (game.weaponLevels[1] != 3)
                 {
@@ -60,7 +60,7 @@ public class RougeShopUIUpdater : MonoBehaviour
 
         }
         else if (game.weaponsOwned.Count == 3) {
-            if (game.weaponsOwned[2].name == "Javelin")
+            if (game.weaponsOwned[2].name == "Spear")
             {
                 if (game.weaponLevels[2] != 3)
                 {
@@ -71,7 +71,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[2] - 1];
 
             }
-            else if (game.weaponsOwned[2].name == "Shurikan")
+            else if (game.weaponsOwned[2].name == "Mace")
             {
                 if (game.weaponLevels[2] != 3)
                 {
@@ -82,7 +82,7 @@ public class RougeShopUIUpdater : MonoBehaviour
 
                 UpgradeShurikan.image.sprite = UpgradeUI[game.weaponLevels[2] - 1];
             }
-            if (game.weaponsOwned[1].name == "Javelin")
+            if (game.weaponsOwned[1].name == "Spear")
             {
                 if (game.weaponLevels[1] != 3)
                 {
@@ -92,7 +92,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                     JavelinPrice.text = "";
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
             }
-            else if (game.weaponsOwned[1].name == "Shurikan")
+            else if (game.weaponsOwned[1].name == "Mace")
             {
                 if (game.weaponLevels[1] != 3)
                 {
@@ -103,5 +103,6 @@ public class RougeShopUIUpdater : MonoBehaviour
                 UpgradeShurikan.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
             }
         }
+        
     }
 }
