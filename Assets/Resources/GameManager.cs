@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public List<string> mageSpells = new List<string>();
     public List<GameObject> weaponsOwned = new List<GameObject>();
+    public List<int> weaponLevels = new List<int>();
     public Image spellBar;
     public Image[] spriteUIImages;
     public GameObject[] AllWeapons = { };

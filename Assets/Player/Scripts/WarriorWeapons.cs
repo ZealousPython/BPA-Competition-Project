@@ -19,7 +19,7 @@ public class WarriorWeapons : MonoBehaviour
     void Start()
     {
         currentWeapon = GameManager.instance.playerWeapon;
-
+        weaponLevels = GameManager.instance.weaponLevels;
         weapons = GameManager.instance.weaponsOwned;
 
         SpellBar = GameManager.instance.spellBar;
@@ -29,12 +29,12 @@ public class WarriorWeapons : MonoBehaviour
             SpriteUIImages[i].enabled = true;
             if (weapons[i].GetComponent<Weapon>().name == "Sword")
                 SpriteUIImages[i].sprite = WeaponUISprites[0];
-            else if (weapons[i].GetComponent<Weapon>().name == "Mace")
+            else if (weapons[i].GetComponent<Weapon>().name == "Spear")
             {
                 SpriteUIImages[i].sprite = WeaponUISprites[1];
                 SpriteUIImages[i].transform.localScale = new Vector3(1, 1, 1);
             }
-            else if (weapons[i].GetComponent<Weapon>().name == "Spear")
+            else if (weapons[i].GetComponent<Weapon>().name == "Mace")
             {
                 SpriteUIImages[i].sprite = WeaponUISprites[2];
                 SpriteUIImages[i].transform.localScale = new Vector3(1, 1, 1);
@@ -58,8 +58,8 @@ public class WarriorWeapons : MonoBehaviour
             {
                 weaponSlot = 0;
             }
-            SpellBar.sprite = SpellBarFrames[weaponSlot + 1];
-            //currentWeaponLevel = weaponLevels[weaponSlot];
+            SpellBar.sprite = SpellBarFrames[weaponSlot+1];
+            currentWeaponLevel = weaponLevels[weaponSlot];
             currentWeapon = weapons[weaponSlot];
             swapCurrentWeapon();
         }
@@ -70,8 +70,8 @@ public class WarriorWeapons : MonoBehaviour
             {
                 weaponSlot = weapons.Count - 1;
             }
-            SpellBar.sprite = SpellBarFrames[weaponSlot + 1];
-            //currentWeaponLevel = weaponLevels[weaponSlot];
+            SpellBar.sprite = SpellBarFrames[weaponSlot+1];
+            currentWeaponLevel = weaponLevels[weaponSlot];
             currentWeapon = weapons[weaponSlot];
             swapCurrentWeapon();
         }
@@ -83,27 +83,47 @@ public class WarriorWeapons : MonoBehaviour
         for (int i = 0; i < weapons.Count; i++)
         {
             SpriteUIImages[i].enabled = true;
-            if (weapons[i].GetComponent<Weapon>().name == "Dagger")
+            if (weapons[i].GetComponent<Weapon>().name == "Sword")
                 SpriteUIImages[i].sprite = WeaponUISprites[0];
-            else if (weapons[i].GetComponent<Weapon>().name == "Javelin")
+            else if (weapons[i].GetComponent<Weapon>().name == "Spear")
+            {
                 SpriteUIImages[i].sprite = WeaponUISprites[1];
-            else if (weapons[i].GetComponent<Weapon>().name == "Shurikan")
+                SpriteUIImages[i].transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (weapons[i].GetComponent<Weapon>().name == "Mace")
+            {
                 SpriteUIImages[i].sprite = WeaponUISprites[2];
+                SpriteUIImages[i].transform.localScale = new Vector3(1, 1, 1);
+            }
             else
             {
+                SpriteUIImages[i].transform.localScale = new Vector3(1, 1, 1);
                 SpriteUIImages[i].sprite = null;
                 SpriteUIImages[i].enabled = false;
             }
         }
     }
     private void swapCurrentWeapon() {
-        transform.GetChild(0).GetComponent<Weapon>().destroyWeapon();
-        GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
-        playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
-        playerWeapon.transform.parent = gameObject.transform;
-        GameManager.instance.playerWeapon = currentWeapon;
+        if (currentWeapon.GetComponent<Weapon>().name == "Spear")
+        {
+            print("HELO");
+            transform.GetChild(0).GetComponent<Weapon>().destroyWeapon();
+            GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
+            playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
+            playerWeapon.transform.parent = gameObject.transform;
+            GameManager.instance.playerWeapon = currentWeapon;
+        }
+        else {
+            transform.GetChild(0).GetComponent<Weapon>().destroyWeapon();
+            GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, Quaternion.identity);
+            playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
+            playerWeapon.transform.parent = gameObject.transform;
+            GameManager.instance.playerWeapon = currentWeapon;
+        }
     }
     public void createWeapon() {
+        weaponSlot = 0;
+        SpellBar.sprite = SpellBarFrames[weaponSlot + 1];
         GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
         playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
         playerWeapon.transform.parent = gameObject.transform;

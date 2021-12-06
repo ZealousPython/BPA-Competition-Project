@@ -26,6 +26,7 @@ public class RogueAttack : MonoBehaviour
 
         SpellBar = GameManager.instance.spellBar;
         SpriteUIImages = GameManager.instance.spriteUIImages;
+        weaponLevels = GameManager.instance.weaponLevels;
         for (int i = 0; i < weapons.Count; i++)
         {
             SpriteUIImages[i].enabled = true;
@@ -49,6 +50,9 @@ public class RogueAttack : MonoBehaviour
             }
         }
         SpellBar.sprite = SpellBarFrames[1];
+        weapon = weapons[0];
+        coolDown = weapon.GetComponent<RougeWeapon>().cooldown;
+        currentWeaponLevel = weaponLevels[0];
     }
 
     void Update()
