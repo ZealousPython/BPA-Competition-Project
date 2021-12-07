@@ -536,9 +536,6 @@ MonoBehaviour:
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
-  secondLevelScenePath: Assets/levels/Desert/Desert.unity
-  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
-  shopScenePath: 
 --- !u!4 &204195456
 Transform:
   m_ObjectHideFlags: 0
@@ -1000,6 +997,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 762695229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &583447981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4554205182002090434, guid: e94a462a9d8fb68459f1c0f0d02ce433,
+    type: 3}
+  m_PrefabInstance: {fileID: 762695229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583447974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436eab14ca6103f4a82ecf43cf9b81c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667288811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,8 +1602,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204195455}
-        m_MethodName: saveFile
+      - m_Target: {fileID: 1799547179}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2338,8 +2347,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799547180}
-  - component: {fileID: 1799547179}
   - component: {fileID: 1799547181}
+  - component: {fileID: 1799547179}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -2367,6 +2376,9 @@ MonoBehaviour:
   RougeWeapons: []
   heartPrice: 10
   potionPrice: 5
+  Mage: {fileID: 583447981}
+  Warrior: {fileID: 0}
+  Rogue: {fileID: 0}
 --- !u!224 &1799547180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2407,6 +2419,7 @@ MonoBehaviour:
   - {fileID: -8565589411722741696, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
   - {fileID: -5113054401711203866, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
   - {fileID: -5507831728832444965, guid: 8ed4993a1debfe84c8cdf71e09841773, type: 3}
+  player: {fileID: 583447974}
 --- !u!1 &1840844466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,8 +2713,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204195455}
-        m_MethodName: nextLevel
+      - m_Target: {fileID: 1799547179}
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2992,8 +3005,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204195455}
-        m_MethodName: saveAndQuit
+      - m_Target: {fileID: 1799547179}
+        m_MethodName: SaveAndQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

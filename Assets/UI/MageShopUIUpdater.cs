@@ -12,6 +12,7 @@ public class MageShopUIUpdater : MonoBehaviour
     public Text IcePrice;
     private GameManager game;
     public Sprite[] UpgradeUI;
+    public GameObject player;
     private MageBasicAttack Mage;
 
     void Awake() {
@@ -21,7 +22,8 @@ public class MageShopUIUpdater : MonoBehaviour
 
     void Start() {
         game = GameManager.instance;
-        Mage = game.player.GetComponent<MageBasicAttack>();
+        GameManager.instance.player = player;
+        Mage = player.GetComponent<MageBasicAttack>();
        
     }
     void Update() {

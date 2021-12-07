@@ -31,7 +31,6 @@ public class desertLevelManager : MonoBehaviour
         
     }
     public void SetUpPlayer() {
-        print("Set");
         if (game.playerClass == 1)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);

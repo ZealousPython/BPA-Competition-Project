@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour
     public bool playing = false;
 
     public string firstLevelScenePath = "Assets/levels/Forest/Forest.unity";
-    public string secondLevelScenePath = "Assets/levels/Desert/Desert.unity";
-    public string thirdLevelScenePath = "Assets/levels/Cave/Cave.unity";
-    public string shopScenePath = "";
+    private string secondLevelScenePath = "Assets/levels/Desert/Desert.unity";
+    private string thirdLevelScenePath = "Assets/levels/Cave/Cave.unity";
+    private string WarriorShopScenePath = "Assets/UI/WarriorBuyMenu.unity";
+    private string RogueShopScenePath = "Assets/UI/RougeBuyMenu.unity";
+    private string MageShopScenePath = "Assets/UI/mage buy menu 1.unity";
     string databasePath = Application.streamingAssetsPath + "/Saves/saves.db";
     void Awake()
     {
@@ -72,9 +74,15 @@ public class GameManager : MonoBehaviour
     public void endLevel() {
         level += .5f;
         if (level%1 != 0) {
-            ChangeScene(shopScenePath);
+            if (playerClass == 1)
+                ChangeScene(WarriorShopScenePath);
+            else if (playerClass == 2)
+                ChangeScene(RogueShopScenePath);
+            else {
+                ChangeScene(MageShopScenePath);
+            }
         }
-        if (level == 1.5f) {
+        else if (level == 2) {
             ChangeScene(secondLevelScenePath);
         }
     }

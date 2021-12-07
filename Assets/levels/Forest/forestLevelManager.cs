@@ -20,6 +20,7 @@ public class forestLevelManager : MonoBehaviour
     public OgreStuff ogre;
     public GameObject ItemContainer;
     public float debugTimer = 5;
+    private bool fightingOgre = false;
 
 
     void Start()
@@ -29,18 +30,11 @@ public class forestLevelManager : MonoBehaviour
     }
     void Update()
     {
-        debugTimer -= Time.deltaTime;
-        if (debugTimer < 0)
-        {
-            for (int i = 0; i < ItemContainer.transform.childCount; i++) {
-                if (ItemContainer.transform.GetChild(i).name.Substring(0,4) == "Coin") {
-                    game.gold++;
-                }
-            }
-            
-            game.endLevel();
-            debugTimer = 9999;
+        if (ogre.isActiveAndEnabled) {
+            fightingOgre = true;
         }
+        if (fightingOgre && !ogre.isActiveAndEnabled)
+            endLevel();
     }
     void getPlayer() {
         print(game.playerClass);
@@ -76,5 +70,17 @@ public class forestLevelManager : MonoBehaviour
         ogre.target = player;
         game.player = player;
 
+    }
+    public void endLevel() {
+        for (int i = 0; i < ItemContainer.transform.childCount; i++)
+        {
+            if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
+            {
+                int goldGained = Random.Range(1,7);
+                game.gold += goldGained;
+            }
+        }
+
+        game.endLevel();
     }
 }
