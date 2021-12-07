@@ -69,8 +69,12 @@ public class GameManager : MonoBehaviour
 
         }
     }
-    public void endLevel(float levelEnded) {
-        if (levelEnded == 1.5f) {
+    public void endLevel() {
+        level += .5f;
+        if (level%1 != 0) {
+            ChangeScene(shopScenePath);
+        }
+        if (level == 1.5f) {
             ChangeScene(secondLevelScenePath);
         }
     }
@@ -246,6 +250,6 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
     public void nextLevel() {
-        endLevel(1.5f);
+        level += .5f;
     }
 }

@@ -18,7 +18,8 @@ public class forestLevelManager : MonoBehaviour
     public CameraMovement cam;
     public EnemySpawner spawner;
     public OgreStuff ogre;
-    private float debugTimer = 5;
+    public GameObject ItemContainer;
+    public float debugTimer = 5;
 
 
     void Start()
@@ -31,7 +32,14 @@ public class forestLevelManager : MonoBehaviour
         debugTimer -= Time.deltaTime;
         if (debugTimer < 0)
         {
-            game.endLevel(1);
+            for (int i = 0; i < ItemContainer.transform.childCount; i++) {
+                if (ItemContainer.transform.GetChild(i).name.Substring(0,4) == "Coin") {
+                    game.gold++;
+                }
+            }
+            
+            game.endLevel();
+            debugTimer = 9999;
         }
     }
     void getPlayer() {

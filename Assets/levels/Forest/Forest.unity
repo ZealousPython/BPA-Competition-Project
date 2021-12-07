@@ -391,6 +391,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &82106365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82106366}
+  m_Layer: 0
+  m_Name: ItemContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &82106366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82106365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &96271517
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +560,8 @@ MonoBehaviour:
   cam: {fileID: 1467351011}
   spawner: {fileID: 1431014941}
   ogre: {fileID: 501715981}
+  ItemContainer: {fileID: 0}
+  debugTimer: 5
 --- !u!1 &204229435
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,14 +900,18 @@ MonoBehaviour:
   playerMaxMana: 100
   playerMana: 100
   potions: 2
+  MageBasicAttackLevel: 1
   playerWeapon: {fileID: 0}
   player: {fileID: 0}
   mageSpells: []
+  weaponsOwned: []
+  weaponLevels: 
   spellBar: {fileID: 1539464156}
   spriteUIImages:
   - {fileID: 826979359}
   - {fileID: 1511853823}
   - {fileID: 45125543}
+  AllWeapons: []
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -3697,6 +3733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  ItemContainer: {fileID: 0}
   isBoss: 1
 --- !u!1 &1686494016
 GameObject:
@@ -5422,6 +5459,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
+      propertyPath: ItemContainer
+      value: 
+      objectReference: {fileID: 82106365}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: enemyContainer

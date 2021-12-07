@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     private bool needSpawn = false;
     public GameObject player;
     public GameObject enemyContainer;
+    public GameObject ItemContainer;
     public bool spawning = false;
     public int enemiesSpawned = 0;
     void Start()
@@ -86,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
             needSpawn = false;
             e.GetComponent<FollowPlayer>().target = player;
             e.transform.parent = enemyContainer.transform;
+            e.GetComponent<EnemyHealth>().ItemContainer = ItemContainer;
             enemiesSpawned++;
         }
 
