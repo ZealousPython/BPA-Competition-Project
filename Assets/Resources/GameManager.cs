@@ -62,18 +62,15 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && potions > 0)
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level%1 != .5f)
         {
             potions--;
             player.GetComponent<PlayerHealth>().usePotion();
         }
-        if (playing)
-        {
-
-        }
     }
     public void endLevel() {
         level += .5f;
+        playerHealth = playerMaxHealth;
         if (level % 1 != 0)
         {
             if (playerClass == 1)
@@ -84,6 +81,10 @@ public class GameManager : MonoBehaviour
             {
                 ChangeScene(MageShopScenePath);
             }
+        }
+        else if (level == 1)
+        {
+            ChangeScene(firstLevelScenePath);
         }
         else if (level == 2)
         {
@@ -136,7 +137,8 @@ public class GameManager : MonoBehaviour
         command.CommandText = "CREATE TABLE IF NOT EXISTS spellSaves (File INTEGER PRIMARY KEY, " +
             "SpellOne TEXT," +
             "SpellTwo TEXT," +
-            "SpellThree TEXT)";
+            "SpellThree TEXT," +
+            "MageAttackLevel INTEGER)";
         command.ExecuteNonQuery();
         connection.Close();
         yield break;
@@ -153,14 +155,14 @@ public class GameManager : MonoBehaviour
         {
             Weapon weaponOne = weaponsOwned[0].GetComponent<Weapon>();
             command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},{3},{4},{5},{6})"
-                , 0, weaponOne.name, weaponOne.level, "NULL", 0, "NULL", 0);
+                , 0, weaponOne.name, weaponLevels[0], "NULL", 0, "NULL", 0);
         }
         else if (weaponsOwned.Count == 2)
         {
             Weapon weaponOne = weaponsOwned[0].GetComponent<Weapon>();
             Weapon weaponTwo = weaponsOwned[1].GetComponent<Weapon>();
             command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},'{3}',{4},{5},{6})"
-                , 0, weaponOne.name, weaponOne.level, weaponTwo.name, weaponTwo.level, "NULL", 0);
+                , 0, weaponOne.name, weaponLevels[0], weaponTwo.name, weaponLevels[1], "NULL", 0);
         }
         else if (weaponsOwned.Count == 3)
         {
@@ -168,7 +170,7 @@ public class GameManager : MonoBehaviour
             Weapon weaponTwo = weaponsOwned[1].GetComponent<Weapon>();
             Weapon weaponThree = weaponsOwned[2].GetComponent<Weapon>();
             command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},'{1}',{2},'{3}',{4},'{5}',{6})"
-                , 0, weaponOne.name, weaponOne.level, weaponTwo.name, weaponTwo.level, weaponThree.name, weaponThree.level);
+                , 0, weaponOne.name, weaponLevels[0], weaponTwo.name, weaponLevels[1], weaponThree.name, weaponLevels[2]);
         }
         else
             command.CommandText = string.Format("INSERT or REPLACE INTO weaponSaves VALUES({0},{1},{2},{3},{4},{5},{6})"
@@ -179,22 +181,22 @@ public class GameManager : MonoBehaviour
             "VALUES({0})", 0);
         if (mageSpells.Count == 1)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
-                mageSpells[0], "NULL", "NULL");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}','{3}')",
+                mageSpells[0], "NULL", "NULL", MageBasicAttackLevel);
         }
         else if (mageSpells.Count == 2)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
-                mageSpells[0], mageSpells[1], "NULL");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}','{3}')",
+                mageSpells[0], mageSpells[1], "NULL", MageBasicAttackLevel);
         }
         else if (mageSpells.Count == 3)
         {
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}')",
-                mageSpells[0], mageSpells[1], mageSpells[2]);
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}','{3}')",
+                mageSpells[0], mageSpells[1], mageSpells[2], MageBasicAttackLevel);
         }
         else
-            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,{0},{1},{2})",
-                "NULL", "NULL", "NULL");
+            command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}','{3}')",
+                "NULL", "NULL", "NULL",MageBasicAttackLevel);
         command.ExecuteNonQuery();
         connection.Close();
 
@@ -223,27 +225,16 @@ public class GameManager : MonoBehaviour
         int Itemindex = 0;
         while (reader.Read())
         {
-            for (int i = 0; i < AllWeapons.Length; i++)
-            {
-                string weaponName = AllWeapons[i].GetComponent<Weapon>().name;
-                if (weaponName == reader[1].ToString())
+            for (int e = 1; e <= 5; e+=2) {
+                for (int i = 0; i < AllWeapons.Length; i++)
                 {
-                    weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[2].ToString());
-                    Itemindex++;
-                }
-                else if (weaponName == reader[3].ToString())
-                {
-                    weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[4].ToString());
-                    Itemindex++;
-                }
-                else if (weaponName == reader[5].ToString())
-                {
-
-                    weaponsOwned.Add(AllWeapons[i]);
-                    weaponsOwned[Itemindex].GetComponent<Weapon>().level = int.Parse(reader[6].ToString());
-                    Itemindex++;
+                    string weaponName = AllWeapons[i].GetComponent<Weapon>().name;
+                    if (weaponName == reader[e].ToString())
+                    {
+                        weaponsOwned.Add(AllWeapons[i]);
+                        weaponLevels[Itemindex] = (int.Parse(reader[e+1].ToString()));
+                        Itemindex++;
+                    }
                 }
             }
         }
@@ -257,9 +248,40 @@ public class GameManager : MonoBehaviour
             mageSpells.Add(reader[1].ToString());
             mageSpells.Add(reader[2].ToString());
             mageSpells.Add(reader[3].ToString());
+            MageBasicAttackLevel = int.Parse(reader[4].ToString());
         }
         reader.Close();
         connection.Close();
+        loadLevel();
+        playerHealth = playerMaxHealth;
+    }
+    public void loadLevel() {
+        if (level % 1 != 0)
+        {
+            if (playerClass == 1)
+                ChangeScene(WarriorShopScenePath);
+            else if (playerClass == 2)
+                ChangeScene(RogueShopScenePath);
+            else
+            {
+                ChangeScene(MageShopScenePath);
+            }
+        }
+        else if (level == 1) {
+            ChangeScene(firstLevelScenePath);
+        }
+        else if (level == 2)
+        {
+            ChangeScene(secondLevelScenePath);
+        }
+        else if (level == 3)
+        {
+            ChangeScene(thirdLevelScenePath);
+        }
+        else if (level == 4)
+        {
+            ChangeScene(fourthLevelScenePath);
+        }
     }
     public void saveAndQuit() {
         saveFile();
