@@ -1309,6 +1309,11 @@ PrefabInstance:
       objectReference: {fileID: 455211451}
     - target: {fileID: -858137347991556504, guid: e94785bd69865aa47985ea8341836b0c,
         type: 3}
+      propertyPath: ItemContainer
+      value: 
+      objectReference: {fileID: 912540419}
+    - target: {fileID: -858137347991556504, guid: e94785bd69865aa47985ea8341836b0c,
+        type: 3}
       propertyPath: enemyContainer
       value: 
       objectReference: {fileID: 823279217}
@@ -1790,6 +1795,7 @@ MonoBehaviour:
   cam: {fileID: 1148566311}
   spawner: {fileID: 1375428065}
   bandit: {fileID: 405187588}
+  ItemContainer: {fileID: 912540419}
 --- !u!4 &545231123
 Transform:
   m_ObjectHideFlags: 0
@@ -2112,9 +2118,6 @@ MonoBehaviour:
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
-  secondLevelScenePath: Assets/levels/Desert/Desert.unity
-  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
-  shopScenePath: 
 --- !u!4 &729431553
 Transform:
   m_ObjectHideFlags: 0
@@ -4085,8 +4088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  ItemContainer: {fileID: 0}
-  isBoss: 0
+  ItemContainer: {fileID: 912540419}
+  isBoss: 1
 --- !u!1 &1268675312
 GameObject:
   m_ObjectHideFlags: 0

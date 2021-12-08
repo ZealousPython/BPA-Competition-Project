@@ -19,7 +19,7 @@ public class ItemDetect : MonoBehaviour
         if (collision.tag == "Player")
         {
             if (itemType == 0)
-                game.gold+= Random.Range(1, 7);
+                game.gold+= Random.Range(1, 5);
             else
                 game.potions++;
             Destroy(gameObject);

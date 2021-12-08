@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3.5
   gold: 1000
   playerClass: 2
   playerMaxHealth: 6

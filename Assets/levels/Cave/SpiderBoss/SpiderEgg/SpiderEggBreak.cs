@@ -10,6 +10,7 @@ public class SpiderEggBreak : MonoBehaviour
     public GameObject enemyContainer;
     private GameManager game;
     private GameObject player;
+    public GameObject ItemContainer;
     void Start()
     {
         game = GameManager.instance;
@@ -25,6 +26,7 @@ public class SpiderEggBreak : MonoBehaviour
         NavMeshAgent agent = e.GetComponent<NavMeshAgent>();
         e.GetComponent<FollowPlayer>().target = player;
         e.transform.parent = enemyContainer.transform;
+        e.GetComponent<EnemyHealth>().ItemContainer = ItemContainer;
         Destroy(gameObject);
     }
 }

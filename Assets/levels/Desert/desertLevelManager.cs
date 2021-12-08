@@ -15,6 +15,8 @@ public class desertLevelManager : MonoBehaviour
     public CameraMovement cam;
     public EnemySpawner spawner;
     public BossBandit bandit;
+    public GameObject ItemContainer;
+    private bool fightingBandit = false;
     // Start is called before the first frame update
     void Awake() {
         
@@ -28,7 +30,13 @@ public class desertLevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (bandit.isActiveAndEnabled)
+        {
+            fightingBandit = true;
+        }
+        if (fightingBandit && !bandit.isActiveAndEnabled)
+            endLevel();
+
     }
     public void SetUpPlayer() {
         if (game.playerClass == 1)
@@ -50,5 +58,18 @@ public class desertLevelManager : MonoBehaviour
         spawner.player = player;
         bandit.target = player;
         game.player = player;
+    }
+    public void endLevel()
+    {
+        for (int i = 0; i < ItemContainer.transform.childCount; i++)
+        {
+            if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
+            {
+                int goldGained = Random.Range(1, 5);
+                game.gold += goldGained;
+            }
+        }
+
+        game.endLevel();
     }
 }

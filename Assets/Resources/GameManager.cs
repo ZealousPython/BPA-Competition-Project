@@ -8,7 +8,7 @@ using System.IO;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    private float level = 1;
+    public float level = 1;
 
     public int gold = 0;
     public int playerClass = 0; // 1 is warrior, 2 is rouge, 3 is mage
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public string firstLevelScenePath = "Assets/levels/Forest/Forest.unity";
     private string secondLevelScenePath = "Assets/levels/Desert/Desert.unity";
     private string thirdLevelScenePath = "Assets/levels/Cave/Cave.unity";
+    private string fourthLevelScenePath = "Assets/levels/Collesium/Collesium.unity";
     private string WarriorShopScenePath = "Assets/UI/WarriorBuyMenu.unity";
     private string RogueShopScenePath = "Assets/UI/RougeBuyMenu.unity";
     private string MageShopScenePath = "Assets/UI/mage buy menu 1.unity";
@@ -73,17 +74,27 @@ public class GameManager : MonoBehaviour
     }
     public void endLevel() {
         level += .5f;
-        if (level%1 != 0) {
+        if (level % 1 != 0)
+        {
             if (playerClass == 1)
                 ChangeScene(WarriorShopScenePath);
             else if (playerClass == 2)
                 ChangeScene(RogueShopScenePath);
-            else {
+            else
+            {
                 ChangeScene(MageShopScenePath);
             }
         }
-        else if (level == 2) {
+        else if (level == 2)
+        {
             ChangeScene(secondLevelScenePath);
+        }
+        else if (level == 3)
+        {
+            ChangeScene(thirdLevelScenePath);
+        }
+        else if (level == 4) {
+            ChangeScene(fourthLevelScenePath);
         }
     }
     public void ChangeScene(string scenePath)
