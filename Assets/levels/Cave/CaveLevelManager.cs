@@ -2,81 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class forestLevelManager : MonoBehaviour
+public class CaveLevelManager : MonoBehaviour
 {
     private GameManager game;
     private GameObject player;
-    private Vector3 playerStartPos = new Vector3(5,-13,0);
+    private Vector3 playerStartPos = new Vector3(2.75f, -18, 0);
 
     public GameObject warrior;
     public GameObject rouge;
     public GameObject mage;
 
-    public GameObject rougeStartWeapon;
-    public GameObject warriorStartWeapon;
-
     public CameraMovement cam;
     public EnemySpawner spawner;
-    public OgreStuff ogre;
+    public SpiderBoss bandit;
     public GameObject ItemContainer;
-    public float debugTimer = 5;
-    private bool fightingOgre = false;
+    private bool fightingBandit = false;
+    // Start is called before the first frame update
+    void Awake()
+    {
 
-
+    }
     void Start()
     {
         game = GameManager.instance;
-        getPlayer();
+        SetUpPlayer();
     }
+
+    // Update is called once per frame
     void Update()
     {
-        if (ogre.isActiveAndEnabled) {
-            fightingOgre = true;
+        if (bandit.isActiveAndEnabled)
+        {
+            fightingBandit = true;
         }
-        if (fightingOgre && !ogre.isActiveAndEnabled)
+        if (fightingBandit && !bandit.isActiveAndEnabled)
             endLevel();
+
     }
-    void getPlayer() {
-        print(game.playerClass);
+    public void SetUpPlayer()
+    {
         if (game.playerClass == 1)
         {
-            if (game.weaponsOwned.Count > 0)
-                game.weaponsOwned[0] = warriorStartWeapon;
-            else {
-                game.weaponsOwned.Add(warriorStartWeapon);
-            }
-            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
-            
+            GameObject playerWeapon = (GameObject)Instantiate(game.playerWeapon, playerStartPos, Quaternion.identity);
+            playerWeapon.transform.parent = player.transform;
         }
         else if (game.playerClass == 2)
         {
-            if (game.weaponsOwned.Count > 0)
-                game.weaponsOwned[0] = rougeStartWeapon;
-            else
-            {
-                game.weaponsOwned.Add(rougeStartWeapon);
-            }
-            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(rouge, playerStartPos, Quaternion.identity);
-            
         }
-        else if(game.playerClass == 3){
-            
+        else if (game.playerClass == 3)
+        {
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
+
         cam.player = player.transform;
         spawner.player = player;
-        ogre.target = player;
+        bandit.target = player;
         game.player = player;
-
     }
-    public void endLevel() {
+    public void endLevel()
+    {
         for (int i = 0; i < ItemContainer.transform.childCount; i++)
         {
             if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
             {
-                int goldGained = Random.Range(1,5);
+                int goldGained = Random.Range(1, 5);
                 game.gold += goldGained;
             }
         }

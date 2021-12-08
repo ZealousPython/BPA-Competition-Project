@@ -257,16 +257,13 @@ MonoBehaviour:
   player: {fileID: 0}
   mageSpells: []
   weaponsOwned: []
-  weaponLevels: 00000000
+  weaponLevels: 01000000
   spellBar: {fileID: 0}
   spriteUIImages: []
   AllWeapons: []
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
-  secondLevelScenePath: Assets/levels/Desert/Desert.unity
-  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
-  shopScenePath: 
 --- !u!4 &414556310
 Transform:
   m_ObjectHideFlags: 0

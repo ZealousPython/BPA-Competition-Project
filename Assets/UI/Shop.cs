@@ -20,9 +20,9 @@ public class Shop : MonoBehaviour
 
     public int heartPrice = 10;
     public int potionPrice = 5;
-    MageBasicAttack Mage;
-    WarriorWeapons Warrior;
-    RogueAttack Rogue;
+    public MageBasicAttack Mage;
+    public WarriorWeapons Warrior;
+    public RogueAttack Rogue;
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
-        getAvailableWeapons();
+        getAvailableWeapons();/*
         if (playerClass == 3)
         {
             Mage = game.player.GetComponent<MageBasicAttack>();
@@ -42,7 +42,7 @@ public class Shop : MonoBehaviour
         }
         else { 
             Rogue = game.player.GetComponent<RogueAttack>();
-        }
+        }*/
     }
 
     void updateShopValues()
@@ -92,7 +92,6 @@ public class Shop : MonoBehaviour
         }
         else if (playerClass == 3)
         {
-            print("Hi");
             for (int i = 0; i < allSpells.Count; i++)
             {
                 bool spellAvailable = true;
@@ -156,7 +155,6 @@ public class Shop : MonoBehaviour
                 {
                     if (game.MageBasicAttackLevel != 3)
                     {
-                        print("level");
                         int upgradePrice = 25 * game.MageBasicAttackLevel;
                         if (upgradePrice <= gold)
                         {
@@ -248,5 +246,15 @@ public class Shop : MonoBehaviour
         else if (spell == "Rock")
             spellChosen = Mage.rockCast;
         return spellChosen.price;
+    }
+    public void NextLevel() {
+        GameManager.instance.endLevel();
+    }
+    public void Save()
+    {
+        GameManager.instance.saveFile();
+    }
+    public void SaveAndQuit() {
+        GameManager.instance.saveAndQuit();
     }
 }

@@ -560,7 +560,7 @@ MonoBehaviour:
   cam: {fileID: 1467351011}
   spawner: {fileID: 1431014941}
   ogre: {fileID: 501715981}
-  ItemContainer: {fileID: 0}
+  ItemContainer: {fileID: 82106365}
   debugTimer: 5
 --- !u!1 &204229435
 GameObject:

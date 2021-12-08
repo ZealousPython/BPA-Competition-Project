@@ -33,6 +33,7 @@ public class SpiderBoss : MonoBehaviour
     public float maxHealth = 30;
 
     private bool dying = false;
+    public GameObject ItemContainer;
     void Start()
     {
 
@@ -83,15 +84,14 @@ public class SpiderBoss : MonoBehaviour
             anim.SetBool("moving", false);
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
-        if (dying)
+        if (health <= 0)
         {
-            game.bossHealth = 0;
-            healthBar.fillAmount = 0;
-            Destroy(gameObject);
-
+            gameObject.SetActive(false);
         }
+
     }
     public void egg()
 
@@ -99,6 +99,7 @@ public class SpiderBoss : MonoBehaviour
         Vector3 spawnPosition = new Vector3(transform.position.x,transform.position.y,0);
         GameObject e = (GameObject)Instantiate(babyegg, spawnPosition, Quaternion.identity);
         e.GetComponent<SpiderEggBreak>().enemyContainer = enemyContainer;
+        e.GetComponent<SpiderEggBreak>().ItemContainer = ItemContainer;
         e.transform.parent = gameObject.transform;
         attackCooldown = summonCooldown;
         attacking = false;

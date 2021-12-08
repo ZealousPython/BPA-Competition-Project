@@ -147,7 +147,8 @@ public class MageBasicAttack : MonoBehaviour
                 }
                 SpellBar.sprite = SpellBarFrames[spellSelection + 1];
             }
-            currentSpell = spells[spellSelection];
+            if(spells.Count > 0)
+                currentSpell = spells[spellSelection];
             GameManager.instance.playerMana = mana;
         }
     }
