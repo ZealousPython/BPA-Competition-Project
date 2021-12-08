@@ -21,6 +21,7 @@ public class CharacterSelect : MonoBehaviour
         game.playerMaxMana = 0;
         game.playerMana = 0;
         game.ChangeScene(game.firstLevelScenePath);
+        game.level = 1;
     }
     public void ChooseRouge()
     {
@@ -30,6 +31,8 @@ public class CharacterSelect : MonoBehaviour
         game.playerMaxMana = 0;
         game.playerMana = 0;
         game.ChangeScene(game.firstLevelScenePath);
+        game.level = 1;
+
     }
     public void ChooseMage()
     {
@@ -39,5 +42,6 @@ public class CharacterSelect : MonoBehaviour
         game.playerMaxMana = 100;
         game.playerMana = 100;
         game.ChangeScene(game.firstLevelScenePath);
+        game.level = 1;
     }
 }

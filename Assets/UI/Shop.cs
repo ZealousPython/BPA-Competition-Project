@@ -140,6 +140,7 @@ public class Shop : MonoBehaviour
                 {
                     gold -= weaponToBuy.price;
                     playerWeapons.Add(weaponsAvailable[i]);
+                    //
                     game.weaponLevels.Add(1);
                     weaponsAvailable.RemoveAt(i);
 
