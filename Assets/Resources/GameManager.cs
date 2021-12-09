@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        if (playerHealth <= 0) {
+            playerHealth = 9999;
+            ChangeScene("Assets/UI/GameOver.unity");
+        }
+
         if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level%1 != .5f)
         {
             potions--;

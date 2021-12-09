@@ -11,8 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        coin = (GameObject)Resources.Load("Items/Coin.prefab", typeof(GameObject));
-        potion = (GameObject)Resources.Load("Items/Potion.prefab", typeof(GameObject));
+        coin = (GameObject)Resources.Load("Items/Coin");
+        potion = (GameObject)Resources.Load("Items/Potion");
     }
     public void hit(float damage) {
 

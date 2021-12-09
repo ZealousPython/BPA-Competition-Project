@@ -63,15 +63,6 @@ public class LevelFourManager : MonoBehaviour
     }
     public void endLevel()
     {
-        for (int i = 0; i < ItemContainer.transform.childCount; i++)
-        {
-            if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
-            {
-                int goldGained = Random.Range(1, 5);
-                game.gold += goldGained;
-            }
-        }
-
-        game.endLevel();
+        GameManager.instance.ChangeScene("Assets/UI/WinScreen.unity");
     }
 }
