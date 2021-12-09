@@ -7,7 +7,7 @@ public class LevelFourManager : MonoBehaviour
     // Start is called before the first frame update
     private GameManager game;
     private GameObject player;
-    private Vector3 playerStartPos = new Vector3(2.75f, -18, 0);
+    private Vector3 playerStartPos = new Vector3(0, -10, 0);
 
     public GameObject warrior;
     public GameObject rouge;

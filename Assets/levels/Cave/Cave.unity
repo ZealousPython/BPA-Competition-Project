@@ -3848,6 +3848,11 @@ PrefabInstance:
       propertyPath: bossBar
       value: 
       objectReference: {fileID: 85373353}
+    - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
+      propertyPath: endWave
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: player

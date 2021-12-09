@@ -21,11 +21,13 @@ public class Mace : Weapon
         if (swinging) transform.parent.GetComponent<PlayerMovement>().speed = 2;
         else transform.parent.GetComponent<PlayerMovement>().speed = 3;
 
-        if (!swinging && Input.GetMouseButtonDown(0)){
+        if (!swinging && Input.GetButton("attack"))
+        {
             anim.SetTrigger("Swing");
             anim.SetBool("Startup",true);
         }        
-        else if (!Input.GetMouseButton(0)){
+        else if (!Input.GetButton("attack"))
+        {
             anim.SetBool("Swinging",false);
             swinging = false;
         }

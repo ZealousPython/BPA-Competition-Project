@@ -7,7 +7,7 @@ public class Shop : MonoBehaviour
     private GameManager game;
 
 
-    private List<GameObject> weaponsAvailable = new List<GameObject>();
+    public List<GameObject> weaponsAvailable = new List<GameObject>();
     private List<string> spellsAvailable = new List<string>();
     public List<string> allSpells;
     public List<GameObject> WarriorWeapons;
@@ -140,8 +140,6 @@ public class Shop : MonoBehaviour
                 {
                     gold -= weaponToBuy.price;
                     playerWeapons.Add(weaponsAvailable[i]);
-                    //
-                    game.weaponLevels.Add(1);
                     weaponsAvailable.RemoveAt(i);
 
                     break;

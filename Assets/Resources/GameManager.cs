@@ -254,6 +254,7 @@ public class GameManager : MonoBehaviour
         connection.Close();
         loadLevel();
         playerHealth = playerMaxHealth;
+        playerWeapon = weaponsOwned[0];
     }
     public void loadLevel() {
         if (level % 1 != 0)

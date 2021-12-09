@@ -20,7 +20,7 @@ public class Sword : Weapon
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && !hitbox.enabled)
+        if (Input.GetButton("attack") && !hitbox.enabled)
         {
             anim.SetTrigger("Swing");
             
