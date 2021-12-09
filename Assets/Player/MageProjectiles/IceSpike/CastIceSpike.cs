@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-
 public class CastIceSpike : Spell
 {
-    private GameObject iceSpike;
+    public GameObject iceSpike;
     int iceSpikeNum = 10;
 
     private void Awake()
     {
-        iceSpike=(GameObject)AssetDatabase.LoadAssetAtPath("Assets/Player/MageProjectiles/IceSpike/IceSpike.prefab",typeof(GameObject));
+       
     }
     
 

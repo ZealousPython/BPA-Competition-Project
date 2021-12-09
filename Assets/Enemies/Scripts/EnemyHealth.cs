@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 public class EnemyHealth : MonoBehaviour
 {
     public float health = 3;
@@ -12,8 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        coin = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Items/Coin.prefab", typeof(GameObject));
-        potion = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Items/Potion.prefab", typeof(GameObject));
+        coin = (GameObject)Resources.Load("Items/Coin.prefab", typeof(GameObject));
+        potion = (GameObject)Resources.Load("Items/Potion.prefab", typeof(GameObject));
     }
     public void hit(float damage) {
 
