@@ -18,10 +18,10 @@ public class Mace : Weapon
     // Update is called once per frame
     void Update()
     {
-        if (swinging) transform.parent.GetComponent<PlayerMovement>().speed = 2;
-        else transform.parent.GetComponent<PlayerMovement>().speed = 3;
+        if (swinging) GameManager.instance.player.GetComponent<PlayerMovement>().speed = 2;
+        else GameManager.instance.player.GetComponent<PlayerMovement>().speed = 3;
 
-        if (!swinging && Input.GetButton("attack"))
+        if (!swinging && Input.GetButtonDown("attack"))
         {
             anim.SetTrigger("Swing");
             anim.SetBool("Startup",true);
