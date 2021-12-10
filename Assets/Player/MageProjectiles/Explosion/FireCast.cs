@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class FireCast : Spell
 {
-    private GameObject fireBolt;
+    public GameObject fireBolt;
 
     private void Awake()
     {
-        fireBolt = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Player/MageProjectiles/Explosion/FireProjectile.prefab", typeof(GameObject));
+        
     }
 
 

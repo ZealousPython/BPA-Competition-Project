@@ -7,7 +7,7 @@ public class LevelFourManager : MonoBehaviour
     // Start is called before the first frame update
     private GameManager game;
     private GameObject player;
-    private Vector3 playerStartPos = new Vector3(2.75f, -18, 0);
+    private Vector3 playerStartPos = new Vector3(0, -10, 0);
 
     public GameObject warrior;
     public GameObject rouge;
@@ -63,15 +63,6 @@ public class LevelFourManager : MonoBehaviour
     }
     public void endLevel()
     {
-        for (int i = 0; i < ItemContainer.transform.childCount; i++)
-        {
-            if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
-            {
-                int goldGained = Random.Range(1, 5);
-                game.gold += goldGained;
-            }
-        }
-
-        game.endLevel();
+        GameManager.instance.ChangeScene("Assets/UI/WinScreen.unity");
     }
 }

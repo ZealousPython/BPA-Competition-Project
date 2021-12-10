@@ -111,7 +111,7 @@ public class MageBasicAttack : MonoBehaviour
                 mana = maxMana;
             if (manaRegenTimer > 0)
                 manaRegenTimer -= Time.deltaTime;
-            if (Input.GetMouseButton(0) && currentCoolDown <= 0)
+            if (Input.GetButton("attack") && currentCoolDown <= 0)
             {
                 shoot();
                 currentCoolDown = basicAttackCoolDown;
@@ -122,7 +122,7 @@ public class MageBasicAttack : MonoBehaviour
                 spellCoolDown = 9999;
                 currentSpell = null;
             }
-            else if (Input.GetMouseButton(1) && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
+            else if (Input.GetButton("attack2") && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
             {
                 currentSpell.cast();
                 spellCoolDown = currentSpell.coolDown;

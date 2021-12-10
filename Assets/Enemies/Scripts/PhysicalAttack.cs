@@ -36,6 +36,7 @@ public class PhysicalAttack : MonoBehaviour
     public void attackEnd() {
         hitbox.enabled = false;
         ai.attacking = false;
+        ai.stopped = false;
         attackCooldown = cooldown;
     }
     private void OnTriggerEnter2D(Collider2D collision)

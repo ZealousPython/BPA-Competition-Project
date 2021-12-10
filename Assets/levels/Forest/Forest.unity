@@ -893,6 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   gold: 0
   playerClass: 0
   playerMaxHealth: 6
@@ -915,9 +916,6 @@ MonoBehaviour:
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
-  secondLevelScenePath: Assets/levels/Desert/Desert.unity
-  thirdLevelScenePath: Assets/levels/Cave/Cave.unity
-  shopScenePath: 
 --- !u!1 &403893052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,6 +5540,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142156670250546, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142156670250546, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142156670250546, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}

@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class RockCast : Spell
 {
-    private GameObject rock;
+    public GameObject rock;
 
     private void Awake()
     {
-        rock = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Player/MageProjectiles/RockThrow/Rock.prefab", typeof(GameObject));
     }
     
 

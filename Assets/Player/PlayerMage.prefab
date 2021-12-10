@@ -161,6 +161,7 @@ MonoBehaviour:
   - {fileID: -8092295105046505211, guid: e2b95c19b076b7744849401384f7d2f9, type: 3}
   SpriteUIImages: []
   active: 1
+  basicAttackLevel: 1
 --- !u!114 &4554205182002090436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +210,8 @@ MonoBehaviour:
   manaUsage: 40
   castTime: 0
   price: 100
+  iceSpike: {fileID: 2616039151931738144, guid: c15d393db44b6744586fe296f1e21bc9,
+    type: 3}
 --- !u!114 &4554205182002090432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +228,7 @@ MonoBehaviour:
   manaUsage: 15
   castTime: 0
   price: 25
+  rock: {fileID: 1972493510792538961, guid: 33a6eddef393d5647a6ef58a023168fa, type: 3}
 --- !u!114 &7237896335311677629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +245,8 @@ MonoBehaviour:
   manaUsage: 25
   castTime: 0
   price: 50
+  fireBolt: {fileID: 2546731541666019790, guid: 1179556ce1136914b999d3b743a4e892,
+    type: 3}
 --- !u!114 &4276969650604971253
 MonoBehaviour:
   m_ObjectHideFlags: 0

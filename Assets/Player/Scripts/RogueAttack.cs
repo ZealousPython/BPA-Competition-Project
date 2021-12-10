@@ -58,13 +58,14 @@ public class RogueAttack : MonoBehaviour
     void Update()
     {
         currentCoolDown -= Time.deltaTime;
-        if (Input.GetMouseButton(0) && currentCoolDown <= 0){
+        if (Input.GetButton("attack") && currentCoolDown <= 0){
             shoot();
             currentCoolDown = coolDown;
         }
         changeWeapons();
     }
     private void changeWeapons() {
+        
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             weaponSlot += 1;
