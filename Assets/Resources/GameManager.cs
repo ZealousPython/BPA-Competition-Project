@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     public Image[] spriteUIImages;
     public GameObject[] AllWeapons = { };
     SQLiteConnection connection;
+    public GameObject pauseMenu;
+    public GameObject pauseMenuInstance;
+    public bool paused = false;
 
 
     public float bossHealth = 0;
@@ -67,10 +70,16 @@ public class GameManager : MonoBehaviour
             ChangeScene("Assets/UI/GameOver.unity");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level%1 != .5f)
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level % 1 != .5f)
         {
             potions--;
             player.GetComponent<PlayerHealth>().usePotion();
+        }
+        if (Input.GetKeyDown(KeyCode.P) && level % 1 != .5f)
+        {
+            if (!paused)
+                Pause();
+            else unPause();
         }
     }
     public void endLevel() {
@@ -201,7 +210,7 @@ public class GameManager : MonoBehaviour
         }
         else
             command.CommandText = string.Format("INSERT or REPLACE INTO spellSaves VALUES(0,'{0}','{1}','{2}','{3}')",
-                "NULL", "NULL", "NULL",MageBasicAttackLevel);
+                "NULL", "NULL", "NULL", MageBasicAttackLevel);
         command.ExecuteNonQuery();
         connection.Close();
 
@@ -230,14 +239,14 @@ public class GameManager : MonoBehaviour
         int Itemindex = 0;
         while (reader.Read())
         {
-            for (int e = 1; e <= 5; e+=2) {
+            for (int e = 1; e <= 5; e += 2) {
                 for (int i = 0; i < AllWeapons.Length; i++)
                 {
                     string weaponName = AllWeapons[i].GetComponent<Weapon>().name;
                     if (weaponName == reader[e].ToString())
                     {
                         weaponsOwned.Add(AllWeapons[i]);
-                        weaponLevels[Itemindex] = (int.Parse(reader[e+1].ToString()));
+                        weaponLevels[Itemindex] = (int.Parse(reader[e + 1].ToString()));
                         Itemindex++;
                     }
                 }
@@ -298,5 +307,15 @@ public class GameManager : MonoBehaviour
     }
     public void nextLevel() {
         level += .5f;
+    }
+    public void Pause() {
+        pauseMenuInstance = (GameObject)Instantiate(pauseMenu, Vector3.zero, Quaternion.identity);
+        Time.timeScale = 0;
+        paused = true;
+    }
+    public void unPause() {
+        pauseMenuInstance.GetComponent<PauseMenu>().kill();
+        Time.timeScale = 1;
+        paused = false;
     }
 }

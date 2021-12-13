@@ -77,5 +77,7 @@ public class RougeWeapon : Weapon
                 Destroy(gameObject);
             }
         }
+        else if (col.tag != "Projectile" && col.tag != "Player")
+            Destroy(gameObject);
     }
 }
