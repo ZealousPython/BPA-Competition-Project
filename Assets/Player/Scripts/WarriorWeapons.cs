@@ -109,16 +109,16 @@ public class WarriorWeapons : MonoBehaviour
         if (currentWeapon.GetComponent<Weapon>().name == "Spear")
         {
             GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
-            playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
             playerWeapon.transform.parent = gameObject.transform;
             GameManager.instance.playerWeapon = currentWeapon;
+            playerWeapon.GetComponent<Weapon>().level = weaponLevels[weaponSlot];
         }
         else {
             
             GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, Quaternion.identity);
-            playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
             playerWeapon.transform.parent = gameObject.transform;
             GameManager.instance.playerWeapon = currentWeapon;
+            playerWeapon.GetComponent<Weapon>().level = weaponLevels[weaponSlot];
         }
     }
     public void createWeapon() {
@@ -128,6 +128,7 @@ public class WarriorWeapons : MonoBehaviour
         playerWeapon.GetComponent<Weapon>().level = currentWeaponLevel;
         playerWeapon.transform.parent = gameObject.transform;
         GameManager.instance.playerWeapon = currentWeapon;
+        swapCurrentWeapon();
     }
     // Update is called once per frame
     void Update()
