@@ -46,6 +46,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 else
                     JavelinPrice.text = "";
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
+                ShurikanPrice.text = ((int)ShurikanWeapon.GetComponent<Weapon>().price).ToString();
             }
             else if (game.weaponsOwned[1].name == "Mace" || game.weaponsOwned[1].name == "Shurikan")
             {
@@ -56,6 +57,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 else
                     ShurikanPrice.text = "";
                 UpgradeShurikan.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
+                JavelinPrice.text = ((int)JavelinWeapon.GetComponent<Weapon>().price).ToString();
             }
 
         }
@@ -69,6 +71,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 else
                     JavelinPrice.text = "";
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[2] - 1];
+                ShurikanPrice.text = ((int)ShurikanWeapon.GetComponent<Weapon>().price).ToString();
 
             }
             else if (game.weaponsOwned[2].name == "Mace" || game.weaponsOwned[1].name == "Shurikan")
@@ -81,6 +84,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                     ShurikanPrice.text = "";
 
                 UpgradeShurikan.image.sprite = UpgradeUI[game.weaponLevels[2] - 1];
+                JavelinPrice.text = ((int)JavelinWeapon.GetComponent<Weapon>().price).ToString();
             }
             if (game.weaponsOwned[1].name == "Spear" || game.weaponsOwned[1].name == "Javelin")
             {
@@ -91,6 +95,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 else
                     JavelinPrice.text = "";
                 UpgradeJavelin.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
+                ShurikanPrice.text = ((int)ShurikanWeapon.GetComponent<Weapon>().price).ToString();
             }
             else if (game.weaponsOwned[1].name == "Mace" || game.weaponsOwned[1].name == "Shurikan")
             {
@@ -101,6 +106,7 @@ public class RougeShopUIUpdater : MonoBehaviour
                 else
                     ShurikanPrice.text = "";
                 UpgradeShurikan.image.sprite = UpgradeUI[game.weaponLevels[1] - 1];
+                JavelinPrice.text = ((int)JavelinWeapon.GetComponent<Weapon>().price).ToString();
             }
         }
         

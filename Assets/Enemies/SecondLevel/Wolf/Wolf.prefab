@@ -131,7 +131,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.05309111}
   serializedVersion: 2
-  m_Radius: 0.32609987
+  m_Radius: 0.3
 --- !u!195 &7747901069448895090
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  ItemContainer: {fileID: 0}
   isBoss: 0
 --- !u!50 &6447771107679213985
 Rigidbody2D:

@@ -70,12 +70,12 @@ public class GameManager : MonoBehaviour
             ChangeScene("Assets/UI/GameOver.unity");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level % 1 != .5f)
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level % 1 != .5f && !paused && playerHealth <=20)
         {
             potions--;
             player.GetComponent<PlayerHealth>().usePotion();
         }
-        if (Input.GetKeyDown(KeyCode.P) && level % 1 != .5f)
+        if (Input.GetKeyDown(KeyCode.Escape) && level % 1 != .5f&&playerHealth<=20)
         {
             if (!paused)
                 Pause();
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string scenePath)
     {
+        Time.timeScale = 1.5f;
         SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
     }
     IEnumerator InitDataBase()
