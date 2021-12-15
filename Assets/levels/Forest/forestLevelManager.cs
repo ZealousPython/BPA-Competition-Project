@@ -76,7 +76,7 @@ public class forestLevelManager : MonoBehaviour
         {
             if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
             {
-                int goldGained = Random.Range(1,5);
+                int goldGained = Random.Range(3,4);
                 game.gold += goldGained;
             }
         }

@@ -389,6 +389,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &85373359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7503245699595712281, guid: c1ac5720b22e96546956aa834a4a0fa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 85373352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &156902892
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +852,8 @@ MonoBehaviour:
   - {fileID: 85373355}
   AllWeapons: []
   pauseMenu: {fileID: 0}
+  pauseMenuInstance: {fileID: 0}
+  paused: 0
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -1658,6 +1672,11 @@ PrefabInstance:
       propertyPath: endWave
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
+      propertyPath: waveProgressBar
+      value: 
+      objectReference: {fileID: 85373359}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: player
@@ -2138,7 +2157,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.3452077, y: -1.4282017}
-      - {x: 3.4677548, y: -0.055019498}
+      - {x: 3.3156724, y: -0.007494103}
       - {x: 3.2093883, y: 0.6865244}
       - {x: -0.0719614, y: 1.5463407}
       - {x: -1.982012, y: -0.0063560605}
@@ -3305,9 +3324,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.845472, y: -0.015918195}
-      - {x: 4.8212786, y: -0.31324708}
-      - {x: 3.412158, y: -0.061158568}
+    - - {x: 8.822189, y: -0.10753575}
+      - {x: 8.845472, y: -0.015918195}
+      - {x: 4.8212786, y: -0.373258}
+      - {x: 3.3521461, y: -0.25319612}
       - {x: -2.6939926, y: 0.54961437}
       - {x: -3.3207598, y: 1.1597273}
       - {x: -3.051283, y: 1.692366}
@@ -3318,8 +3338,8 @@ PolygonCollider2D:
       - {x: -1.7004423, y: -0.14919382}
       - {x: -0.085271835, y: -0.309152}
       - {x: 2.383173, y: -0.47983104}
-      - {x: 4.671575, y: -0.64052093}
-      - {x: 8.614952, y: -0.5896085}
+      - {x: 4.647424, y: -0.644946}
+      - {x: 8.687405, y: -0.6379102}
 --- !u!50 &1471165085
 Rigidbody2D:
   serializedVersion: 4
@@ -3618,7 +3638,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.10833333
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 6a0ae956a8feefc43b6ca8ddba48f26d, type: 2}
@@ -3864,7 +3884,7 @@ PolygonCollider2D:
       - {x: 0.32045305, y: -40.766407}
       - {x: 0.60774827, y: -41.05238}
       - {x: 0.24233508, y: -41.08668}
-      - {x: -3.8573937, y: -41.029037}
+      - {x: -3.8819256, y: -41.237556}
       - {x: -16.014948, y: -41.254307}
       - {x: -17.607765, y: -39.97698}
       - {x: -18.736753, y: -38.928646}
@@ -4017,7 +4037,7 @@ PolygonCollider2D:
       - {x: -7.034205, y: 2.7439528}
       - {x: -7.6450047, y: 1.7798667}
       - {x: -2.6504111, y: -2.128282}
-      - {x: 0.7367697, y: -3.066267}
+      - {x: 0.7073183, y: -2.8895645}
       - {x: 1.3821093, y: -2.7772737}
       - {x: 2.109293, y: -0.1162498}
       - {x: 1.7142153, y: 4.7161694}

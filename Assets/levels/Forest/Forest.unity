@@ -913,6 +913,9 @@ MonoBehaviour:
   - {fileID: 1511853823}
   - {fileID: 45125543}
   AllWeapons: []
+  pauseMenu: {fileID: 0}
+  pauseMenuInstance: {fileID: 0}
+  paused: 0
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -3043,7 +3046,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.10833333
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: c420ed82f0677b945bea7b0f9f8b6e26, type: 2}
@@ -4512,15 +4515,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 10.473331, y: 6.694814}
-      - {x: 10.43972, y: 6.6068053}
-      - {x: 10.375915, y: 6.3613186}
-      - {x: 10.315768, y: 6.3352833}
-      - {x: 10.127157, y: 6.2561684}
-      - {x: 9.768337, y: 5.9835453}
-      - {x: 9.394103, y: 5.5528345}
-      - {x: 8.89602, y: 5.3133507}
-      - {x: 8.513286, y: 4.947091}
+    - - {x: 10.43972, y: 6.6068053}
       - {x: 7.654511, y: 4.6285763}
       - {x: 7.650848, y: 4.4788036}
       - {x: 7.3353276, y: 4.467581}
@@ -4713,9 +4708,8 @@ PolygonCollider2D:
       - {x: 8.197422, y: 33.752724}
       - {x: 8.549637, y: 33.170784}
       - {x: 9.043031, y: 32.85455}
-      - {x: 9.379953, y: 32.591125}
-      - {x: 9.627796, y: 32.46905}
-      - {x: 9.595836, y: 32.969307}
+      - {x: 9.428993, y: 32.453815}
+      - {x: 9.497758, y: 33.04777}
       - {x: 9.2645035, y: 33.093987}
       - {x: 8.765945, y: 33.415756}
       - {x: 8.653975, y: 33.674587}
@@ -4734,16 +4728,10 @@ PolygonCollider2D:
       - {x: 10.590255, y: 35.65039}
       - {x: 10.740251, y: 35.451286}
       - {x: 10.770965, y: 33.69037}
-      - {x: 10.741157, y: 33.0507}
-      - {x: 10.414979, y: 32.925617}
-      - {x: 10.415803, y: 32.57749}
-      - {x: 10.975741, y: 32.723873}
+      - {x: 10.542481, y: 32.935425}
+      - {x: 10.583427, y: 32.5081}
       - {x: 11.473471, y: 32.98622}
       - {x: 11.653848, y: 33.154465}
-      - {x: 11.873546, y: 33.23312}
-      - {x: 11.959294, y: 33.33679}
-      - {x: 12.028611, y: 33.368027}
-      - {x: 12.114743, y: 33.51011}
       - {x: 12.295145, y: 33.9497}
       - {x: 12.486752, y: 34.198914}
       - {x: 12.851353, y: 34.7247}
@@ -4951,34 +4939,11 @@ PolygonCollider2D:
       - {x: 13.95875, y: -0.13007164}
       - {x: 13.911975, y: -0.21068573}
       - {x: 12.978283, y: -0.13701248}
-      - {x: 12.022969, y: 0.31275368}
       - {x: 11.947738, y: 0.55995655}
-      - {x: 11.705807, y: 0.72255135}
-      - {x: 11.557138, y: 0.88241196}
-      - {x: 11.506111, y: 1.1652355}
-      - {x: 11.176821, y: 1.4361992}
-      - {x: 11.018605, y: 1.6568928}
-      - {x: 10.81054, y: 1.8800831}
       - {x: 10.790591, y: 2.0851107}
-      - {x: 10.66527, y: 2.2661467}
-      - {x: 10.660577, y: 2.4807215}
-      - {x: 10.611333, y: 2.650981}
-      - {x: 10.625131, y: 3.0361187}
-      - {x: 10.682703, y: 3.1393194}
-      - {x: 10.711519, y: 3.2996702}
       - {x: 10.849847, y: 3.528514}
-      - {x: 10.930017, y: 3.9336405}
       - {x: 11.29943, y: 4.4242163}
-      - {x: 10.989461, y: 4.4816084}
-      - {x: 11.39388, y: 4.69186}
-      - {x: 11.43193, y: 4.761159}
-      - {x: 11.516093, y: 4.8548183}
-      - {x: 11.63485, y: 4.920597}
-      - {x: 11.70457, y: 5.060648}
-      - {x: 11.707369, y: 5.1420155}
-      - {x: 11.823821, y: 5.2991705}
-      - {x: 11.946343, y: 5.3638544}
-      - {x: 12.40074, y: 5.6115894}
+      - {x: 12.324159, y: 5.400991}
 --- !u!114 &1995323814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5452,6 +5417,11 @@ PrefabInstance:
       propertyPath: baseEnemySpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
+      propertyPath: waveProgressBar
+      value: 
+      objectReference: {fileID: 6562142157065336073}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: player
@@ -5668,3 +5638,15 @@ PrefabInstance:
       objectReference: {fileID: 377184853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ac5720b22e96546956aa834a4a0fa2, type: 3}
+--- !u!114 &6562142157065336073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7503245699595712281, guid: c1ac5720b22e96546956aa834a4a0fa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6562142157065336072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
