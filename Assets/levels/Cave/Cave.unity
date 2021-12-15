@@ -206,6 +206,16 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6562142156670250547, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 852075141}
+    - target: {fileID: 6562142156670250547, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -29111601
+      objectReference: {fileID: 0}
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -310,6 +320,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -41.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34.899994
       objectReference: {fileID: 0}
     - target: {fileID: 6562142157832273128, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}

@@ -114,8 +114,8 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string scenePath)
     {
-        Time.timeScale = 1.5f;
-        SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
+        Time.timeScale = 1;
+        SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
     }
     IEnumerator InitDataBase()
     {

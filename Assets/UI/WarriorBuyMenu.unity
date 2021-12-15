@@ -405,6 +405,9 @@ MonoBehaviour:
   - {fileID: 5947976530867867345}
   - {fileID: 8422899438381944912}
   AllWeapons: []
+  pauseMenu: {fileID: 0}
+  pauseMenuInstance: {fileID: 0}
+  paused: 0
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -1764,7 +1767,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 2
   m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 1600, y: 900}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 1
   m_FallbackScreenDPI: 49
@@ -1779,8 +1782,8 @@ Canvas:
   m_GameObject: {fileID: 1391714602}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 426813926}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -1788,7 +1791,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -29111601
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1391714606
