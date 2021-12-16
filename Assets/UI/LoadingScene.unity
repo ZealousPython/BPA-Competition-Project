@@ -397,7 +397,7 @@ MonoBehaviour:
   gold: 0
   playerClass: 0
   playerMaxHealth: 5
-  playerHealth: 0
+  playerHealth: 99
   playerMaxMana: 100
   playerMana: 100
   potions: 0
@@ -416,6 +416,8 @@ MonoBehaviour:
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: 
+  NextScene: 
 --- !u!4 &1031653683
 Transform:
   m_ObjectHideFlags: 0
@@ -441,6 +443,7 @@ GameObject:
   - component: {fileID: 1109200915}
   - component: {fileID: 1109200914}
   - component: {fileID: 1109200913}
+  - component: {fileID: 1109200916}
   m_Layer: 0
   m_Name: LoadAnim
   m_TagString: Untagged
@@ -532,6 +535,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1109200916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109200912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda37833b3c81f24cb2ea6f42fdb813f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2116701473
 GameObject:
   m_ObjectHideFlags: 0

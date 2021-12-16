@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     private string RogueShopScenePath = "Assets/UI/RougeBuyMenu.unity";
     private string MageShopScenePath = "Assets/UI/mage buy menu 1.unity";
     string databasePath = Application.streamingAssetsPath + "/Saves/saves.db";
+
+    public string loadScenePath = "Assets/UI/LoadingScene.unity";
+    public string NextScene = "";
     void Awake()
     {
         if (instance == null)
@@ -115,7 +118,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string scenePath)
     {
         Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
+        SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
     }
     IEnumerator InitDataBase()
     {
