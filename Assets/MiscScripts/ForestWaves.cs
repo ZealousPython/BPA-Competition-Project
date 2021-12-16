@@ -11,7 +11,7 @@ public class ForestWaves : MonoBehaviour
     public float difficultyScale = .75f;
     private EnemySpawner spawner;
     private int enemiesLeft = 0;
-    private int inBetweenTime = 5;
+    private int inBetweenTime = 2;
     private float timer = 0;
     public Text waves;
     private int waveEnemyCount;
@@ -19,6 +19,7 @@ public class ForestWaves : MonoBehaviour
     private bool bossWave = false;
     public GameObject boss;
     public GameObject bossBar;
+    public Image waveProgressBar;
     private void Awake()
     {
         waveEnemyCount = (int)(baseEnemyCount);
@@ -27,7 +28,9 @@ public class ForestWaves : MonoBehaviour
     }
     void Update()
     {
+        
         enemiesLeft = spawner.enemyContainer.transform.childCount;
+        waveProgressBar.fillAmount = (spawner.enemiesSpawned-enemiesLeft * 1.0f) / (waveEnemyCount*1.0f);
         if (enemiesLeft <= 0 && spawner.enemiesSpawned >= waveEnemyCount && timer <= 0)
         {
             spawner.spawning = false;
@@ -54,15 +57,14 @@ public class ForestWaves : MonoBehaviour
             timer -= Time.deltaTime;
         if (!spawner.spawning && waveEnded && timer <= 0 && wave <= endWave)
         {
-
+            waveProgressBar.fillAmount = 0;
             spawner.spawning = true;
             waveEnded = false;
         }
         if (timer <= 0 && wave == endWave &&bossWave) {
-            wave++;
             boss.SetActive(true);
             bossBar.SetActive(true);
         }
-        waves.text = "Wave: " + wave.ToString();
+        waves.text =  wave.ToString();
     }
 }

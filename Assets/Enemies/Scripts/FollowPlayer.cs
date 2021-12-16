@@ -27,11 +27,8 @@ public class FollowPlayer : MonoBehaviour
         if (target == null) {
             target = game.player;
         }
-        if (!attacking)
-        {
-            agent.SetDestination(target.transform.position);
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        }
+        agent.SetDestination(target.transform.position);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (agent.remainingDistance <= agent.stoppingDistance) {
             stopped = true;
         }

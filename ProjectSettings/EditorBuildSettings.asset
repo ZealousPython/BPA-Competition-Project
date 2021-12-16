@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/UI/Main Menu.unity
     guid: 16312763d0c7794429d026d7421788ca
   - enabled: 1
+    path: Assets/UI/LoadingScene.unity
+    guid: fc45771caacc18b4b92fa6df5494161b
+  - enabled: 1
     path: Assets/UI/PlayerSelect/CharacterSelect.unity
     guid: 7507c6a2087359543a6252ede184389a
   - enabled: 1
@@ -38,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI/WinScreen.unity
     guid: 30d83ae18ae6dd942899876e3fb16e1e
+  - enabled: 1
+    path: Assets/UI/Tutorial.unity
+    guid: f661f64e54967ea4d927581e432cbe0e
   m_configObjects: {}

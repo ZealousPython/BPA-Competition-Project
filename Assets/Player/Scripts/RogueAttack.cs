@@ -18,8 +18,13 @@ public class RogueAttack : MonoBehaviour
     private Vector2[] SpellUIPositions = new Vector2[] { new Vector2(-56, 8), new Vector2(-9, 10), new Vector2(34, 11) };
     public Sprite[] WeaponUISprites;
     public Image[] SpriteUIImages;
+    private float mana;
+    private float maxMana;
+    public float manaRegenRate = 5;
     void Start()
     {
+        maxMana = GameManager.instance.playerMaxMana;
+        mana = GameManager.instance.playerMana;
         weapon = GameManager.instance.playerWeapon;
         
         weapons = GameManager.instance.weaponsOwned;
@@ -57,12 +62,22 @@ public class RogueAttack : MonoBehaviour
 
     void Update()
     {
+        if ( mana < maxMana)
+            mana += manaRegenRate * Time.deltaTime;
+        if (mana > maxMana)
+            mana = maxMana;
         currentCoolDown -= Time.deltaTime;
         if (Input.GetButton("attack") && currentCoolDown <= 0){
             shoot();
             currentCoolDown = coolDown;
         }
+        if (Input.GetButton("attack2") && mana >= 90)
+        {
+            mana -= 90;
+            Special();
+        }
         changeWeapons();
+        GameManager.instance.playerMana = mana;
     }
     private void changeWeapons() {
         
@@ -123,5 +138,22 @@ public class RogueAttack : MonoBehaviour
         pscript.level = currentWeaponLevel;
         pscript.updateProjectileLevel();
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
+    }
+    private void Special() {
+        for (int i = 0; i < 10; i++)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = (mousePos - transform.position);
+            direction.z = 0.0f;
+
+            Vector2 directionNormalized = direction.normalized;
+            directionNormalized = Quaternion.AngleAxis(Random.Range(-15f, 15f), Vector3.forward) * directionNormalized * Random.Range(.5f, 1f);
+
+            float angle = Mathf.Atan2(directionNormalized.y, directionNormalized.x) * Mathf.Rad2Deg - 90;
+
+            GameObject p = (GameObject)Instantiate(weapon, transform.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+            RougeWeapon pscript = p.GetComponent<RougeWeapon>();
+            pscript.updateDirection(new Vector2(directionNormalized.x, directionNormalized.y));
+        }
     }
 }

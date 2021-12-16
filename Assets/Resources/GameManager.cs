@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     private string RogueShopScenePath = "Assets/UI/RougeBuyMenu.unity";
     private string MageShopScenePath = "Assets/UI/mage buy menu 1.unity";
     string databasePath = Application.streamingAssetsPath + "/Saves/saves.db";
+
+    public string loadScenePath = "Assets/UI/LoadingScene.unity";
+    public string NextScene = "";
     void Awake()
     {
         if (instance == null)
@@ -70,12 +73,12 @@ public class GameManager : MonoBehaviour
             ChangeScene("Assets/UI/GameOver.unity");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level % 1 != .5f)
+        if (Input.GetKeyDown(KeyCode.Q) && potions > 0 && level % 1 != .5f && !paused && playerHealth <=20)
         {
             potions--;
             player.GetComponent<PlayerHealth>().usePotion();
         }
-        if (Input.GetKeyDown(KeyCode.P) && level % 1 != .5f)
+        if (Input.GetKeyDown(KeyCode.Escape) && level % 1 != .5f&&playerHealth<=20)
         {
             if (!paused)
                 Pause();
@@ -114,7 +117,9 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string scenePath)
     {
-        SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
+        Time.timeScale = 1;
+        NextScene = scenePath;
+        SceneManager.LoadScene(loadScenePath, LoadSceneMode.Single);
     }
     IEnumerator InitDataBase()
     {

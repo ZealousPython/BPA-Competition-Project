@@ -10,8 +10,9 @@ public class PauseMenu : MonoBehaviour
     public void quit() {
         GameManager.instance.Quit();
     }
-    public void save() {
-        GameManager.instance.saveFile();
+    public void MainMenu() {
+        GameManager.instance.paused = false;
+        GameManager.instance.ChangeScene("Assets/UI/Main Menu.unity");
     }
     public void kill() {
         Destroy(gameObject);

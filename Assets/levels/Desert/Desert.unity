@@ -827,7 +827,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.10833333
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 3bc02022adefbe34ab7ae0a03d21ad29, type: 2}
@@ -2116,6 +2116,9 @@ MonoBehaviour:
   - {fileID: 263779244}
   - {fileID: 1539779298}
   AllWeapons: []
+  pauseMenu: {fileID: 0}
+  pauseMenuInstance: {fileID: 0}
+  paused: 0
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
@@ -4325,21 +4328,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.2002449, y: 0.31712914}
-      - {x: 1.1849318, y: 0.4425316}
-      - {x: 0.7181082, y: 0.4472828}
-      - {x: 0.6584234, y: 0.4283848}
-      - {x: -0.77338505, y: 0.45183185}
-      - {x: -0.8394127, y: 0.44308475}
-      - {x: -1.2733583, y: 0.3448885}
-      - {x: -1.2721314, y: -0.42882526}
-      - {x: -0.110087395, y: -0.41843605}
-      - {x: 0.6731024, y: -0.4128456}
-      - {x: 0.68388844, y: -0.4696865}
-      - {x: 1.189757, y: -0.4605081}
-      - {x: 1.188364, y: -0.2798977}
-      - {x: 1.70014, y: -0.23150253}
-      - {x: 1.6924314, y: 0.28367227}
+    - - {x: -1.3425465, y: 1.2996861}
+      - {x: -1.3136439, y: -0.9961679}
+      - {x: 4.6473103, y: -0.91031444}
+      - {x: 4.3406906, y: 1.1066128}
 --- !u!114 &1331147843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4398,6 +4390,11 @@ PrefabInstance:
       propertyPath: difficultyScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2146466820046233953, guid: 32a7ae5ec8c51b541a70c88486e75753,
+        type: 3}
+      propertyPath: waveProgressBar
+      value: 
+      objectReference: {fileID: 1998322393}
     - target: {fileID: 2146466820046233954, guid: 32a7ae5ec8c51b541a70c88486e75753,
         type: 3}
       propertyPath: player
@@ -6781,6 +6778,16 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6562142156670250547, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1148566309}
+    - target: {fileID: 6562142156670250547, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -29111601
+      objectReference: {fileID: 0}
     - target: {fileID: 6562142156670250548, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6893,6 +6900,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ac5720b22e96546956aa834a4a0fa2, type: 3}
+--- !u!114 &1998322393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7503245699595712281, guid: c1ac5720b22e96546956aa834a4a0fa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998322392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2016882568 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6562142158442064917, guid: c1ac5720b22e96546956aa834a4a0fa2,

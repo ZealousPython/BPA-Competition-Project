@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 7252456848300893952}
   - component: {fileID: 4919349921633810567}
   - component: {fileID: 1333968943779717947}
-  - component: {fileID: 6181768173641488643}
   m_Layer: 0
   m_Name: BigGoblin
   m_TagString: Enemy
@@ -160,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  ItemContainer: {fileID: 0}
+  isBoss: 0
 --- !u!114 &6197486267833384021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,15 +238,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8212576, y: 0.907092}
   m_EdgeRadius: 0
---- !u!114 &6181768173641488643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311530879853015538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce91b788b3d4cc44bfd4bc4188962a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

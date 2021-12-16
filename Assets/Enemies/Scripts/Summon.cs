@@ -88,6 +88,7 @@ public class Summon : MonoBehaviour
             else
             {
                 e.GetComponent<FollowPlayer>().target = player;
+                e.GetComponent<EnemyHealth>().ItemContainer = gameObject;
                 e.transform.parent = enemyContainer.transform;
             }
         }

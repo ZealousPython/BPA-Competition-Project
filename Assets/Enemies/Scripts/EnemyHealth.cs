@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0 && !isBoss) {
             drop();
             Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     private void drop()

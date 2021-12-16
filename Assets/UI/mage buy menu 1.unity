@@ -534,9 +534,14 @@ MonoBehaviour:
   - {fileID: 5947976530867867345}
   - {fileID: 8422899438381944912}
   AllWeapons: []
+  pauseMenu: {fileID: 0}
+  pauseMenuInstance: {fileID: 0}
+  paused: 0
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: Assets/UI/LoadingScene.unity
+  NextScene: 
 --- !u!4 &204195456
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,7 +1414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 109, y: 2.6794271}
+  m_AnchoredPosition: {x: 109, y: 2.679428}
   m_SizeDelta: {x: 57.901443, y: -41.358856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015753663
@@ -1998,8 +2003,8 @@ Canvas:
   m_GameObject: {fileID: 1391714602}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 426813926}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -2007,7 +2012,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -29111601
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1391714606
