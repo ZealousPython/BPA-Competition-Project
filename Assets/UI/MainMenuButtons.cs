@@ -24,4 +24,8 @@ public class MainMenuButtons : MonoBehaviour
     public void start() {
         GameManager.instance.ChangeScene("Assets/UI/PlayerSelect/CharacterSelect.unity");
     }
+    public void LoadTutorial() {
+       
+        GameManager.instance.ChangeScene("Assets/UI/Tutorial.unity");
+    }
 }

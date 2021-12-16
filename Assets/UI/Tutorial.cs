@@ -12,10 +12,20 @@ public class Tutorial : MonoBehaviour
 
     public List<GameObject> weapons;
 
-    void Start() {
-        GameManager.instance.weaponsOwned = weapons;
-        GameManager.instance.playerWeapon = weapons[0];
+    void Awake() {
+        GameManager.instance.weaponsOwned = new List<GameObject>();
+        GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[3]);
+        GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[5]);
+        GameManager.instance.playerWeapon = GameManager.instance.weaponsOwned[0];
+        GameManager.instance.playerMaxHealth = 12;
+        GameManager.instance.playerHealth = 4;
+        GameManager.instance.potions = 3;
         GameManager.instance.level = 0;
+        GameManager.instance.gold = 1000;
+        GameManager.instance.weaponLevels = new List<int>();
+        GameManager.instance.weaponLevels.Add(1);
+        GameManager.instance.weaponLevels.Add(1);
+        GameManager.instance.weaponLevels.Add(1);
         GameManager.instance.player = player;
     }
 

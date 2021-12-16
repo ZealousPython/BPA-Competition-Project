@@ -21,8 +21,8 @@ public class CharacterSelect : MonoBehaviour
         game.playerClass = 1;
         game.playerMaxHealth = 8;
         game.playerHealth = 8;
-        game.playerMaxMana = 0;
-        game.playerMana = 0;
+        game.playerMaxMana = 100;
+        game.playerMana = 100;
         game.ChangeScene(game.firstLevelScenePath);
         game.level = 1;
         game.weaponLevels = new List<int>();
@@ -39,8 +39,8 @@ public class CharacterSelect : MonoBehaviour
         game.playerClass = 2;
         game.playerMaxHealth = 7;
         game.playerHealth = 7;
-        game.playerMaxMana = 0;
-        game.playerMana = 0;
+        game.playerMaxMana = 100;
+        game.playerMana = 100;
         game.ChangeScene(game.firstLevelScenePath);
         game.level = 1;
         game.weaponLevels = new List<int>();

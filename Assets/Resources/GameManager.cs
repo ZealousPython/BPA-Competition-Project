@@ -118,7 +118,8 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string scenePath)
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(scenePath, LoadSceneMode.Single);
+        NextScene = scenePath;
+        SceneManager.LoadScene(loadScenePath, LoadSceneMode.Single);
     }
     IEnumerator InitDataBase()
     {

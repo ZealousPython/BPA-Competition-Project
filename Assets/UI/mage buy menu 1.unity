@@ -540,6 +540,8 @@ MonoBehaviour:
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: Assets/UI/LoadingScene.unity
+  NextScene: 
 --- !u!4 &204195456
 Transform:
   m_ObjectHideFlags: 0
@@ -2010,7 +2012,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -29111601
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1391714606
