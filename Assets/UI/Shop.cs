@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    //variable declarations
     private GameManager game;
 
 
@@ -26,27 +27,18 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
+        //get global variables and call avalilable weapons
         game = GameManager.instance;
         playerClass = game.playerClass;
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
-        getAvailableWeapons();/*
-        if (playerClass == 3)
-        {
-            Mage = game.player.GetComponent<MageBasicAttack>();
-        }
-        else if (playerClass == 1)
-        {
-            Warrior = game.player.GetComponent<WarriorWeapons>();
-        }
-        else { 
-            Rogue = game.player.GetComponent<RogueAttack>();
-        }*/
+        getAvailableWeapons();
     }
 
     void updateShopValues()
     {
+        //updates the shop values based on Gamemanager
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
@@ -54,6 +46,7 @@ public class Shop : MonoBehaviour
 
     void updateGameValues()
     {
+        //updates the gameManager values based on the current shop values
         game.gold = gold;
         game.weaponsOwned = playerWeapons;
         game.mageSpells = playerSpells;
@@ -62,6 +55,7 @@ public class Shop : MonoBehaviour
 
     public void getAvailableWeapons()
     {
+        //get weapons and spells that can be bought based on each player type
         if (playerClass == 1)
         {
             for (int i = 0; i < WarriorWeapons.Count; i++)
@@ -108,6 +102,7 @@ public class Shop : MonoBehaviour
 
     public void buyHeart()
     {
+        //if the player has enough gold add a heart in exchange for gold and heals player too full
         if (gold >= heartPrice && game.playerMaxHealth < 20)
         {
             gold -= heartPrice;
@@ -119,6 +114,7 @@ public class Shop : MonoBehaviour
 
     public void buyPotion()
     {
+        //if player has enough gold adds a potion and removes gold
         if (gold >= potionPrice)
         {
             gold -= potionPrice;
@@ -129,9 +125,11 @@ public class Shop : MonoBehaviour
 
     public void selectItem(GameObject item)
     {
+        //When the player selects and item handle the item weather it needs to be bought or upgraded
         bool itemToBuy = false;
         for (int i = 0; i < weaponsAvailable.Count; i++)
         {
+            //loops through available weapons and see if the weapon can be bought if so buy it and add it to the players inventory
             if (item == weaponsAvailable[i])
             {
                 itemToBuy = true;
@@ -146,10 +144,12 @@ public class Shop : MonoBehaviour
                 }
             }
         }
+        //if the item cannot be bought check if it can be upgraded for each player type
         if (!itemToBuy)
         {
             if (playerClass == 3)
             {
+                // since the mage only has one upgradedble item check to see if it is one and if so increase the weapon level if there is enough gold
                 if (item.gameObject.name == Mage.basicAttack.name)
                 {
                     if (game.MageBasicAttackLevel != 3)
@@ -163,8 +163,10 @@ public class Shop : MonoBehaviour
                     }
                 }
             }
+            //check through all weapons and see if the weapon can be upgraded and if so upgrad it
             for (int i = 0; i < playerWeapons.Count; i++)
             {
+
                 if (item == playerWeapons[i])
                 {
                     for (int e = 0; e < game.weaponsOwned.Count; e++)
@@ -205,6 +207,7 @@ public class Shop : MonoBehaviour
 
     public void selectItem(string spell)
     {
+        //if the item selected is a spell check which one it is and buy it and update the spell UI
         for (int i = 0; i < spellsAvailable.Count; i++)
         {
             if (spell == spellsAvailable[i])
@@ -231,12 +234,13 @@ public class Shop : MonoBehaviour
     }
 
     public int getItemPrice(GameObject item)
-    {
+    {//get the price of an item through
         return item.GetComponent<Weapon>().price;
     }
 
     public int getItemPrice(string spell)
     {
+        //get which spell is veing passed through and return the price
         Spell spellChosen = Mage.fireCast;
         if (spell == "Fire")
             spellChosen = Mage.fireCast;
@@ -246,6 +250,7 @@ public class Shop : MonoBehaviour
             spellChosen = Mage.rockCast;
         return spellChosen.price;
     }
+    //methods for each button to run methods from Gamemanager
     public void NextLevel() {
         GameManager.instance.endLevel();
     }
