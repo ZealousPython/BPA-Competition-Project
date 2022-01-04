@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Data.SQLite;
 using System.IO;
+using UnityEngine.Diagnostics;
 public class GameManager : MonoBehaviour
 {
     //create an instance of a gamemanager object

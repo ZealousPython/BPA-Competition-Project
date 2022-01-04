@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class MageBasicAttack : MonoBehaviour
 {
-    [SerializeField] private float basicAttackCoolDown;
 
+    //Declaring variables
+    [SerializeField] private float basicAttackCoolDown;
     private float currentCoolDown = 0;
     private float spellCoolDown = 0;
     private bool casting = false;
@@ -34,6 +35,7 @@ public class MageBasicAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //get current spells from gamemanager and add them to an list
         iceCast = GetComponent<CastIceSpike>();
         rockCast = GetComponent<RockCast>();
         fireCast = GetComponent<FireCast>();
@@ -46,8 +48,11 @@ public class MageBasicAttack : MonoBehaviour
             else if (currentSpells[i] == "Rock")
                 spells.Add(rockCast);
         }
+        //grab mana values from gamemanager
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
+        basicAttackLevel = GameManager.instance.MageBasicAttackLevel;
+        //grab Image gameobjects from the scene and update the players UI Accordingly
         SpellBar = GameManager.instance.spellBar;
         SpriteUIImages = GameManager.instance.spriteUIImages;
         for (int i = 0; i < spells.Count;i++) {
@@ -63,10 +68,10 @@ public class MageBasicAttack : MonoBehaviour
                 SpriteUIImages[i].enabled = false;
             }
         }
-        basicAttackLevel = GameManager.instance.MageBasicAttackLevel;
     }
-
+    //Update spell UI while the player is instanced used in shops
     public void updateSpellUI() {
+        //update the current spell list
         currentSpells = GameManager.instance.mageSpells;
         spells.Clear();
         for (int i = 0; i < currentSpells.Count; i++)
@@ -79,6 +84,7 @@ public class MageBasicAttack : MonoBehaviour
             else if (currentSpells[i] == "Rock")
                 spells.Add(rockCast);
         }
+        //update the players ui based on current spell list
         for (int i = 0; i < spells.Count; i++)
         {
             SpriteUIImages[i].enabled = true;
@@ -153,10 +159,12 @@ public class MageBasicAttack : MonoBehaviour
         }
     }
     private void shoot(){
+        //get mouse position and get the distance from the player to that point and normalize it 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = (mousePos - transform.position);
         direction.z = 0.0f;
         Vector3 directionNormalized = direction.normalized;
+        //create a Projectile and and set values to it
         GameObject p = (GameObject)Instantiate(basicAttack, transform.position, Quaternion.identity);
         ProjectileMovement pscript = p.GetComponent<ProjectileMovement>();
         pscript.level = basicAttackLevel;
