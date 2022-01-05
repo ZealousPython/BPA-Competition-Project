@@ -195,3 +195,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa6f2285458a01c438879b75a3aee155, type: 3}
   - {fileID: -5675910084441776498, guid: 8401c6f14c9827e4bb622dcb11a567f4, type: 3}
   SpriteUIImages: []
+  manaRegenRate: 15

@@ -32,7 +32,6 @@ public class Summon : MonoBehaviour
     }
     void Update()
     {
-        enemyContainer.transform.rotation = Quaternion.Euler(0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
         if (ai.stopped && !ai.attacking && attackCooldown <= 0)
         {
             ai.attacking = true;
@@ -88,8 +87,8 @@ public class Summon : MonoBehaviour
             else
             {
                 e.GetComponent<FollowPlayer>().target = player;
-                e.GetComponent<EnemyHealth>().ItemContainer = gameObject;
-                e.transform.parent = enemyContainer.transform;
+                e.GetComponent<EnemyHealth>().ItemContainer = e;
+                e.transform.parent = transform.parent.transform;
             }
         }
     attackCooldown = cooldown;
