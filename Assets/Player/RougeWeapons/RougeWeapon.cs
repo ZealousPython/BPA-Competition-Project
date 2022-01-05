@@ -38,6 +38,24 @@ public class RougeWeapon : Weapon
         hitbox = GetComponent<CircleCollider2D>();
         Destroy(gameObject, lifeTime);
     }
+    public void updateProjectileLevel()
+    {
+        if (level == 1)
+        {
+            peirce = piercelvl1;
+            damage = damagelvl1;
+        }
+        else if (level == 2)
+        {
+            peirce = piercelvl2;
+            damage = damagelvl2;
+        }
+        else if (level == 3)
+        {
+            peirce = piercelvl3;
+            damage = damagelvl3;
+        }
+    }
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -59,5 +77,7 @@ public class RougeWeapon : Weapon
                 Destroy(gameObject);
             }
         }
+        else if (col.tag != "Projectile" && col.tag != "Player")
+            Destroy(gameObject);
     }
 }

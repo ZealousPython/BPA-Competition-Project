@@ -18,6 +18,9 @@ public class forestLevelManager : MonoBehaviour
     public CameraMovement cam;
     public EnemySpawner spawner;
     public OgreStuff ogre;
+    public GameObject ItemContainer;
+    public float debugTimer = 5;
+    private bool fightingOgre = false;
 
 
     void Start()
@@ -27,23 +30,38 @@ public class forestLevelManager : MonoBehaviour
     }
     void Update()
     {
-        
+        if (ogre.isActiveAndEnabled) {
+            fightingOgre = true;
+        }
+        if (fightingOgre && !ogre.isActiveAndEnabled)
+            endLevel();
     }
     void getPlayer() {
         print(game.playerClass);
-        if (game.playerClass == 0)
+        if (game.playerClass == 1)
         {
+            if (game.weaponsOwned.Count > 0)
+                game.weaponsOwned[0] = warriorStartWeapon;
+            else {
+                game.weaponsOwned.Add(warriorStartWeapon);
+            }
+            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
-            GameObject playerWeapon = (GameObject)Instantiate(warriorStartWeapon, playerStartPos, Quaternion.identity);
-            playerWeapon.transform.parent = player.transform;
-            game.playerWeapon = warriorStartWeapon;
+            
         }
-        else if (game.playerClass == 1)
+        else if (game.playerClass == 2)
         {
+            if (game.weaponsOwned.Count > 0)
+                game.weaponsOwned[0] = rougeStartWeapon;
+            else
+            {
+                game.weaponsOwned.Add(rougeStartWeapon);
+            }
+            game.playerWeapon = game.weaponsOwned[0];
             player = (GameObject)Instantiate(rouge, playerStartPos, Quaternion.identity);
-            game.playerWeapon = rougeStartWeapon;
+            
         }
-        else {
+        else if(game.playerClass == 3){
             
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
@@ -52,5 +70,17 @@ public class forestLevelManager : MonoBehaviour
         ogre.target = player;
         game.player = player;
 
+    }
+    public void endLevel() {
+        for (int i = 0; i < ItemContainer.transform.childCount; i++)
+        {
+            if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
+            {
+                int goldGained = Random.Range(3,4);
+                game.gold += goldGained;
+            }
+        }
+
+        game.endLevel();
     }
 }

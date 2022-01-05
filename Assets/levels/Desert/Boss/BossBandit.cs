@@ -30,6 +30,7 @@ public class BossBandit : MonoBehaviour
     public float maxHealth = 30;
 
     private bool dying = false;
+    public GameObject ItemContainer;
     void Start()
     {
 
@@ -77,13 +78,12 @@ public class BossBandit : MonoBehaviour
             anim.SetBool("moving", false);
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
-        if (dying) {
-            game.bossHealth = 0;
-            healthBar.fillAmount = 0;
-            Destroy(gameObject);
-            
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
         }
     }
     public void Summon()
@@ -123,6 +123,7 @@ public class BossBandit : MonoBehaviour
             {
                 e.GetComponent<FollowPlayer>().target = target;
                 e.transform.parent = enemyContainer.transform;
+                e.GetComponent<EnemyHealth>().ItemContainer = ItemContainer;
             }
             attackCooldown = summonCooldown;
             attacking = false;

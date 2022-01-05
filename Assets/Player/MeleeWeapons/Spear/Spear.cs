@@ -20,7 +20,7 @@ public class Spear : Weapon
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("attack"))
         {
             anim.SetBool("stabbing", true);
 
@@ -31,7 +31,7 @@ public class Spear : Weapon
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy"&&anim.GetBool("stabbing"))
         {
             if(level == 1)
                 collision.gameObject.GetComponent<EnemyHealth>().hit(damagelvl1);

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    //variable declarations
     private GameManager game;
 
 
-    private List<GameObject> weaponsAvailable;
-    private List<string> spellsAvailable;
+    public List<GameObject> weaponsAvailable = new List<GameObject>();
+    private List<string> spellsAvailable = new List<string>();
     public List<string> allSpells;
     public List<GameObject> WarriorWeapons;
     public List<GameObject> RougeWeapons;
@@ -18,32 +19,43 @@ public class Shop : MonoBehaviour
     private int playerClass;
     private int gold;
 
-    public int heartPrice = 15;
+    public int heartPrice = 10;
     public int potionPrice = 5;
+    public MageBasicAttack Mage;
+    public WarriorWeapons Warrior;
+    public RogueAttack Rogue;
 
     void Start()
     {
+        //get global variables and call avalilable weapons
         game = GameManager.instance;
         playerClass = game.playerClass;
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
+        getAvailableWeapons();
     }
 
-    void updateShopValues() {
+    void updateShopValues()
+    {
+        //updates the shop values based on Gamemanager
         gold = game.gold;
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
     }
 
-    void updateGameValues() {
+    void updateGameValues()
+    {
+        //updates the gameManager values based on the current shop values
         game.gold = gold;
         game.weaponsOwned = playerWeapons;
         game.mageSpells = playerSpells;
         updateShopValues();
     }
 
-    public void getAvailableWeapons() {
+    public void getAvailableWeapons()
+    {
+        //get weapons and spells that can be bought based on each player type
         if (playerClass == 1)
         {
             for (int i = 0; i < WarriorWeapons.Count; i++)
@@ -72,7 +84,8 @@ public class Shop : MonoBehaviour
                     weaponsAvailable.Add(RougeWeapons[i]);
             }
         }
-        else if (playerClass == 3) {
+        else if (playerClass == 3)
+        {
             for (int i = 0; i < allSpells.Count; i++)
             {
                 bool spellAvailable = true;
@@ -87,15 +100,21 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void buyHeart() {
-        if (gold >= heartPrice && game.playerMaxHealth < 20) {
+    public void buyHeart()
+    {
+        //if the player has enough gold add a heart in exchange for gold and heals player too full
+        if (gold >= heartPrice && game.playerMaxHealth < 20)
+        {
             gold -= heartPrice;
             game.playerMaxHealth++;
+            game.playerHealth = game.playerMaxHealth;
         }
         updateGameValues();
     }
 
-    public void buyPotion() {
+    public void buyPotion()
+    {
+        //if player has enough gold adds a potion and removes gold
         if (gold >= potionPrice)
         {
             gold -= potionPrice;
@@ -104,13 +123,19 @@ public class Shop : MonoBehaviour
         updateGameValues();
     }
 
-    public void selectItem(GameObject item) {
+    public void selectItem(GameObject item)
+    {
+        //When the player selects and item handle the item weather it needs to be bought or upgraded
         bool itemToBuy = false;
-        for (int i = 0; i < weaponsAvailable.Count; i++) {
-            if (item == weaponsAvailable[i]) {
+        for (int i = 0; i < weaponsAvailable.Count; i++)
+        {
+            //loops through available weapons and see if the weapon can be bought if so buy it and add it to the players inventory
+            if (item == weaponsAvailable[i])
+            {
                 itemToBuy = true;
                 Weapon weaponToBuy = weaponsAvailable[i].GetComponent<Weapon>();
-                if (gold >= weaponToBuy.price) {
+                if (gold >= weaponToBuy.price)
+                {
                     gold -= weaponToBuy.price;
                     playerWeapons.Add(weaponsAvailable[i]);
                     weaponsAvailable.RemoveAt(i);
@@ -119,51 +144,88 @@ public class Shop : MonoBehaviour
                 }
             }
         }
-        if (!itemToBuy) {
-            for (int i = 0; i < playerWeapons.Count; i++) {
-                if (item == playerWeapons[i]) {
-                    if (item.GetComponent<Weapon>().price != 0)
+        //if the item cannot be bought check if it can be upgraded for each player type
+        if (!itemToBuy)
+        {
+            if (playerClass == 3)
+            {
+                // since the mage only has one upgradedble item check to see if it is one and if so increase the weapon level if there is enough gold
+                if (item.gameObject.name == Mage.basicAttack.name)
+                {
+                    if (game.MageBasicAttackLevel != 3)
                     {
-                        int upgradePrice = (int)(0.5f * playerWeapons[i].GetComponent<Weapon>().price * playerWeapons[i].GetComponent<Weapon>().level);
+                        int upgradePrice = 25 * game.MageBasicAttackLevel;
                         if (upgradePrice <= gold)
                         {
                             gold -= upgradePrice;
-                            playerWeapons[i].GetComponent<Weapon>().level++;
+                            game.MageBasicAttackLevel++;
                         }
                     }
-                    else {
-                        int upgradePrice = 10 * playerWeapons[i].GetComponent<Weapon>().level;
-                        if (upgradePrice <= gold) {
-                            gold -= upgradePrice;
-                            playerWeapons[i].GetComponent<Weapon>().level++;
+                }
+            }
+            //check through all weapons and see if the weapon can be upgraded and if so upgrad it
+            for (int i = 0; i < playerWeapons.Count; i++)
+            {
+
+                if (item == playerWeapons[i])
+                {
+                    for (int e = 0; e < game.weaponsOwned.Count; e++)
+                    {
+                        if (game.weaponLevels[i] < 3)
+                        {
+                            if (item.GetComponent<Weapon>().price != 0)
+                            {
+                                if (game.weaponsOwned[i].name == item.GetComponent<Weapon>().name)
+                                {
+                                    int upgradePrice = (int)(playerWeapons[i].GetComponent<Weapon>().price * game.weaponLevels[i]);
+                                    if (upgradePrice <= gold)
+                                    {
+                                        gold -= upgradePrice;
+                                        game.weaponLevels[i]++;
+                                        break;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int upgradePrice = 25 * game.weaponLevels[i];
+                                if (upgradePrice <= gold)
+                                {
+                                    gold -= upgradePrice;
+                                    game.weaponLevels[i]++;
+                                    break;
+                                }
+                            }
                         }
                     }
-                    break;
                 }
             }
         }
+
         updateGameValues();
     }
 
     public void selectItem(string spell)
     {
+        //if the item selected is a spell check which one it is and buy it and update the spell UI
         for (int i = 0; i < spellsAvailable.Count; i++)
         {
             if (spell == spellsAvailable[i])
             {
-                Spell spellToBuy = new FireCast();
+                Spell spellToBuy = Mage.fireCast;
                 if (spell == "Fire")
-                    spellToBuy = new FireCast();
+                    spellToBuy = Mage.fireCast;
                 else if (spell == "Ice")
-                    spellToBuy = new CastIceSpike();
+                    spellToBuy = Mage.iceCast;
                 else if (spell == "Rock")
-                    spellToBuy = new RockCast();
+                    spellToBuy = Mage.rockCast;
                 int spellPrice = spellToBuy.price;
                 if (gold >= spellPrice)
                 {
                     gold -= spellPrice;
                     playerSpells.Add(spellsAvailable[i]);
                     spellsAvailable.RemoveAt(i);
+                    Mage.updateSpellUI();
                     break;
                 }
             }
@@ -171,18 +233,32 @@ public class Shop : MonoBehaviour
         updateGameValues();
     }
 
-    public int getItemPrice(GameObject item) {
+    public int getItemPrice(GameObject item)
+    {//get the price of an item through
         return item.GetComponent<Weapon>().price;
     }
 
-    public int getItemPrice(string spell) {
-        Spell spellChosen = new FireCast();
+    public int getItemPrice(string spell)
+    {
+        //get which spell is veing passed through and return the price
+        Spell spellChosen = Mage.fireCast;
         if (spell == "Fire")
-            spellChosen = new FireCast();
+            spellChosen = Mage.fireCast;
         else if (spell == "Ice")
-            spellChosen = new CastIceSpike();
+            spellChosen = Mage.iceCast;
         else if (spell == "Rock")
-            spellChosen = new RockCast();
+            spellChosen = Mage.rockCast;
         return spellChosen.price;
+    }
+    //methods for each button to run methods from Gamemanager
+    public void NextLevel() {
+        GameManager.instance.endLevel();
+    }
+    public void Save()
+    {
+        GameManager.instance.saveFile();
+    }
+    public void SaveAndQuit() {
+        GameManager.instance.saveAndQuit();
     }
 }
