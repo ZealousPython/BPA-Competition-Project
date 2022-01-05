@@ -15,9 +15,18 @@ public class WarriorWeapons : MonoBehaviour
     private Vector2[] SpellUIPositions = new Vector2[] { new Vector2(-56, 8), new Vector2(-9, 10), new Vector2(34, 11) };
     public Sprite[] WeaponUISprites;
     public Image[] SpriteUIImages;
+    private float mana;
+    private float maxMana;
+    public float manaRegenRate = 5;
+    private float speedTimer;
+    public bool Speed = false;
+    private PlayerMovement moveScript;
     // Start is called before the first frame update
     void Start()
     {
+        moveScript = GetComponent<PlayerMovement>();
+        maxMana = GameManager.instance.playerMaxMana;
+        mana = GameManager.instance.playerMana;
         currentWeapon = GameManager.instance.playerWeapon;
         weaponLevels = GameManager.instance.weaponLevels;
         weapons = GameManager.instance.weaponsOwned;
@@ -133,6 +142,29 @@ public class WarriorWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mana < maxMana)
+            mana += manaRegenRate * Time.deltaTime;
+        if (mana > maxMana)
+            mana = maxMana;
         changeWeapons();
+        if (Input.GetButtonDown("attack2") && mana >= 30)
+        {
+            mana -= 30;
+            Special();
+        }
+        if (Speed) {
+            speedTimer -= Time.deltaTime;
+            moveScript.speed = 5;
+            if (speedTimer <= 0)
+            {
+                Speed = false;
+                moveScript.speed = 3;
+            }
+        }
+        GameManager.instance.playerMana = mana;
+    }
+    private void Special() {
+        speedTimer = 1;
+        Speed = true;
     }
 }

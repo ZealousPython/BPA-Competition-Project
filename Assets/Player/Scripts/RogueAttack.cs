@@ -142,7 +142,7 @@ public class RogueAttack : MonoBehaviour
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
     private void Special() {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 direction = (mousePos - transform.position);

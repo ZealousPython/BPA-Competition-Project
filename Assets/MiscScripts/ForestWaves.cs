@@ -20,6 +20,7 @@ public class ForestWaves : MonoBehaviour
     public GameObject boss;
     public GameObject bossBar;
     public Image waveProgressBar;
+    private bool bossActive = false;
     private void Awake()
     {
         waveEnemyCount = (int)(baseEnemyCount);
@@ -61,9 +62,10 @@ public class ForestWaves : MonoBehaviour
             spawner.spawning = true;
             waveEnded = false;
         }
-        if (timer <= 0 && wave == endWave &&bossWave) {
+        if (timer <= 0 && wave == endWave &&bossWave&&!bossActive) {
             boss.SetActive(true);
             bossBar.SetActive(true);
+            bossActive = true;
         }
         waves.text =  wave.ToString();
     }
