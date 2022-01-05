@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RogueAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //variable declaration
     private GameObject weapon;
     private float coolDown;
     private float currentCoolDown = 0;
@@ -21,17 +21,19 @@ public class RogueAttack : MonoBehaviour
     private float mana;
     private float maxMana;
     public float manaRegenRate = 5;
+    // Start is called before the first frame update
     void Start()
     {
+        //grab variables from gamemanager
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
         weapon = GameManager.instance.playerWeapon;
-        
         weapons = GameManager.instance.weaponsOwned;
-
         SpellBar = GameManager.instance.spellBar;
         SpriteUIImages = GameManager.instance.spriteUIImages;
         weaponLevels = GameManager.instance.weaponLevels;
+
+        //update the Player UI
         for (int i = 0; i < weapons.Count; i++)
         {
             SpriteUIImages[i].enabled = true;
