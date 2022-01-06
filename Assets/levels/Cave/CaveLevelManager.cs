@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//is used to set the player up after starting the level and change to the next scene when the boss is killed
 public class CaveLevelManager : MonoBehaviour
 {
+    //delcare variables
     private GameManager game;
     private GameObject player;
     private Vector3 playerStartPos = new Vector3(-0.46f, -19.27f, 0);
@@ -14,14 +15,10 @@ public class CaveLevelManager : MonoBehaviour
 
     public CameraMovement cam;
     public EnemySpawner spawner;
-    public SpiderBoss bandit;
+    public SpiderBoss Spider;
     public GameObject ItemContainer;
-    private bool fightingBandit = false;
+    private bool fightingSpider = false;
     // Start is called before the first frame update
-    void Awake()
-    {
-
-    }
     void Start()
     {
         game = GameManager.instance;
@@ -31,16 +28,17 @@ public class CaveLevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bandit.isActiveAndEnabled)
+        //checks if the spider is spawned and if is dead if is dead end the level
+        if (Spider.isActiveAndEnabled)
         {
-            fightingBandit = true;
+            fightingSpider = true;
         }
-        if (fightingBandit && !bandit.isActiveAndEnabled)
+        if (fightingSpider && !Spider.isActiveAndEnabled)
             endLevel();
-
     }
     public void SetUpPlayer()
     {
+        //sets up the player gameobject based on playerclass
         if (game.playerClass == 1)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
@@ -55,23 +53,24 @@ public class CaveLevelManager : MonoBehaviour
         {
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
-
+        //assigns the objects the player variable so they can operate
         cam.player = player.transform;
         spawner.player = player;
-        bandit.target = player;
+        Spider.target = player;
         game.player = player;
     }
     public void endLevel()
     {
+        //get all the coins in the item container and automatically get them for the player
         for (int i = 0; i < ItemContainer.transform.childCount; i++)
         {
             if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")
             {
-                int goldGained = Random.Range(3, 4);
+                int goldGained = Random.Range(2, 4);
                 game.gold += goldGained;
             }
         }
-
+        //call end level from the gamemanager in order to switch levels
         game.endLevel();
     }
 }

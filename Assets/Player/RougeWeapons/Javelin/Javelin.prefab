@@ -150,10 +150,10 @@ MonoBehaviour:
   lifeTime: 6
   peirce: 4
   cooldown: 0.5
-  piercelvl1: 4
-  piercelvl2: 8
-  piercelvl3: 10
-  damagelvl1: 4
-  damagelvl2: 8
-  damagelvl3: 12
+  piercelvl1: 3
+  piercelvl2: 5
+  piercelvl3: 7
+  damagelvl1: 1.5
+  damagelvl2: 3
+  damagelvl3: 5
   damage: 1

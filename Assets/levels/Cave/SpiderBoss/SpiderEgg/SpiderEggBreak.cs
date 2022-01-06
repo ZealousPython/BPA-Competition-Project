@@ -2,29 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+//an animation is set to call this scripts eggBreak function when it ends
 public class SpiderEggBreak : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //declare variables
     public GameObject babySpider;
     public GameObject enemyContainer;
-    private GameManager game;
     private GameObject player;
     public GameObject ItemContainer;
-    void Start()
-    {
-        game = GameManager.instance;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void eggBreak(){
+        //create a babyspider at this position and set its parent and itemcontainer then destroy this object
         GameObject e = (GameObject)Instantiate(babySpider, gameObject.transform.position, Quaternion.identity);
-        NavMeshAgent agent = e.GetComponent<NavMeshAgent>();
-        e.GetComponent<FollowPlayer>().target = player;
         e.transform.parent = enemyContainer.transform;
         e.GetComponent<EnemyHealth>().ItemContainer = ItemContainer;
         Destroy(gameObject);
