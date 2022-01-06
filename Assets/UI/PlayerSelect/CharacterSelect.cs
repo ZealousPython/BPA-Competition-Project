@@ -16,6 +16,7 @@ public class CharacterSelect : MonoBehaviour
 
     }
     public void ChooseWarrior() {
+        //initilize nessasry variables for warrior
         game.gold = 0;
         game.potions = 1;
         game.playerClass = 1;
@@ -34,6 +35,7 @@ public class CharacterSelect : MonoBehaviour
     }
     public void ChooseRouge()
     {
+        //initilize nessasry variables for Rouge
         game.gold = 0;
         game.potions = 1;
         game.playerClass = 2;
@@ -53,6 +55,7 @@ public class CharacterSelect : MonoBehaviour
     }
     public void ChooseMage()
     {
+        //initilize nessasry variables for Mage
         game.gold = 0;
         game.potions = 1;
         game.playerClass = 3;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WarriorWeapons : MonoBehaviour
 {
+    //initilize
     private GameObject currentWeapon;
     public List<GameObject> weapons;
     public List<int> weaponLevels = new List<int>();
