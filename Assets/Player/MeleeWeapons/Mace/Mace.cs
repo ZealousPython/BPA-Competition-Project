@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mace : Weapon
 {
-    // Start is called before the first frame update
+    
     private bool swinging = false;
     private Animator anim;
     public float damagelvl1 = 1;
@@ -12,6 +12,7 @@ public class Mace : Weapon
     public float damagelvl3 = 4;
     void Start()
     {
+        //get the animator component
         anim = GetComponent<Animator>();     
     }
 
