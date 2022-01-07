@@ -448,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   gold: 0
   playerClass: 0
   playerMaxHealth: 11
@@ -473,9 +472,12 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   pauseMenuInstance: {fileID: 0}
   paused: 0
+  level: 1
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: Assets/UI/LoadingScene.unity
+  NextScene: 
 --- !u!4 &509269824
 Transform:
   m_ObjectHideFlags: 0
@@ -921,6 +923,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -41.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34.899994
+      objectReference: {fileID: 0}
     - target: {fileID: 6562142158442064918, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: m_RootOrder
@@ -998,7 +1010,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "WASD: Move\t\tP: Pause\n\nScrollWheel: Change Weapon Selected\n\nQ: Use
-    Potion\n\nLeft Click: Fire\n\nRight Click: Use Spell"
+    Potion\n\nLeft Click: Fire\t\tMoveMouse:Aim\n\nRight Click: Use Spell/Special"
 --- !u!222 &1137985972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1272,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1659292695
 RectTransform:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class Tutorial : MonoBehaviour
         GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[3]);
         GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[5]);
         GameManager.instance.playerWeapon = GameManager.instance.weaponsOwned[0];
+        GameManager.instance.playerMaxMana = 100;
         GameManager.instance.playerMaxHealth = 12;
         GameManager.instance.playerHealth = 4;
         GameManager.instance.potions = 3;

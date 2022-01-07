@@ -173,7 +173,7 @@ MonoBehaviour:
   mage: {fileID: 4554205182002090459, guid: e94a462a9d8fb68459f1c0f0d02ce433, type: 3}
   cam: {fileID: 852075143}
   spawner: {fileID: 1939029018}
-  bandit: {fileID: 38052934}
+  Spider: {fileID: 38052934}
   ItemContainer: {fileID: 598501679}
 --- !u!4 &42398448
 Transform:
@@ -851,7 +851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   gold: 0
   playerClass: 0
   playerMaxHealth: 6
@@ -874,9 +873,12 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   pauseMenuInstance: {fileID: 0}
   paused: 0
+  level: 1
   bossHealth: 100
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: Assets/UI/LoadingScene.unity
+  NextScene: 
 --- !u!4 &375908976
 Transform:
   m_ObjectHideFlags: 0

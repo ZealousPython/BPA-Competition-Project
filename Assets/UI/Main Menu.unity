@@ -1034,8 +1034,8 @@ MonoBehaviour:
   playerClass: 0
   playerMaxHealth: 11
   playerHealth: 3
-  playerMaxMana: 0
-  playerMana: 0
+  playerMaxMana: 100
+  playerMana: 100
   potions: 2
   MageBasicAttackLevel: 1
   playerWeapon: {fileID: 6789345497600479027, guid: fc2ca21a0ed5bf64bbbcaea8ceea602c,

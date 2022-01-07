@@ -492,6 +492,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -41.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562142157477674807, guid: c1ac5720b22e96546956aa834a4a0fa2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34.899994
+      objectReference: {fileID: 0}
     - target: {fileID: 6562142157832273128, guid: c1ac5720b22e96546956aa834a4a0fa2,
         type: 3}
       propertyPath: game
@@ -674,7 +684,7 @@ MonoBehaviour:
   mage: {fileID: 4554205182002090459, guid: e94a462a9d8fb68459f1c0f0d02ce433, type: 3}
   cam: {fileID: 1188379775}
   spawner: {fileID: 795718719}
-  bandit: {fileID: 1679890940}
+  dragon: {fileID: 1679890940}
   ItemContainer: {fileID: 1207158257}
 --- !u!4 &1207158259
 Transform:
@@ -1285,7 +1295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657b041fddecf124cad7bc92d5c348d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   gold: 0
   playerClass: 0
   playerMaxHealth: 20
@@ -1311,9 +1320,12 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   pauseMenuInstance: {fileID: 0}
   paused: 0
+  level: 1
   bossHealth: 0
   playing: 0
   firstLevelScenePath: Assets/levels/Forest/Forest.unity
+  loadScenePath: Assets/UI/LoadingScene.unity
+  NextScene: 
 --- !u!4 &2124813767
 Transform:
   m_ObjectHideFlags: 0

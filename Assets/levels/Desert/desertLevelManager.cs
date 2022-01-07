@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//sets up and spawns player as well as handling the ending of the level
 public class desertLevelManager : MonoBehaviour
 {
+    //declare variables
     private GameManager game;
     private GameObject player;
     private Vector3 playerStartPos = new Vector3(2.75f, -18, 0);
@@ -18,9 +19,6 @@ public class desertLevelManager : MonoBehaviour
     public GameObject ItemContainer;
     private bool fightingBandit = false;
     // Start is called before the first frame update
-    void Awake() {
-        
-    }
     void Start()
     {
         game = GameManager.instance;
