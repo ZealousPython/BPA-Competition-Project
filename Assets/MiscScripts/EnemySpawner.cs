@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
+    //declare variables
     public GameObject[] enemies;
     public float[] enemySpawnWeight;
     public float spawnInterval = 2;
@@ -19,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesSpawned = 0;
     void Start()
     {
+        //get camera dimensions for enemy spawning
         Camera camera = Camera.main;
         halfHeight = camera.orthographicSize;
         halfWidth = camera.aspect * halfHeight;
@@ -27,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //manage the spawning of enemies and the spawner timer
         if(spawning)
         timer -= Time.deltaTime;
         if (timer <= 0)
@@ -41,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void spawn()
     {
+        //get the spawn position and offset it by the screens length based on spawn direction
         Vector3 spawnPosition = new Vector3(player.transform.position.x, player.transform.position.y, 0);
         int offscreenDirection = Random.Range(0, 4);
         if (offscreenDirection == 0)
@@ -63,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
             spawnPosition.y += halfHeight + 1;
             spawnPosition.x += Random.Range(-halfWidth, halfWidth);
         }
+        //pick which enemy will be spawned based off if enemy spawn weight and a random number from 0 - 99
         int rangeNum = Random.Range(0, 100);
         GameObject enemy = enemies[0];
         float randomVal = Random.Range(0,100);
@@ -75,15 +80,18 @@ public class EnemySpawner : MonoBehaviour
                 break;
             }
         }
+        //create the enemy object and get the agent component
         GameObject e = (GameObject)Instantiate(enemy, spawnPosition, Quaternion.identity);
         NavMeshAgent agent = e.GetComponent<NavMeshAgent>();
         if (!agent.isOnNavMesh)
         {
+            // spawn another enemy if the current enemy is not on the spawn mesh
             needSpawn = true;
             Destroy(e);
         }
         else
         {
+            //if enemy is on the mesh spawn the enemy and increment the amount of enemies spawned
             needSpawn = false;
             e.GetComponent<FollowPlayer>().target = player;
             e.transform.parent = enemyContainer.transform;

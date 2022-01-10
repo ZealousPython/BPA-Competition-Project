@@ -24,7 +24,8 @@ public class MageShopUIUpdater : MonoBehaviour
         game = GameManager.instance;
         GameManager.instance.player = player;
         Mage = player.GetComponent<MageBasicAttack>();
-       
+
+        Time.timeScale = 1;
     }
     void Update() {
         RockPrice.text = Mage.rockCast.price.ToString();

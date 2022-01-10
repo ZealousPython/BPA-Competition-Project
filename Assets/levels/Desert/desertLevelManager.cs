@@ -37,6 +37,7 @@ public class desertLevelManager : MonoBehaviour
 
     }
     public void SetUpPlayer() {
+        //spawn the player and set it up depending on the class
         if (game.playerClass == 1)
         {
             player = (GameObject)Instantiate(warrior, playerStartPos, Quaternion.identity);
@@ -51,7 +52,7 @@ public class desertLevelManager : MonoBehaviour
         {
             player = (GameObject)Instantiate(mage, playerStartPos, Quaternion.identity);
         }
-
+        //assign player variables to other gameobjects
         cam.player = player.transform;
         spawner.player = player;
         bandit.target = player;
@@ -59,6 +60,7 @@ public class desertLevelManager : MonoBehaviour
     }
     public void endLevel()
     {
+        //collect gold on the floor and end the level
         for (int i = 0; i < ItemContainer.transform.childCount; i++)
         {
             if (ItemContainer.transform.GetChild(i).name.Substring(0, 4) == "Coin")

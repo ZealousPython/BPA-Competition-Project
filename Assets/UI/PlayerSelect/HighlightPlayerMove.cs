@@ -13,6 +13,7 @@ public class HighlightPlayerMove : MonoBehaviour, IPointerEnterHandler, IPointer
     private Animator anim;
     void Start()
     {
+        Time.timeScale = 1;
         anim = sprite.GetComponent<Animator>();
     }
     public void OnPointerEnter(PointerEventData eventData)

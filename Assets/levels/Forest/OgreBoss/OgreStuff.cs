@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+//Boss script for the ogre boss
 public class OgreStuff : MonoBehaviour
 {
+    //declare variables
     public GameObject target;
     private NavMeshAgent agent;
     private Animator anim;
@@ -25,7 +27,7 @@ public class OgreStuff : MonoBehaviour
     public float maxHealth = 15;
     void Start()
     {
-        
+        //initilize variables
         healthScript = GetComponent<EnemyHealth>();
         game = GameManager.instance;
         agent = GetComponent<NavMeshAgent>();
@@ -37,7 +39,7 @@ public class OgreStuff : MonoBehaviour
     }
     void Update()
     {
-        //attackCoolDown
+        //attackCoolDown and choose which attack to use
         if (stopped && !attacking && attackCooldown <= 0)
         {
             attacking = true;
@@ -49,7 +51,7 @@ public class OgreStuff : MonoBehaviour
         }
         if(attackCooldown>0)
             attackCooldown -= Time.deltaTime;
-        //Following Player
+        //Following Player and decide when boss is close enough to player to attack
         if (!attacking)
         {
             agent.SetDestination(target.transform.position);
@@ -61,12 +63,14 @@ public class OgreStuff : MonoBehaviour
         }
         else
             stopped = false;
+        //manages moving animation and rotates towards player
         if (!attacking && !stopped)
             anim.SetBool("moving", true);
         else if (!attacking)
             anim.SetBool("moving", false);
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        //manages healthbar and dying
         health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
@@ -77,11 +81,13 @@ public class OgreStuff : MonoBehaviour
     }
     private void LateUpdate()
     {
+        //manages health and healthbar
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
     }
     public void BarfAttack()
     {
+        //creates barf projectile
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation = new Vector3(rotation.x, rotation.y, rotation.z - 90);
         Vector3 direction = (target.transform.position - transform.position);
@@ -95,6 +101,7 @@ public class OgreStuff : MonoBehaviour
     }
     public void SmashAttack()
     {
+        //creates smash projectile
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation = new Vector3(rotation.x, rotation.y, rotation.z - 90);
         Vector3 direction = (target.transform.position - transform.position);
@@ -108,6 +115,7 @@ public class OgreStuff : MonoBehaviour
     }
     public void hit(float damage)
     {
+        //when called takes damage based on damage value passed throgu the function
         health -= damage;
         if (health <= 0)
         {

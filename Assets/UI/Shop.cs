@@ -34,6 +34,7 @@ public class Shop : MonoBehaviour
         playerWeapons = game.weaponsOwned;
         playerSpells = game.mageSpells;
         getAvailableWeapons();
+        Time.timeScale = 1;
     }
 
     void updateShopValues()

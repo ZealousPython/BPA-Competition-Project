@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+//code used for the second boss of the game the bandit
 public class BossBandit : MonoBehaviour
 {
+    //Declare Variables
     public GameObject target;
     private NavMeshAgent agent;
     private Animator anim;
@@ -33,10 +35,11 @@ public class BossBandit : MonoBehaviour
     public GameObject ItemContainer;
     void Start()
     {
-
+        //set up the camera and variables to allow the boss to spawn enemies as an attack
         Camera camera = Camera.main;
         halfHeight = camera.orthographicSize;
         halfWidth = camera.aspect * halfHeight;
+        //initilize other variables
         healthScript = GetComponent<EnemyHealth>();
         game = GameManager.instance;
         agent = GetComponent<NavMeshAgent>();
@@ -48,7 +51,7 @@ public class BossBandit : MonoBehaviour
     }
     void Update()
     {
-        //attackCoolDown
+        //choose wich attack to use and set attack cooldown
         if (stopped && !attacking && attackCooldown <= 0)
         {
             attacking = true;
@@ -60,7 +63,7 @@ public class BossBandit : MonoBehaviour
         }
         if (attackCooldown > 0)
             attackCooldown -= Time.deltaTime;
-        //Following Player
+        //Following Player and check if boss is in range to attack
         if (!attacking)
         {
             agent.SetDestination(target.transform.position);
@@ -72,12 +75,14 @@ public class BossBandit : MonoBehaviour
         }
         else
             stopped = false;
+        //managing moving animations and rotate towards player
         if (!attacking && !stopped)
             anim.SetBool("moving", true);
         else if (!attacking)
             anim.SetBool("moving", false);
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        //manage the bosses health and update the health bar
         health = healthScript.health;
         game.bossHealth = health;
         healthBar.fillAmount = healthScript.health / maxHealth;
@@ -88,6 +93,7 @@ public class BossBandit : MonoBehaviour
     }
     public void Summon()
     {
+        //summon four different wolves 
         for (int i = 0; i < 4; i++)
         {
             Vector3 spawnPosition = new Vector3(target.transform.position.x, target.transform.position.y, 0);
@@ -131,6 +137,7 @@ public class BossBandit : MonoBehaviour
     }
     public void ShootALot()
     {
+        //shoot three different bullet projectiles towards player
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation = new Vector3(rotation.x, rotation.y, rotation.z - 90);
         Vector3 direction = (target.transform.position - transform.position);
@@ -144,6 +151,7 @@ public class BossBandit : MonoBehaviour
     }
     public void hit(float damage)
     {
+        //take damage and deal with dying
         health -= damage;
         if (health <= 0)
         {

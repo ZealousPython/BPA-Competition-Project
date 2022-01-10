@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
+    void Start() {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         //kill player if health is less than zero
@@ -283,10 +286,11 @@ public class GameManager : MonoBehaviour
         }
         reader.Close();
         connection.Close();
-        loadLevel();
+        
         playerHealth = playerMaxHealth;
         if (playerClass != 3)
             playerWeapon = weaponsOwned[0];
+        loadLevel();
     }
     public void loadLevel() {
         //changes scene based on current level used instead of endlevel for saving

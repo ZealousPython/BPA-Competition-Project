@@ -21,7 +21,9 @@ public class RougeShopUIUpdater : MonoBehaviour
         
     }
 
+
     void Start() {
+        Time.timeScale = 1;
         game = GameManager.instance;
        
     }

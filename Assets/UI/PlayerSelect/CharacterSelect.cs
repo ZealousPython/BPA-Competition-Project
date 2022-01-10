@@ -10,6 +10,7 @@ public class CharacterSelect : MonoBehaviour
     private GameManager game;
     
     void Start() {
+        Time.timeScale = 1;
         game = GameManager.instance;
     }
     void Update() {
