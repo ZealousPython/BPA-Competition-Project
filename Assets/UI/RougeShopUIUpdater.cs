@@ -74,9 +74,9 @@ public class RougeShopUIUpdater : MonoBehaviour
                 ShurikanPrice.text = ((int)ShurikanWeapon.GetComponent<Weapon>().price).ToString();
 
             }
-            else if (game.weaponsOwned[2].name == "Mace" || game.weaponsOwned[1].name == "Shurikan")
+            else if (game.weaponsOwned[2].name == "Mace" || game.weaponsOwned[2].name == "Shurikan")
             {
-                if (game.weaponLevels[2] != 3)
+                if (game.weaponLevels[2] < 3)
                 {
                     ShurikanPrice.text = ((int)ShurikanWeapon.GetComponent<Weapon>().price * game.weaponLevels[2]).ToString();
                 }
