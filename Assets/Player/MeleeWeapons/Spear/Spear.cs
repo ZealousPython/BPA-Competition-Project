@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//script for the spear to use to attack with
 public class Spear : Weapon
 {
-    // Start is called before the first frame update
+    //declare variables
     private Animator anim;
     private BoxCollider2D hitbox;
     public float damagelvl1;
     public float damagelvl2;
     public float damagelvl3;
 
+    // Start is called before the first frame update
     void Start()
     {
+        //grab animator and box collider components
         anim = GetComponent<Animator>();
         hitbox = GetComponent<BoxCollider2D>();
     }
@@ -20,6 +22,7 @@ public class Spear : Weapon
     // Update is called once per frame
     void Update()
     {
+        //while attacking start the stabbing animation
         if (Input.GetButton("attack"))
         {
             anim.SetBool("stabbing", true);
@@ -31,6 +34,7 @@ public class Spear : Weapon
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //while colliding and stabbing attack enemies
         if (collision.tag == "Enemy"&&anim.GetBool("stabbing"))
         {
             if(level == 1)

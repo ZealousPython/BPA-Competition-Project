@@ -53,7 +53,7 @@ MonoBehaviour:
   speed: 10
   lifeTime: 0.6
   peirce: 3
-  cooldown: 0.2
+  cooldown: 0.25
   piercelvl1: 2
   piercelvl2: 4
   piercelvl3: 6

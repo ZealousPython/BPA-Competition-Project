@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Data.SQLite;
 using System.IO;
 using UnityEngine.Diagnostics;
+//the gamemanager script is a global script which manages all the games stored values and scene transitions
 public class GameManager : MonoBehaviour
 {
     //create an instance of a gamemanager object
@@ -145,6 +146,7 @@ public class GameManager : MonoBehaviour
         print(databasePath);
         connection = new SQLiteConnection(databasePath);
         connection.Open();
+        //use sql connection to run sql commands
         SQLiteCommand command = connection.CreateCommand();
         command.CommandText = "PRAGMA foreign_key = ON;";
         command.ExecuteNonQuery();
@@ -176,7 +178,7 @@ public class GameManager : MonoBehaviour
     }
     public void saveFile()
     {
-        //opens connection and writes all needed values to there repective tables
+        //opens connection and writes all needed values to there repective tables using sql
         connection.Open();
        
         SQLiteCommand command = connection.CreateCommand();

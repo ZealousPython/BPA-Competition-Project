@@ -64,10 +64,12 @@ public class RogueAttack : MonoBehaviour
 
     void Update()
     {
+        //manage mana consumption for special usage
         if ( mana < maxMana)
             mana += manaRegenRate * Time.deltaTime;
         if (mana > maxMana)
             mana = maxMana;
+        //attack if cooldown is low enough and attack is pressed and use special if attack two is pressed
         currentCoolDown -= Time.deltaTime;
         if (Input.GetButton("attack") && currentCoolDown <= 0){
             shoot();
@@ -82,7 +84,7 @@ public class RogueAttack : MonoBehaviour
         GameManager.instance.playerMana = mana;
     }
     private void changeWeapons() {
-        
+        //change active weapon
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             weaponSlot += 1;
@@ -129,6 +131,7 @@ public class RogueAttack : MonoBehaviour
         }
     }
     private void shoot(){
+        //shoot the selected weapon
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation = new Vector3(rotation.x, rotation.y, rotation.z + 180);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -142,6 +145,7 @@ public class RogueAttack : MonoBehaviour
         pscript.updateDirection(new Vector2(directionNormalized.x,directionNormalized.y));
     }
     private void Special() {
+        //shoot a barrage of five of the current selected weapon
         for (int i = 0; i < 5; i++)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

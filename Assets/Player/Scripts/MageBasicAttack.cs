@@ -107,6 +107,7 @@ public class MageBasicAttack : MonoBehaviour
         
         if (active)
         {
+            //manage mana consumption and other coolowns
             if (currentCoolDown > 0)
                 currentCoolDown -= Time.deltaTime;
             if (spellCoolDown > 0 && !casting)
@@ -117,17 +118,20 @@ public class MageBasicAttack : MonoBehaviour
                 mana = maxMana;
             if (manaRegenTimer > 0)
                 manaRegenTimer -= Time.deltaTime;
+            //attack if attack button is held down and cooldown is done
             if (Input.GetButton("attack") && currentCoolDown <= 0)
             {
                 shoot();
                 currentCoolDown = basicAttackCoolDown;
             }
+            //make sure the player cannot use spells if they do not have any
             if (spells.Count <= 0)
             {
                 SpellBar.sprite = SpellBarFrames[0];
                 spellCoolDown = 9999;
                 currentSpell = null;
             }
+            //if the player uses attack2 use the selected spell
             else if (Input.GetButton("attack2") && spellCoolDown <= 0 && mana > currentSpell.manaUsage && !casting)
             {
                 currentSpell.cast();
@@ -135,6 +139,7 @@ public class MageBasicAttack : MonoBehaviour
                 mana -= currentSpell.manaUsage;
                 manaRegenTimer = manaRegenTime;
             }
+            //change spell selection based on scrollwheel inputs
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
                 spellSelection += 1;
@@ -153,12 +158,13 @@ public class MageBasicAttack : MonoBehaviour
                 }
                 SpellBar.sprite = SpellBarFrames[spellSelection + 1];
             }
+            //change the spell selected and update mana
             if(spells.Count > 0)
                 currentSpell = spells[spellSelection];
             GameManager.instance.playerMana = mana;
         }
     }
-    private void shoot(){
+    private void shoot() {
         //get mouse position and get the distance from the player to that point and normalize it 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = (mousePos - transform.position);

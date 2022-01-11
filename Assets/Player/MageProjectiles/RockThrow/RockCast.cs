@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//script to cast a rock goin in direction of the mouse
 public class RockCast : Spell
-{
+{   //get rock gameobject
     public GameObject rock;
-
-    private void Awake()
-    {
-    }
-    
 
     public override void useSpell()
     {
+        //spawn rock
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = (mousePos - transform.position);
         direction.z = 0.0f;

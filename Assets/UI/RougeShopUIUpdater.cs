@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//manage the rogue and warrior shop menu UI
 public class RougeShopUIUpdater : MonoBehaviour
 {
+    //get UI objectss and gameobjects
     public Button UpgradeDagger;
     public Button UpgradeJavelin;
     public Button UpgradeShurikan;
@@ -15,19 +16,12 @@ public class RougeShopUIUpdater : MonoBehaviour
     public Sprite[] UpgradeUI;
     public GameObject JavelinWeapon;
     public GameObject ShurikanWeapon;
-
-    void Awake() {
-        
-        
-    }
-
-
     void Start() {
         Time.timeScale = 1;
         game = GameManager.instance;
-       
     }
     void Update() {
+        //update the prices of the weapons based on if they are bought and there levels
         if (game.weaponLevels[0] != 3)
             DaggerPrice.text = ((int)game.weaponLevels[0] * 25).ToString();
         else

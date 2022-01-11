@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//base class for rouge weapons
 public class RougeWeapon : Weapon
 {
-    // Start is called before the first frame update
+    //declare variables
     private Rigidbody2D body;
     private CircleCollider2D hitbox;
     [SerializeField] private float speed;
@@ -19,9 +19,10 @@ public class RougeWeapon : Weapon
     public float damagelvl2;
     public float damagelvl3;
     public float damage;
-    // Start is called before the first frame update
+   
     void Awake()
     {
+        //assign damage and pierce based on level
         if (level == 1) {
             peirce = piercelvl1;
             damage = damagelvl1;
@@ -34,12 +35,14 @@ public class RougeWeapon : Weapon
             peirce = piercelvl3;
             damage = damagelvl3;
         }
+        //ge body and hitbox and destroy the projectile after a set amount of time
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<CircleCollider2D>();
         Destroy(gameObject, lifeTime);
     }
     public void updateProjectileLevel()
     {
+        //update the piecer and damage based on level
         if (level == 1)
         {
             peirce = piercelvl1;
@@ -60,14 +63,17 @@ public class RougeWeapon : Weapon
     // Update is called once per frame
     private void FixedUpdate()
     {
+        //move the projectile every physics frame
         body.velocity = speed * directionThrown;
     }
     public void updateDirection(Vector2 direction)
     {
+        //update the movement direction
         directionThrown = direction;
     }
     virtual public void OnTriggerEnter2D(Collider2D col)
     {
+        //hit enemy and destroy the object based on pierce
         if (col.tag == "Enemy")
         {
             col.gameObject.GetComponent<EnemyHealth>().hit(damage);

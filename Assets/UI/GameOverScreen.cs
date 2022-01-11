@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//manage the game over screen buttons
 public class GameOverScreen : MonoBehaviour
 {
     // Start is called before the first frame update

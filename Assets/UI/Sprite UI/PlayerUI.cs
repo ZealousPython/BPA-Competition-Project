@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//manage the hearts and mana bar for the player
 public class PlayerUI : MonoBehaviour
 {
+    //grab UI elements
     public Image ManaBar;
     public Image HeartBarOneE;
     public Image HeartBarOneF;
@@ -24,6 +25,7 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //update the players health and mana
         ManaBar.fillAmount = game.playerMana / game.playerMaxMana;
         HeartBarOneE.fillAmount = game.playerMaxHealth/10;
         HeartBarOneF.fillAmount = game.playerMaxHealth / 10 * (game.playerHealth / game.playerMaxHealth);

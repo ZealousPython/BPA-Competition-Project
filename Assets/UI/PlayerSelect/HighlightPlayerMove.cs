@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-
+// make the characters in their sprites move when the mouse enters the button
 public class HighlightPlayerMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject sprite;

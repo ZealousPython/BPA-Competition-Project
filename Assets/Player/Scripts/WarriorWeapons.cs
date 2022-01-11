@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//manage the warriors weapon selection and special usage
 public class WarriorWeapons : MonoBehaviour
 {
-    //initilize
+    //declare variables
     private GameObject currentWeapon;
     public List<GameObject> weapons;
     public List<int> weaponLevels = new List<int>();
@@ -25,6 +25,7 @@ public class WarriorWeapons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //initilize variables
         moveScript = GetComponent<PlayerMovement>();
         maxMana = GameManager.instance.playerMaxMana;
         mana = GameManager.instance.playerMana;
@@ -34,6 +35,7 @@ public class WarriorWeapons : MonoBehaviour
 
         SpellBar = GameManager.instance.spellBar;
         SpriteUIImages = GameManager.instance.spriteUIImages;
+        //set up the weapon UI
         for (int i = 0; i < weapons.Count; i++)
         {
             SpriteUIImages[i].enabled = true;
@@ -57,10 +59,12 @@ public class WarriorWeapons : MonoBehaviour
             }
         }
         SpellBar.sprite = SpellBarFrames[1];
+        //spawn the current weapon
         createWeapon();
     }
     private void changeWeapons()
     {
+        //change the current weapon
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             weaponSlot += 1;
@@ -88,6 +92,7 @@ public class WarriorWeapons : MonoBehaviour
     }
     public void updateSpellUI()
     {
+        //update the weapon UI
         weapons = GameManager.instance.weaponsOwned;
         weapons.Clear();
         for (int i = 0; i < weapons.Count; i++)
@@ -114,6 +119,7 @@ public class WarriorWeapons : MonoBehaviour
         }
     }
     private void swapCurrentWeapon() {
+        //change the current weapon being used 
         for (int i = 0; i < transform.childCount; i++)
             transform.GetChild(i).GetComponent<Weapon>().destroyWeapon();
         if (currentWeapon.GetComponent<Weapon>().name == "Spear")
@@ -132,6 +138,7 @@ public class WarriorWeapons : MonoBehaviour
         }
     }
     public void createWeapon() {
+        //spawn the weapon
         weaponSlot = 0;
         SpellBar.sprite = SpellBarFrames[weaponSlot + 1];
         GameObject playerWeapon = (GameObject)Instantiate(currentWeapon, transform.position, transform.rotation);
@@ -143,16 +150,19 @@ public class WarriorWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //mange mana consumtion
         if (mana < maxMana)
             mana += manaRegenRate * Time.deltaTime;
         if (mana > maxMana)
             mana = maxMana;
         changeWeapons();
+        //when attack two is pressed use your special
         if (Input.GetButtonDown("attack2") && mana >= 30)
         {
             mana -= 30;
             Special();
         }
+        //while the speed ability is active make the player move faster
         if (Speed) {
             speedTimer -= Time.deltaTime;
             moveScript.speed = 5;
@@ -165,6 +175,7 @@ public class WarriorWeapons : MonoBehaviour
         GameManager.instance.playerMana = mana;
     }
     private void Special() {
+        //activate extra speed
         speedTimer = 1;
         Speed = true;
     }

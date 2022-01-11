@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//manage the buy and upgrade buttons for the spell UI
 public class MageShopUIUpdater : MonoBehaviour
 {
+    //Get UI Buttons
     public Button UpgradeMageBasicAttack;
     public Text MageBasicAttackPrice;
     public Text RockPrice;
@@ -15,11 +16,6 @@ public class MageShopUIUpdater : MonoBehaviour
     public GameObject player;
     private MageBasicAttack Mage;
 
-    void Awake() {
-        
-        
-    }
-
     void Start() {
         game = GameManager.instance;
         GameManager.instance.player = player;
@@ -28,6 +24,7 @@ public class MageShopUIUpdater : MonoBehaviour
         Time.timeScale = 1;
     }
     void Update() {
+        //update the prices of the spells and the leveling  for the basic attack
         RockPrice.text = Mage.rockCast.price.ToString();
         FirePrice.text = Mage.fireCast.price.ToString();
         IcePrice.text = Mage.iceCast.price.ToString();

@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//moves a projectile in a direction constantly with that directions abillity to be changed
 public class ProjectileMovement : Weapon
 {
+    //declare variables
     private Rigidbody2D body;
     private CircleCollider2D hitbox;
     [SerializeField] private float speed;
@@ -16,6 +17,7 @@ public class ProjectileMovement : Weapon
 
     // Start is called before the first frame update
     void Awake(){
+        //get and set the levels of the projectile and set the object to destroy itself
         if (level == 1)
             damage = damagelvl1;
         else if (level == 2)
@@ -26,7 +28,8 @@ public class ProjectileMovement : Weapon
         hitbox = GetComponent<CircleCollider2D>();
         Destroy(gameObject, lifeTime);
     }
-    public void updateProjectileLevel() {
+    public void updateProjectileLevel() { 
+        //update the projectiles level
         if (level == 1)
             damage = damagelvl1;
         else if (level == 2)
@@ -38,13 +41,16 @@ public class ProjectileMovement : Weapon
     // Update is called once per frame
     void Update()
     {
+        //move the gameobject
         body.velocity = speed*directionCast;
         
     }
     public void updateDirection(Vector2 direction){
+        //change the direction to be moving
         directionCast = direction;
     }
     void OnTriggerEnter2D(Collider2D col){
+        //attack enemies on collision
         if (col.tag == "Enemy")
         {
             col.gameObject.GetComponent<EnemyHealth>().hit(damage);

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//manages the players health
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //declare varaiables
     private GameManager game;
     private float maxHealth;
     private float health;
@@ -14,20 +14,14 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = game.playerMaxHealth;
         health = game.playerHealth;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void hit(float damage)
     {
+        //when the player is hit take damage
         health -= damage;
-        if (health < 0)
-            print("dead");
         game.playerHealth = health;
     }
     public void usePotion() {
+        //upon using a potion heal five health
         health += 5;
         if (health > maxHealth) {
             health = maxHealth;

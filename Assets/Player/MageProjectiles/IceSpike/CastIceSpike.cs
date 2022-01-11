@@ -1,19 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//script use to summon a barrage of ice spikes
 public class CastIceSpike : Spell
 {
+    //declare variables
     public GameObject iceSpike;
     int iceSpikeNum = 10;
-
-    private void Awake()
-    {
-       
-    }
-    
-
-
     public override void useSpell() {
+        //spawn the amount of icespikes in different direction and speeds
         for (int i = 0; i < iceSpikeNum; i++)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

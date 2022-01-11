@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Script for sword attack
 public class Sword : Weapon
 {
+    //declare variables
     private Animator anim;
     private BoxCollider2D hitbox;
     public float damagelvl1 = 1;
@@ -19,7 +20,9 @@ public class Sword : Weapon
 
     // Update is called once per frame
     void Update()
+
     {
+        //while attacking play the swing animation
         if (Input.GetButton("attack") && !hitbox.enabled)
         {
             anim.SetTrigger("Swing");
@@ -28,6 +31,7 @@ public class Sword : Weapon
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //on trigger collision attack the enemy
         if (collision.tag == "Enemy") {
             if (level == 1) 
                 collision.gameObject.GetComponent<EnemyHealth>().hit(damagelvl1);

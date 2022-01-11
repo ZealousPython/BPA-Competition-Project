@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
+//initilize variables for each player class depending on what is selected
 public class CharacterSelect : MonoBehaviour
 {
     private GameManager game;

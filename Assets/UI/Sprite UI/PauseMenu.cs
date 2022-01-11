@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//manages pause menu buttons
 public class PauseMenu : MonoBehaviour
 {
     public void pause() {

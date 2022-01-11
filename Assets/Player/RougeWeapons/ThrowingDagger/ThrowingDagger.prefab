@@ -125,11 +125,11 @@ MonoBehaviour:
   peirce: 3
   cooldown: 0.2
   piercelvl1: 3
-  piercelvl2: 3
-  piercelvl3: 3
+  piercelvl2: 4
+  piercelvl3: 6
   damagelvl1: 0.5
   damagelvl2: 1
-  damagelvl3: 1.5
+  damagelvl3: 2
   damage: 1
 --- !u!50 &4813338335886852281
 Rigidbody2D:

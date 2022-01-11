@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
+    //grab game objects
     public GameObject howToPlay;
     public GameObject controls;
     public GameObject backButton;
@@ -13,6 +14,7 @@ public class Tutorial : MonoBehaviour
     public List<GameObject> weapons;
 
     void Awake() {
+        //set gameanager values at start
         GameManager.instance.weaponsOwned = new List<GameObject>();
         GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[3]);
         GameManager.instance.weaponsOwned.Add(GameManager.instance.AllWeapons[5]);
@@ -31,18 +33,21 @@ public class Tutorial : MonoBehaviour
     }
 
     public void goBack() {
+        //change which menu is displayed
         howToPlay.SetActive(true);
         forwardButton.SetActive(true);
         controls.SetActive(false);
         backButton.SetActive(false);
     }
     public void goForward() {
+        //change which menu is displayed
         howToPlay.SetActive(false);
         forwardButton.SetActive(false);
         controls.SetActive(true);
         backButton.SetActive(true);
     }
     public void backToMainMenu() {
+        //goes back to main menu
         GameManager.instance.level = .5f;
         GameManager.instance.paused = false;
         GameManager.instance.ChangeScene("Assets/UI/Main Menu.unity");

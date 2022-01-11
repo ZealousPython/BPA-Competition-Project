@@ -1,17 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//script to manage the properties of the throwing dagger projectile
 public class ThrowingDagger : RougeWeapon
 {
-    // Start is called before the first frame update
-    /*private Rigidbody2D body;
-    private CircleCollider2D hitbox;
-    [SerializeField] private float speed;
-    private Vector2 directionThrown = new Vector2(1,0);
-    [SerializeField] private float lifeTime;
-    [SerializeField] private float peirce;
-    */
+    //declare variables
     private float spinTime = 0.3f;
     private Animator anim;
     bool spining = false;
@@ -24,28 +17,13 @@ public class ThrowingDagger : RougeWeapon
     // Update is called once per frame
     void Update()
     {
-        //body.velocity = speed*directionThrown;
+        //countdown until the dagger spins when it starts spinning lower the damage delt and make it so it has no pierce
         spinTime -= Time.deltaTime;
         if (spinTime <= 0 && !spining){
             anim.SetTrigger("spin");
             damage /= 2;
             spining = true;
-            if (peirce < 2) {
-                peirce = -1;
-            }
+            peirce -= 2;
         }
-    }
-    override public void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Enemy")
-        {
-            col.gameObject.GetComponent<EnemyHealth>().hit(damage);
-            peirce--;
-            if (peirce <= 0 || spining)
-            {
-                Destroy(gameObject);
-            }
-        }
-        else if (col.tag != "Projectile" && col.tag != "Player")
-            Destroy(gameObject);
     }
 }

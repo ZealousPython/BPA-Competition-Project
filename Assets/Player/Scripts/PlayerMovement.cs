@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//manage player movement
 public class PlayerMovement : MonoBehaviour
 {
+    //declare variables
     public float speed;
     private float rotationOffset = 90;
     private CircleCollider2D colliderCircle;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementDirection;
 
     private void Awake(){
+        //get components
         colliderCircle = GetComponent<CircleCollider2D>();
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg+rotationOffset;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
+    //ignore enemy collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy") {
