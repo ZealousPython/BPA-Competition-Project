@@ -260,6 +260,7 @@ public class Shop : MonoBehaviour
         GameManager.instance.saveFile();
     }
     public void SaveAndQuit() {
-        GameManager.instance.saveAndQuit();
+        GameManager.instance.saveFile();
+        GameManager.instance.ChangeScene("Assets/UI/Main Menu.unity");
     }
 }

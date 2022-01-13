@@ -789,8 +789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -279, y: -250}
-  m_SizeDelta: {x: 160, y: 64}
+  m_AnchoredPosition: {x: -300.96, y: -255.2}
+  m_SizeDelta: {x: 234.96832, y: 80.61481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028127500
 MonoBehaviour:
@@ -1064,15 +1064,15 @@ RectTransform:
   m_GameObject: {fileID: 1137985969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 1659292695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2, y: -208}
-  m_SizeDelta: {x: 456, y: 256}
+  m_AnchoredPosition: {x: 0.000015258789, y: -201.1}
+  m_SizeDelta: {x: 2015.9996, y: 960.36273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137985971
 MonoBehaviour:
@@ -1087,27 +1087,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6273585, g: 1, b: 0.99999994, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: f385d0af027fa3b4c88d921455a73928, type: 3}
+    m_FontSize: 105
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 185
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "WASD: Move\t\tP: Pause\n\nScrollWheel: Change Weapon Selected\n\nQ: Use
-    Potion\n\nLeft Click: Fire\t\tMoveMouse:Aim\n\nRight Click: Use Spell/Special"
+  m_Text: "WASD: MOVE\t\tESC: PAUSE\n\nSCROLLWHEEL: CHANGE WEAPON\n\nQ: USE POTION\n\nLEFT
+    CLICK: FIRE\tMOUSE:AIM\n\nRIGHT CLICK: SPELL/SPECIAL"
 --- !u!222 &1137985972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1174,8 +1174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6336415019778641988, guid: 02387394d30f6b549a1ac90da720c52c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc71cb40bd0909c4998d28c3b6391f35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1301,15 +1300,15 @@ RectTransform:
   m_GameObject: {fileID: 1601399571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09, y: 0.09, z: 1}
   m_Children: []
   m_Father: {fileID: 1371683923}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2, y: -208}
-  m_SizeDelta: {x: 456, y: 256}
+  m_AnchoredPosition: {x: -0.00012207031, y: -196.47}
+  m_SizeDelta: {x: 5600, y: 2610.5303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601399573
 MonoBehaviour:
@@ -1324,32 +1323,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.627451, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: f385d0af027fa3b4c88d921455a73928, type: 3}
+    m_FontSize: 216
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 300
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'The game is played in waves you kill different waves of enemys unitl you
-    get to the final way in which you will have to fight a boss.
-
-
-    After each
-    level there is a shop where you can buy and upgrade weapons, health, and potions
-    using gold earned by killing enemies.'
+    m_LineSpacing: 1.5
+  m_Text: THIS GAME IS PLAYED IN WAVES. KILL WAVES OF ENEMIES UNTIL YOU GET TO THE
+    FINAL WAVE IN WHICH YOU HAVE TO FIGHT A BOSS.AFTER EACH LEVEL THERE IS A SHOP
+    WHERE YOU CAN BUY AND UPGRADE WEAPONS. HEALTH, AND POTIONS USING GOLD EARNED
+    BY KILLING ENEMIES.
 --- !u!222 &1601399574
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1422,8 +1418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6336415019778641988, guid: 02387394d30f6b549a1ac90da720c52c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc71cb40bd0909c4998d28c3b6391f35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1468,15 +1463,15 @@ RectTransform:
   m_GameObject: {fileID: 1736085173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1028127499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.29, y: 2.3}
-  m_SizeDelta: {x: 160, y: 32}
+  m_AnchoredPosition: {x: 4, y: -0.0000076294}
+  m_SizeDelta: {x: 1718.5161, y: 891.75977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736085175
 MonoBehaviour:
@@ -1498,19 +1493,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: f385d0af027fa3b4c88d921455a73928, type: 3}
+    m_FontSize: 248
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Back To Main Menu
+    m_LineSpacing: 1.5
+  m_Text: "BACK TO \nMAIN MENU"
 --- !u!222 &1736085176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1546,15 +1541,15 @@ RectTransform:
   m_GameObject: {fileID: 1748682293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 1371683923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -15}
-  m_SizeDelta: {x: 504, y: 128}
+  m_AnchoredPosition: {x: 0, y: -36.097992}
+  m_SizeDelta: {x: 2016, y: 288.782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748682295
 MonoBehaviour:
@@ -1569,26 +1564,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.627451, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
-    m_FontStyle: 1
-    m_BestFit: 1
+    m_Font: {fileID: 12800000, guid: f385d0af027fa3b4c88d921455a73928, type: 3}
+    m_FontSize: 190
+    m_FontStyle: 0
+    m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 7
+    m_MaxSize: 194
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How To Play
+  m_Text: HOW TO PLAY
 --- !u!222 &1748682296
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1624,15 +1619,15 @@ RectTransform:
   m_GameObject: {fileID: 1810133781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 1659292695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -15}
-  m_SizeDelta: {x: 504, y: 128}
+  m_AnchoredPosition: {x: 0, y: -39.5}
+  m_SizeDelta: {x: 2016, y: 324.00003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1810133783
 MonoBehaviour:
@@ -1647,26 +1642,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.627451, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
-    m_FontStyle: 1
-    m_BestFit: 1
+    m_Font: {fileID: 12800000, guid: f385d0af027fa3b4c88d921455a73928, type: 3}
+    m_FontSize: 261
+    m_FontStyle: 0
+    m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 7
+    m_MaxSize: 261
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls
+  m_Text: CONTROLS
 --- !u!222 &1810133784
 CanvasRenderer:
   m_ObjectHideFlags: 0
